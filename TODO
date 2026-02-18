@@ -1,3 +1,6 @@
 [ ] converter a logo para vetorial
 [ ] responsividade para tablet e telemovel
 [ ] rever as cores, pode haver sitios que nao usem as cores globais
+[ ] ver porque é que quando se puxa o scroll para cima o header "sai" do sitio temporariamente
+[ ] adicionar alt às imagens?
+[ ] quando se carrega para trocar de idioma a pagina volta para cima, talvez tenha a ver com o href

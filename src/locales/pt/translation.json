@@ -3,5 +3,45 @@
         "partners": "Parceiros",
         "team": "Equipa",
         "contact": "Contacto"
+    },
+
+    "footer": {
+        "contact": "Contacta-nos",
+        "email": "erta@ualg.pt",
+        "location": "Universidade do Algarve, Faro, Portugal"
+    },
+
+    "hero": {
+        "slogan": {
+            "text": "Algum slogan bue fixe tipo katchau"
+        }
+    },
+
+    "feature": {
+        "about-us": {
+            "title": "Quem somos",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim tincidunt luctus. Sed ut quam tellus. Aliquam tempus, nulla ac dignissim consequat, magna justo euismod nunc, vel egestas purus urna vel metus. Phasellus a ex sed lectus ullamcorper imperdiet non vitae sapien. Nullam sollicitudin diam ut libero iaculis, in malesuada turpis hendrerit. Nam volutpat aliquam eleifend. Fusce non orci vitae nisl faucibus posuere. Nam cursus at arcu id sagittis. Integer nisi sapien, iaculis ac ornare eget, condimentum id nibh. Pellentesque at vulputate ex. Integer vitae malesuada justo, id congue diam. Nulla dignissim libero sit amet augue eleifend, nec rutrum felis auctor. Proin diam ante, rutrum sit amet maximus sit amet, vulputate hendrerit nisi. Maecenas nisi diam, mattis aliquet accumsan eget, rutrum ac felis. "
+        },
+
+        "formula-student": {
+            "title": "Formula Student",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim tincidunt luctus. Sed ut quam tellus. Aliquam tempus, nulla ac dignissim consequat, magna justo euismod nunc, vel egestas purus urna vel metus. Phasellus a ex sed lectus ullamcorper imperdiet non vitae sapien. Nullam sollicitudin diam ut libero iaculis, in malesuada turpis hendrerit. Nam volutpat aliquam eleifend. Fusce non orci vitae nisl faucibus posuere. Nam cursus at arcu id sagittis. Integer nisi sapien, iaculis ac ornare eget, condimentum id nibh. Pellentesque at vulputate ex. Integer vitae malesuada justo, id congue diam. Nulla dignissim libero sit amet augue eleifend, nec rutrum felis auctor. Proin diam ante, rutrum sit amet maximus sit amet, vulputate hendrerit nisi. Maecenas nisi diam, mattis aliquet accumsan eget, rutrum ac felis. ",
+            "ev-card": {
+                "title": "Carros elétricos",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec  pellentesque, nibh ut convallis consectetur, orci elit dapibus sem, a  cursus lorem erat ut nibh."
+            },
+            "cv-card": {
+                "title": "Carros a combustão",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec  pellentesque, nibh ut convallis consectetur, orci elit dapibus sem, a  cursus lorem erat ut nibh."
+            },
+            "dv-card": {
+                "title": "Carros autónomos",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec  pellentesque, nibh ut convallis consectetur, orci elit dapibus sem, a  cursus lorem erat ut nibh."
+            }
+        },
+
+        "partners": {
+            "text": "Alguns dos nossos parceiros"
+        }
     }
 }

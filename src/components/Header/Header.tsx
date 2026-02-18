@@ -1,46 +1,54 @@
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "i18next";
 
-interface HeaderProps {
-    logoSrc: string;
-    logoAlt?: string;
-}
+import data from "../../data/Header";
 
-export default function Header({ logoSrc, logoAlt = "Logo" }: HeaderProps) {
+export default function Header() {
     const { t } = useTranslation();
 
     return (
         <header className="sticky top-0 z-50 w-full bg-primary shadow-sm">
             <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
                 <div className="flex items-center">
-                    <img /* TODO meter a imagem a voltar para a homepage??? nao sei se sera mesmo necessario, mas constuma ser assim */
-                        src={logoSrc}
-                        alt={logoAlt}
+                    <img /* TODO meter a imagem a voltar para a homepage??? */
+                        src={data.logo}
+                        /* alt={logoAlt} */
                         className="h-10 w-auto object-contain"
                     />
                 </div>
 
-                {/* parceiros equipa contacto */}
                 <nav>
                     <ul className="flex items-center space-x-8 text-base font-medium text-white">
                         <li>
-                            <button /* TODO classes de estilo */
+                            {/* <button
                                 onClick={() => {
                                     changeLanguage("en");
                                     localStorage.setItem("lang", "en");
                                 }}
                             >
                                 EN
-                            </button>
-
-                            <button /* TODO classes de estilo */
+                            </button> */}
+                            <a
                                 onClick={() => {
-                                    changeLanguage("pt");
+                                    changeLanguage("en");
                                     localStorage.setItem("lang", "en");
                                 }}
+                                href="#"
+                                className="transition-colors duration-200 hover:opacity-80"
+                            >
+                                EN
+                            </a>
+                            /
+                            <a
+                                onClick={() => {
+                                    changeLanguage("pt");
+                                    localStorage.setItem("lang", "pt");
+                                }}
+                                href="#"
+                                className="transition-colors duration-200 hover:opacity-80"
                             >
                                 PT
-                            </button>
+                            </a>
                         </li>
                         <li>
                             <a

@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #134B8A;
-  --color-secondary: #F59E0B;
+  --color-secondary: #A9D8F6;
   --color-accent: #10B981;
   --color-background: #F3F4F6;
   --color-surface: #FFFFFF;
@@ -11,6 +11,11 @@
   --color-error: #EF4444;
   --color-success: #22C55E;
   --color-warning: #FACC15;
+}
+
+/* idk se é propriamente a melhor opcao, mas yah */
+body {
+  background-color: var(--color-primary);
 }
 
 /* tailwind utilities */
