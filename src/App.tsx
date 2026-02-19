@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Home from "./pages/Home"
+import UnderConstruction from "./pages/UnderConstruction"
 import Join from "./pages/Join"
 
 function App() {
@@ -7,10 +8,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* homepage */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<UnderConstruction />} />
 
         {/* /join */}
         <Route path="/join" element={<Join />} />
+
+        {/* HACK apenas para expor o que ja temos e os placeholders para design e marketing trocarem */}
+        <Route path="/demo-homepage" element={<Home />} />
 
         {/* default */}
         <Route path="*" element={<Navigate to="/" />} />
