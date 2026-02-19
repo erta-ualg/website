@@ -4,3 +4,4 @@
 [ ] ver porque é que quando se puxa o scroll para cima o header "sai" do sitio temporariamente
 [ ] adicionar alt às imagens?
 [ ] quando se carrega para trocar de idioma a pagina volta para cima, talvez tenha a ver com o href
+[ ] adicionar a rota /join para redirecionar para o forms
