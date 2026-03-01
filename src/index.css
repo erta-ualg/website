@@ -560,7 +560,7 @@ a:focus-visible {
   }
 
   .sponsor-track {
-    animation: none;
+    animation: none !important;
   }
 }
 
