@@ -55,6 +55,11 @@
     },
     "the-car": {
         "eyebrow": "O CARRO",
+        "hero": {
+            "eyebrow": "O CARRO",
+            "title": "The car",
+            "subtitle": "Lorem ipsum dolor sit amet."
+        },
         "title": "Protótipo EV — Classe 2",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "stats": {

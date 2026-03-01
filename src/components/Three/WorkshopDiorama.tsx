@@ -1,7 +1,9 @@
-import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Html, OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import * as THREE from "three";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+
+import carModelUrl from "../../assets/car/car.glb";
 
 interface WorkshopDioramaProps {
     reducedMotion?: boolean;
@@ -27,13 +29,79 @@ function CameraShift({ shiftX }: { shiftX: number }) {
     return null;
 }
 
+function LoadingOverlay() {
+    const { progress, active } = useProgress();
+    const percentage = Math.min(100, Math.max(0, Math.round(progress)));
+    const isHidden = !active && percentage >= 100;
+    const loaderClassName = `hero-loader${isHidden ? " is-hidden" : ""}`;
+
+    return (
+        <Html center className={loaderClassName}>
+            <div className="hero-loader-panel">
+                <div className="hero-loader-track">
+                    <div className="hero-loader-bar" style={{ width: `${percentage}%` }} />
+                </div>
+                <span className="hero-loader-text">Loading model {percentage}%</span>
+            </div>
+        </Html>
+    );
+}
+
+function SceneGround() {
+    return (
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.25, 0]} receiveShadow>
+            <planeGeometry args={[40, 40]} />
+            <meshStandardMaterial color="#78afed" roughness={0} />
+        </mesh>
+    );
+}
+
 function WorkshopScene() {
+    const { scene } = useGLTF(carModelUrl, true);
+    const smoothWhiteMaterial = useMemo(() => {
+        const material = new THREE.MeshStandardMaterial({
+            color: "#ffffff",
+            roughness: 0.2,
+            metalness: 0.05,
+            transparent: true,
+            opacity: 0,
+        });
+
+        return material;
+    }, []);
+
+    const car = useMemo(() => {
+        const cloned = scene.clone(true);
+
+        cloned.traverse((obj: THREE.Object3D) => {
+            if ((obj as THREE.Mesh).isMesh) {
+                const mesh = obj as THREE.Mesh;
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                if (Array.isArray(mesh.material)) {
+                    mesh.material = mesh.material.map(() => smoothWhiteMaterial);
+                } else {
+                    mesh.material = smoothWhiteMaterial;
+                }
+            }
+        });
+
+        cloned.position.set(0, 0, 0);
+        cloned.scale.setScalar(1);
+
+        return cloned;
+    }, [scene, smoothWhiteMaterial]);
+
+    useFrame((_, delta) => {
+        if (smoothWhiteMaterial.opacity < 1) {
+            smoothWhiteMaterial.opacity = Math.min(1, smoothWhiteMaterial.opacity + delta * 1.5);
+        }
+    });
+
     return (
         <group position={[0, 0, 0]}>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.25, 0]} receiveShadow>
-                <planeGeometry args={[40, 40]} />
-                <meshStandardMaterial color="#dbeafe" roughness={0}/>
-            </mesh>
+            <primitive object={car} />
+
             <mesh position={[0, 0, 0]}>
                 <boxGeometry args={[0.2, 0.2, 0.2]} />
                 <meshStandardMaterial color="#38bdf8" emissive="#7dd3fc" emissiveIntensity={1.2} />
@@ -43,12 +111,12 @@ function WorkshopScene() {
 }
 
 export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps) {
-    const viewShift = -200;
+    const viewShift = -300;
     const [isInteracting, setIsInteracting] = useState(false);
 
     return (
         <Canvas
-            shadows
+            shadows="soft"
             camera={{ position: [3.4, 1.7, 2.6], fov: 42 }}
             style={{ width: "100%", height: "100%" }}
             gl={{ antialias: true }}
@@ -56,14 +124,15 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
             <CameraShift shiftX={viewShift} />
             <fog attach="fog" args={["#134B8A", 4.5, 10]} />
             <color attach="background" args={["#134B8A"]} />
-            <ambientLight intensity={0.2} color="#c7d9f2" />
+            <ambientLight intensity={0.2} color="#ffffff" />
             <directionalLight
                 position={[-4, 6, 4]}
                 intensity={1.05}
-                color="#93c5fd"
+                color="#ffffff"
                 castShadow
                 shadow-mapSize-width={2048}
                 shadow-mapSize-height={2048}
+                shadow-radius={6}
                 shadow-bias={-0.00035}
                 shadow-camera-left={-6}
                 shadow-camera-right={6}
@@ -71,21 +140,24 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
                 shadow-camera-bottom={-6}
             />
 
-            <group rotation={[0, 0, 0]}>
-                <WorkshopScene />
-            </group>
+            <SceneGround />
+            <Suspense fallback={<LoadingOverlay />}>
+                <group rotation={[0, 0, 0]}>
+                    <WorkshopScene />
+                </group>
+            </Suspense>
 
             <OrbitControls
                 enablePan={false}
-                enableZoom={false}
-                enableRotate
-                autoRotate={!reducedMotion && !isInteracting}
-                autoRotateSpeed={0.6}
-                enableDamping
-                dampingFactor={0.1}
-                rotateSpeed={0.35}
-                minPolarAngle={Math.PI / 2.6}
-                maxPolarAngle={Math.PI / 2.15}
+                    enableZoom={false}
+                    enableRotate
+                    autoRotate={!reducedMotion && !isInteracting}
+                    autoRotateSpeed={0.6}
+                    enableDamping
+                    dampingFactor={0.1}
+                    rotateSpeed={0.35}
+                    minPolarAngle={Math.PI / 2.6}
+                    maxPolarAngle={Math.PI / 2.15}
                 target={[0, 0, 0]}
                 onStart={() => setIsInteracting(true)}
                 onEnd={() => setIsInteracting(false)}
@@ -93,3 +165,6 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
         </Canvas>
     );
 }
+
+// optional preloading
+useGLTF.preload(carModelUrl);
