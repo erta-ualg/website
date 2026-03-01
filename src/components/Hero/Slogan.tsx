@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
@@ -7,6 +7,15 @@ import data from "../../data/Slogan";
 export default function Slogan() {
     const { t } = useTranslation();
     const [isMuted, setIsMuted] = useState(true);
+    const [reduceMotion, setReduceMotion] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        setReduceMotion(mediaQuery.matches);
+        const handleChange = () => setReduceMotion(mediaQuery.matches);
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+    }, []);
 
     return (
         <section
@@ -14,9 +23,9 @@ export default function Slogan() {
         >
             <video
                 className="hero-video-media"
-                autoPlay
+                autoPlay={!reduceMotion}
                 muted={isMuted}
-                loop
+                loop={!reduceMotion}
                 playsInline
                 preload="metadata"
                 poster={data.background}
