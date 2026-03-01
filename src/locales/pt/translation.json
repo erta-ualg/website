@@ -1,8 +1,9 @@
 {
     "header": {
-        "partners": "Parceiros",
-        "team": "Equipa",
-        "contact": "Contacto"
+        "partners": "PARCEIROS",
+        "team": "A EQUIPA",
+        "contact": "CONTACTOS",
+        "the-car": "O CARRO"
     },
 
     "footer": {
@@ -14,13 +15,21 @@
     "hero": {
         "slogan": {
             "text": "Algum slogan bue fixe tipo katchau"
+        },
+        "video": {
+            "mute": "Desativar som",
+            "unmute": "Ativar som"
         }
     },
 
     "feature": {
         "about-us": {
             "title": "Quem somos",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim tincidunt luctus. Sed ut quam tellus. Aliquam tempus, nulla ac dignissim consequat, magna justo euismod nunc, vel egestas purus urna vel metus. Phasellus a ex sed lectus ullamcorper imperdiet non vitae sapien. Nullam sollicitudin diam ut libero iaculis, in malesuada turpis hendrerit. Nam volutpat aliquam eleifend. Fusce non orci vitae nisl faucibus posuere. Nam cursus at arcu id sagittis. Integer nisi sapien, iaculis ac ornare eget, condimentum id nibh. Pellentesque at vulputate ex. Integer vitae malesuada justo, id congue diam. Nulla dignissim libero sit amet augue eleifend, nec rutrum felis auctor. Proin diam ante, rutrum sit amet maximus sit amet, vulputate hendrerit nisi. Maecenas nisi diam, mattis aliquet accumsan eget, rutrum ac felis. "
+            "eyebrow": "Quem somos",
+            "description": "Somos uma equipa recente (2026), aceite na Formula Student Portugal Classe 2. Esta classe foca-se na validação da base do veículo, preparando a transição para a Classe 1 e a competição em pista.",
+            "fact-founded": "Fundada em 2026",
+            "fact-class2": "Aceite: FS Portugal Classe 2",
+            "fact-roadmap": "Rumo a Classe 1"
         },
 
         "formula-student": {
@@ -42,6 +51,79 @@
 
         "partners": {
             "text": "Os nossos parceiros"
+        }
+    },
+    "the-car": {
+        "eyebrow": "O CARRO",
+        "title": "Protótipo EV — Classe 2",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "stats": {
+            "value-1": "2026",
+            "label-1": "Primeiro rollout",
+            "value-2": "Classe 2",
+            "label-2": "FS Portugal",
+            "value-3": "12 meses",
+            "label-3": "Cadência"
+        },
+        "overview": {
+            "title": "Visão geral",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque vel sapien nec erat elementum dignissim.",
+            "fact-1": "Plataforma de validação",
+            "fact-2": "Pronto para Classe 1"
+        },
+        "timeline": {
+            "title": "Calendário",
+            "step-1": "Fase 01 — Arquitetura",
+            "step-1-body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "step-2": "Fase 02 — Protótipo",
+            "step-2-body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "step-3": "Fase 03 — Pista",
+            "step-3-body": "Ut enim ad minim veniam, quis nostrud exercitation."
+        },
+        "specs": {
+            "title": "Especificações",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique.",
+            "item-1": {
+                "title": "Chassis",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            "item-2": {
+                "title": "Powertrain",
+                "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "item-3": {
+                "title": "Aerodinâmica",
+                "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+            },
+            "item-4": {
+                "title": "Controlo",
+                "body": "Duis aute irure dolor in reprehenderit in voluptate velit."
+            }
+        },
+        "systems": {
+            "title": "Subsistemas",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+            "item-1": {
+                "title": "Bateria & HV",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            "item-2": {
+                "title": "Suspensão",
+                "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "item-3": {
+                "title": "Telemetria",
+                "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+            }
+        },
+        "gallery": {
+            "title": "Galeria",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        "cta": {
+            "title": "Junta-te ao projeto",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "action": "Junta-te"
         }
     }
 }

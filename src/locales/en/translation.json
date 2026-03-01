@@ -1,8 +1,9 @@
 {
     "header": {
-        "partners": "Partners",
-        "team": "Team",
-        "contact": "Contact"
+        "partners": "PARTNERS",
+        "team": "THE TEAM",
+        "contact": "CONTACTS",
+        "the-car": "THE CAR"
     },
 
     "footer": {
@@ -14,13 +15,21 @@
     "hero": {
         "slogan": {
             "text": "Some super cool slogan like katchau"
+        },
+        "video": {
+            "mute": "Mute",
+            "unmute": "Unmute"
         }
     },
 
     "feature": {
         "about-us": {
             "title": "About us",
-            "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim tincidunt luctus. Sed ut quam tellus. Aliquam tempus, nulla ac dignissim consequat, magna justo euismod nunc, vel egestas purus urna vel metus. Phasellus a ex sed lectus ullamcorper imperdiet non vitae sapien. Nullam sollicitudin diam ut libero iaculis, in malesuada turpis hendrerit. Nam volutpat aliquam eleifend. Fusce non orci vitae nisl faucibus posuere. Nam cursus at arcu id sagittis. Integer nisi sapien, iaculis ac ornare eget, condimentum id nibh. Pellentesque at vulputate ex. Integer vitae malesuada justo, id congue diam. Nulla dignissim libero sit amet augue eleifend, nec rutrum felis auctor. Proin diam ante, rutrum sit amet maximus sit amet, vulputate hendrerit nisi. Maecenas nisi diam, mattis aliquet accumsan eget, rutrum ac felis. "
+            "eyebrow": "Who we are",
+            "description": "We are a newly founded team (2026) accepted into Formula Student Portugal Class 2. This class focuses on validating the vehicle platform as we transition toward Class 1 and full racing participation.",
+            "fact-founded": "Founded in 2026",
+            "fact-class2": "Accepted: FS Portugal Class 2",
+            "fact-roadmap": "Roadmap: Class 1 Racing"
         },
 
         "formula-student": {
@@ -42,6 +51,79 @@
 
         "partners": {
             "text": "Our partners"
+        }
+    },
+    "the-car": {
+        "eyebrow": "THE CAR",
+        "title": "Prototype EV - Class 2",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "stats": {
+            "value-1": "2026",
+            "label-1": "First rollout",
+            "value-2": "Class 2",
+            "label-2": "FS Portugal",
+            "value-3": "12 mo",
+            "label-3": "Build cadence"
+        },
+        "overview": {
+            "title": "Concept overview",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque vel sapien nec erat elementum dignissim.",
+            "fact-1": "Validation platform",
+            "fact-2": "Class 1 ready"
+        },
+        "timeline": {
+            "title": "Program timeline",
+            "step-1": "Phase 01 — Architecture",
+            "step-1-body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "step-2": "Phase 02 — Prototype",
+            "step-2-body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "step-3": "Phase 03 — Track",
+            "step-3-body": "Ut enim ad minim veniam, quis nostrud exercitation."
+        },
+        "specs": {
+            "title": "Key specs",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique.",
+            "item-1": {
+                "title": "Chassis",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            "item-2": {
+                "title": "Powertrain",
+                "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "item-3": {
+                "title": "Aerodynamics",
+                "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+            },
+            "item-4": {
+                "title": "Controls",
+                "body": "Duis aute irure dolor in reprehenderit in voluptate velit."
+            }
+        },
+        "systems": {
+            "title": "Subsystems",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+            "item-1": {
+                "title": "Battery & HV",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            "item-2": {
+                "title": "Suspension",
+                "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "item-3": {
+                "title": "Telemetry",
+                "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+            }
+        },
+        "gallery": {
+            "title": "Gallery",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        "cta": {
+            "title": "Join the build",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "action": "Join the team"
         }
     }
 }
