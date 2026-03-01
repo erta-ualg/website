@@ -35,7 +35,7 @@ export default function FormulaStudent() {
                     {t("feature.formula-student.description")}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 site-card-grid">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {cards.map((card, index) => (
                         <Card
                             key={index}
