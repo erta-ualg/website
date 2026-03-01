@@ -21,7 +21,7 @@ export default function Slogan() {
                 preload="metadata"
                 poster={data.background}
             >
-                <source src={data.video} type="video/mp4" />
+                <source src={data.video} type="video/webm" />
             </video>
 
             <div className="hero-video-overlay" aria-hidden="true" />
