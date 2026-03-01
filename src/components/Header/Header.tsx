@@ -33,7 +33,7 @@ export default function Header() {
                                     changeLanguage("en");
                                     localStorage.setItem("lang", "en");
                                 }}
-                                href="#"
+                                href=""
                                 className="transition-colors duration-200 hover:opacity-80"
                             >
                                 EN
@@ -44,7 +44,7 @@ export default function Header() {
                                     changeLanguage("pt");
                                     localStorage.setItem("lang", "pt");
                                 }}
-                                href="#"
+                                href=""
                                 className="transition-colors duration-200 hover:opacity-80"
                             >
                                 PT
@@ -60,7 +60,7 @@ export default function Header() {
                         </li>
                         <li>
                             <a
-                                href="#partners" /* TODO ver estas referencias */
+                                href="/partners" /* TODO ver estas referencias */
                                 className="transition-colors duration-200 hover:opacity-80"
                             >
                                 {t("header.partners")}
@@ -68,7 +68,7 @@ export default function Header() {
                         </li>
                         <li>
                             <a
-                                href="#team" /* TODO ver estas referencias */
+                                href="/team" /* TODO ver estas referencias */
                                 className="transition-colors duration-200 hover:opacity-80"
                             >
                                 {t("header.team")}
@@ -76,7 +76,7 @@ export default function Header() {
                         </li>
                         <li>
                             <a
-                                href="#contact" /* TODO ver estas referencias */
+                                href="/contact" /* TODO ver estas referencias */
                                 className="rounded-xl bg-white px-4 py-2 text-black transition-opacity duration-200 hover:opacity-90 site-header-cta"
                             >
                                 {t("header.contact")}
