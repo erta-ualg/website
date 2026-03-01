@@ -19,7 +19,7 @@ export default function Slogan() {
 
     return (
         <section
-            className="relative w-full h-screen min-h-[130vh] flex items-center justify-center text-center hero-video"
+            className="relative w-full flex items-center justify-center text-center hero-video"
         >
             <video
                 className="hero-video-media"

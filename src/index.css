@@ -126,6 +126,7 @@ a {
 
 .hero-video {
   position: relative;
+  min-height: calc(100vh - var(--header-height));
   height: calc(100vh - var(--header-height));
 }
 
@@ -133,7 +134,7 @@ a {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - var(--header-height));
   object-fit: cover;
 }
 
