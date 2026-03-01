@@ -1,21 +1,43 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 import data from "../../data/Slogan";
 
 export default function Slogan() {
     const { t } = useTranslation();
+    const [isMuted, setIsMuted] = useState(true);
 
     return (
         <section
-            /* TODO tentar meter a imagem por tras em vez de ficar "associada" à section ??? */
-            className="relative w-full h-screen flex items-center justify-center text-center"
-            style={{
-                backgroundImage: `url(${data.background})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}
+            className="relative w-full h-screen min-h-130 flex items-center justify-center text-center hero-video"
         >
-            <div className="absolute inset-0 bg-black/50"></div>
+            <video
+                className="hero-video-media"
+                autoPlay
+                muted={isMuted}
+                loop
+                playsInline
+                preload="metadata"
+                poster={data.background}
+            >
+                <source src={data.video} type="video/mp4" />
+            </video>
+
+            <div className="hero-video-overlay" aria-hidden="true" />
+
+            <button
+                type="button"
+                className="hero-video-audio"
+                onClick={() => setIsMuted((current) => !current)}
+                aria-label={isMuted ? t("hero.video.unmute") : t("hero.video.mute")}
+                aria-pressed={!isMuted}
+            >
+                {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                <span className="hero-video-audio-label">
+                    {isMuted ? t("hero.video.unmute") : t("hero.video.mute")}
+                </span>
+            </button>
 
             <div className="relative z-10 max-w-3xl px-6">
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
