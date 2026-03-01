@@ -39,12 +39,12 @@ export default function CarroHero() {
 
             <div className="relative z-10 h-full w-full flex items-center hero-diorama-overlay">
                 <div className="hero-diorama-text">
-                    <p className="hero-eyebrow">Formula Student Team</p>
+                    <p className="hero-eyebrow">{t("the-car.hero.eyebrow")}</p>
                     <h1 className="hero-title">
-                        {t("hero.slogan.text")}
+                        {t("the-car.hero.title")}
                     </h1>
                     <p className="hero-subtitle">
-                        Engineering a new generation of performance. Design, build, and race a Formula Student car with precision, speed, and relentless curiosity.
+                        {t("the-car.hero.subtitle")}
                     </p>
                 </div>
             </div>
