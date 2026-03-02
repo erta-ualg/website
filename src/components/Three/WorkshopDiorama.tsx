@@ -111,7 +111,10 @@ function WorkshopScene() {
 }
 
 export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps) {
-    const viewShift = -300;
+    const viewShift = useMemo(() => {
+        const width = window.innerWidth;
+        return -0.17 * width;
+    }, []);
     const [isInteracting, setIsInteracting] = useState(false);
 
     return (
