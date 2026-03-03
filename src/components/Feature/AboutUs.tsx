@@ -26,6 +26,7 @@ export default function AboutUs() {
                 <div className="flex-1 site-media">
                     <img
                         src={data.image}
+                        alt="Logo da ERTA"
                         className="w-full h-auto rounded shadow-lg site-media-image"
                     />
                 </div>

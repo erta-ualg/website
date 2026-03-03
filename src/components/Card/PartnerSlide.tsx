@@ -4,7 +4,7 @@ import data from "../../data/Partners";
 export default function PartnerSlide() {
     const sponsors = Object.values(data);
 
-    // nao me orgulho nem um pouco disto, mas tambem nao estou a ver outra forma
+    // nao me orgulho nem um pouco disto, mas tambem nao estou a ver outra forma (lmao, no probs)
     const repeated = [
         ...sponsors,
         ...sponsors,
@@ -26,7 +26,7 @@ export default function PartnerSlide() {
                 .sponsor-track {
                     animation: sponsor-scroll 60s linear infinite;
                 }
-                .sponsor-track:hover {
+                .sponsor-track:hover, .sponsor-track:focus-within {
                     animation-play-state: paused;
                 }
             `}</style>
@@ -53,6 +53,7 @@ export default function PartnerSlide() {
                             key={index}
                             imageSrc={sponsor.image}
                             link={sponsor.link}
+                            displayName={sponsor.displayName}
                         />
                     ))}
                 </div>

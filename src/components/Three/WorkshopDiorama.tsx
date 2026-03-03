@@ -123,6 +123,7 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
             camera={{ position: [3.4, 1.7, 2.6], fov: 42 }}
             style={{ width: "100%", height: "100%" }}
             gl={{ antialias: true }}
+            aria-hidden="true"
         >
             <CameraShift shiftX={viewShift} />
             <fog attach="fog" args={["#134B8A", 4.5, 10]} />
