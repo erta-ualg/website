@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import UnderConstruction from "./pages/UnderConstruction"
 import Join from "./pages/Join"
 import TeamPage from "./pages/Team"
+import TheCar from "./pages/TheCar"
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Route path="/demo-homepage" element={<Home />} />
 
         <Route path="/team" element={<TeamPage />} />
+
+        {/* the car */}
+        <Route path="/carro" element={<TheCar />} />
 
         {/* default */}
         <Route path="*" element={<Navigate to="/" />} />

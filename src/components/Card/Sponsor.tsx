@@ -6,7 +6,7 @@ interface SponsorProps {
 
 export default function Sponsor({ imageSrc, link }: SponsorProps) {
     return (
-        <div className="px-8">
+        <div className="px-8 site-sponsor">
             <a
                 href={link}
                 target="_blank"
@@ -16,7 +16,7 @@ export default function Sponsor({ imageSrc, link }: SponsorProps) {
                 <img
                     src={imageSrc}
                     // TODO alt aqui?
-                    className="h-14 object-contain grayscale hover:grayscale-0 transition duration-300"
+                    className="h-14 object-contain grayscale hover:grayscale-0 transition duration-300 site-sponsor-logo"
                 />
             </a>
         </div>

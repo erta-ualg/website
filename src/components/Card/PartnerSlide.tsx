@@ -31,7 +31,7 @@ export default function PartnerSlide() {
                 }
             `}</style>
 
-            <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
+            <div className="relative w-full max-w-6xl mx-auto overflow-hidden site-sponsor-track">
                 <div
                     className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24"
                     style={{
