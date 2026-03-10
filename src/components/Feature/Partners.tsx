@@ -8,9 +8,10 @@ export default function Partners() {
     return (
         <section className="w-full bg-background py-12">
             <div className="max-w-6xl mx-auto px-6 text-center site-section-inner">
-                <p className="text-text-secondary mb-8 text-lg font-medium site-body">
+                {/*h2 ajuda os screenreaders */}
+                <h2 className="text-text-secondary mb-8 text-lg font-medium site-body">
                     {t("feature.partners.text")}
-                </p>
+                </h2>
 
                 <PartnerSlide/>
             </div>

@@ -1,4 +1,4 @@
-import logo from "../assets/header/logo.png"
+import logo from "../assets/header/logo.svg"
 
 const data = {
     logo: logo

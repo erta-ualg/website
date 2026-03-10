@@ -29,6 +29,7 @@ export default function Slogan() {
                 playsInline
                 preload="metadata"
                 poster={data.background}
+                aria-hidden="true"
             >
                 <source src={data.video} type="video/webm" />
             </video>

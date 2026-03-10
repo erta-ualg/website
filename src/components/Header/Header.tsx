@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "i18next";
+import i18n from "i18next";
 
 import data from "../../data/Header";
 
@@ -28,27 +29,33 @@ export default function Header() {
                             >
                                 EN
                             </button> */}
-                            <a
+                            <button
                                 onClick={() => {
                                     changeLanguage("en");
                                     localStorage.setItem("lang", "en");
+                                    document.documentElement.lang = "en";
                                 }}
-                                href=""
-                                className="transition-colors duration-200 hover:opacity-80"
+                                aria-current={i18n.language === "en" ? "page" : undefined}
+                                className={`transition-colors duration-200 hover:opacity-80 cursor-pointer ${
+                                    i18n.language === "en" ? "underline" : ""
+                                }`}
                             >
                                 EN
-                            </a>
-                            /
-                            <a
+                            </button>
+                            <span> / </span>
+                            <button
                                 onClick={() => {
                                     changeLanguage("pt");
                                     localStorage.setItem("lang", "pt");
+                                    document.documentElement.lang = "pt";
                                 }}
-                                href=""
-                                className="transition-colors duration-200 hover:opacity-80"
+                                aria-current={i18n.language === "pt" ? "page" : undefined}
+                                className={`transition-colors duration-200 hover:opacity-80 cursor-pointer ${
+                                    i18n.language === "pt" ? "underline" : ""
+                                }`}
                             >
                                 PT
-                            </a>
+                            </button>
                         </li>
                         <li>
                             <a
