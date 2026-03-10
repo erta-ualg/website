@@ -16,6 +16,12 @@
         "slogan": {
             "text": "Algum slogan bue fixe tipo katchau"
         },
+        "team": {
+            "title": "Construído para correr, projetado para vencer",
+            "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
+            "explore": "Explorar",
+            "learn-more": "Saber mais"
+        },
         "video": {
             "mute": "Desativar som",
             "unmute": "Ativar som"
@@ -51,6 +57,11 @@
 
         "partners": {
             "text": "Os nossos parceiros"
+        },
+        "join-cta": {
+            "title": "Pronto para construir o futuro?",
+            "description": "Estamos sempre à procura de estudantes apaixonados para se juntarem à nossa equipa. Quer te interesse engenharia, design, marketing ou gestão, há um lugar para ti aqui.",
+            "button": "Junta-te à equipa"
         }
     },
     "contacts": {
