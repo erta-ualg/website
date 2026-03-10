@@ -4,6 +4,7 @@ import UnderConstruction from "./pages/UnderConstruction"
 import Join from "./pages/Join"
 import TeamPage from "./pages/Team"
 import TheCar from "./pages/TheCar"
+import Contactos from "./pages/Contactos"
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
 
         {/* default */}
         <Route path="*" element={<Navigate to="/" />} />
+
+        {/* contactos */}
+        <Route path="/contactos" element={<Contactos />} />
       </Routes>
     </BrowserRouter>
   )

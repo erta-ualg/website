@@ -64,6 +64,40 @@
             "button": "Junta-te à equipa"
         }
     },
+    "contacts": {
+        "eyebrow": "FALA CONNOSCO",
+        "title": "Contactos",
+        "subtitle": "Tens alguma dúvida, queres patrocinar-nos ou juntar-te à equipa? Entra em contacto — adorávamos saber de ti.",
+        "info": {
+            "title": "Informação de contacto",
+            "email-label": "Email",
+            "location-label": "Localização",
+            "socials-label": "Segue-nos"
+        },
+        "form": {
+            "title": "Envia-nos uma mensagem",
+            "name": "Nome",
+            "name-placeholder": "O teu nome",
+            "email": "Email",
+            "email-placeholder": "o-teu@email.com",
+            "subject": "Assunto",
+            "subject-placeholder": "Sobre o quê?",
+            "message": "Mensagem",
+            "message-placeholder": "Escreve a tua mensagem aqui...",
+            "send": "Enviar mensagem",
+            "sending": "A enviar...",
+            "success": "Mensagem enviada com sucesso! Responderemos em breve.",
+            "error": "Algo correu mal. Tenta novamente ou envia-nos um email diretamente."
+        },
+        "map": {
+            "title": "Encontra-nos"
+        },
+        "cta": {
+            "title": "Queres juntar-te à equipa?",
+            "body": "Estamos sempre à procura de estudantes apaixonados por engenharia, gestão e design.",
+            "action": "Junta-te à ERTA"
+        }
+    },
     "the-car": {
         "eyebrow": "O CARRO",
         "hero": {

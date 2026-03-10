@@ -1,10 +1,10 @@
 interface SponsorProps {
     imageSrc: string;
     link: string;
-    alt?: string;
+    displayName?: string;
 }
 
-export default function Sponsor({ imageSrc, link }: SponsorProps) {
+export default function Sponsor({ imageSrc, link, displayName }: SponsorProps) {
     return (
         <div className="px-8 site-sponsor">
             <a
@@ -15,7 +15,7 @@ export default function Sponsor({ imageSrc, link }: SponsorProps) {
             >
                 <img
                     src={imageSrc}
-                    // TODO alt aqui?
+                    alt={displayName || "Sponsor"}
                     className="h-14 object-contain grayscale hover:grayscale-0 transition duration-300 site-sponsor-logo"
                 />
             </a>

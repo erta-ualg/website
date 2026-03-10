@@ -64,6 +64,40 @@
             "button": "Join our team"
         }
     },
+    "contacts": {
+        "eyebrow": "GET IN TOUCH",
+        "title": "Contacts",
+        "subtitle": "Have a question, want to sponsor us, or interested in joining the team? Reach out — we'd love to hear from you.",
+        "info": {
+            "title": "Contact information",
+            "email-label": "Email",
+            "location-label": "Location",
+            "socials-label": "Follow us"
+        },
+        "form": {
+            "title": "Send us a message",
+            "name": "Name",
+            "name-placeholder": "Your name",
+            "email": "Email",
+            "email-placeholder": "your@email.com",
+            "subject": "Subject",
+            "subject-placeholder": "What is this about?",
+            "message": "Message",
+            "message-placeholder": "Write your message here...",
+            "send": "Send message",
+            "sending": "Sending...",
+            "success": "Message sent successfully! We'll get back to you soon.",
+            "error": "Something went wrong. Please try again or email us directly."
+        },
+        "map": {
+            "title": "Find us"
+        },
+        "cta": {
+            "title": "Want to join the team?",
+            "body": "We're always looking for passionate students in engineering, business, and design.",
+            "action": "Join ERTA"
+        }
+    },
     "the-car": {
         "eyebrow": "THE CAR",
         "hero": {
