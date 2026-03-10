@@ -4,7 +4,31 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 import data from "../../data/Slogan";
 
-export default function Slogan() {
+export function SloganImage() {
+    const { t } = useTranslation();
+
+    return (
+        <section
+            /* TODO tentar meter a imagem por tras em vez de ficar "associada" à section ??? */
+            className="relative w-full h-screen flex items-center justify-center text-center"
+            style={{
+                backgroundImage: `url(${data.background})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            <div className="absolute inset-0 bg-black/50"></div>
+
+            <div className="relative z-10 max-w-3xl px-6">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                    {t("hero.slogan.text")}
+                </h1>
+            </div>
+        </section>
+    );
+}
+
+export function SloganVideo() {
     const { t } = useTranslation();
     const [isMuted, setIsMuted] = useState(true);
     const [reduceMotion, setReduceMotion] = useState(false);
@@ -56,4 +80,8 @@ export default function Slogan() {
             </div>
         </section>
     );
+}
+
+export default function Slogan() {
+    return SloganImage();
 }
