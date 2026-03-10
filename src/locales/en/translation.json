@@ -21,6 +21,7 @@
             "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
             "explore": "Explore",
             "learn-more": "Learn more"
+        },
         "video": {
             "mute": "Mute",
             "unmute": "Unmute"

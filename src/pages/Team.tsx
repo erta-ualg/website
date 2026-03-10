@@ -1,4 +1,3 @@
-import React from 'react';
 import teamData from '../data/teamData';
 import LeadershipSection from '../components/team/LeadershipSection';
 import DepartmentLeadersSection from '../components/team/DepartmentLeadersSection';
