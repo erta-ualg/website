@@ -3,7 +3,7 @@ import { Html, OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import * as THREE from "three";
 import { Suspense, useEffect, useMemo, useState } from "react";
 
-import carModelUrl from "../../assets/car/car.glb";
+import carModelUrl from "../../assets/car/tapado.glb";
 
 interface WorkshopDioramaProps {
     reducedMotion?: boolean;
@@ -49,7 +49,7 @@ function LoadingOverlay() {
 
 function SceneGround() {
     return (
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.25, 0]} receiveShadow>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
             <planeGeometry args={[40, 40]} />
             <meshStandardMaterial color="#78afed" roughness={0} />
         </mesh>
@@ -60,11 +60,12 @@ function WorkshopScene() {
     const { scene } = useGLTF(carModelUrl, true);
     const smoothWhiteMaterial = useMemo(() => {
         const material = new THREE.MeshStandardMaterial({
-            color: "#ffffff",
-            roughness: 0.2,
-            metalness: 0.05,
-            transparent: true,
+            color: "#555555",
+            roughness: 0.8,
+            metalness: 0.2,
+            transparent: false,
             opacity: 0,
+            side: THREE.DoubleSide,
         });
 
         return material;

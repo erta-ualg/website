@@ -1,4 +1,4 @@
-import background from "../assets/slogan/background.jpg"
+import background from "../assets/slogan/erta-tapado-logoless.png"
 
 const data = {
     background: background,
