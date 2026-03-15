@@ -8,10 +8,10 @@ export default function Footer() {
     const { t } = useTranslation();
 
     return (
-        <footer className="bg-primary text-gray-200 py-8 px-6 site-footer">
+        <footer className="bg-primary text-black-200 py-8 px-6 site-footer">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between site-footer-inner">
                 <div className="mb-6 md:mb-0 text-left">
-                    <h2 className="text-lg font-bold text-gray-200 site-logo-text">ERTA</h2>
+                    <h2 className="text-lg font-bold text-black-200 site-logo-text">ERTA</h2>
                     <div className="flex space-x-4 mt-2">
                         <a
                             href={data.instagram}

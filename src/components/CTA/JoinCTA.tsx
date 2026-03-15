@@ -17,7 +17,7 @@ const JoinCTA = () => {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               to="/join"
-              className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+              className="rounded-md bg-gray-200 px-6 py-3 text-sm font-semibold text-white-200 shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
             >
               {t('feature.join-cta.button')}
             </Link>
