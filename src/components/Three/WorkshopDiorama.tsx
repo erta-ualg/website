@@ -60,7 +60,7 @@ function WorkshopScene() {
     const { scene } = useGLTF(carModelUrl, true);
     const smoothWhiteMaterial = useMemo(() => {
         const material = new THREE.MeshStandardMaterial({
-            color: "#555555",
+            color: "#ff0000",
             roughness: 0.8,
             metalness: 0.2,
             transparent: false,
@@ -154,15 +154,15 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
 
             <OrbitControls
                 enablePan={false}
-                    enableZoom={false}
-                    enableRotate
-                    autoRotate={!reducedMotion && !isInteracting}
-                    autoRotateSpeed={0.6}
-                    enableDamping
-                    dampingFactor={0.1}
-                    rotateSpeed={0.35}
-                    minPolarAngle={Math.PI / 2.6}
-                    maxPolarAngle={Math.PI / 2.15}
+                enableZoom={false}
+                enableRotate
+                autoRotate={!reducedMotion && !isInteracting}
+                autoRotateSpeed={0.6}
+                enableDamping
+                dampingFactor={0.1}
+                rotateSpeed={0.35}
+                minPolarAngle={Math.PI / 2.6}
+                maxPolarAngle={Math.PI / 2.15}
                 target={[0, 0, 0]}
                 onStart={() => setIsInteracting(true)}
                 onEnd={() => setIsInteracting(false)}
