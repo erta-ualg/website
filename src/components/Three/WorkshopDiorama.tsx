@@ -100,12 +100,12 @@ function WorkshopScene() {
     });
 
     return (
-        <group position={[0, 0, 0]}>
+        <group position={[0, 0.02, 0]}>
             <primitive object={car} />
 
             <mesh position={[0, 0, 0]}>
                 <boxGeometry args={[0.2, 0.2, 0.2]} />
-                <meshStandardMaterial color="#38bdf8" emissive="#7dd3fc" emissiveIntensity={1.2} />
+                <meshStandardMaterial color="#38bdf8" emissive="#7dd3fc" emissiveIntensity={1.2} side={THREE.DoubleSide} />
             </mesh>
         </group>
     );
