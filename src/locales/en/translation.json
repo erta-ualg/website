@@ -64,6 +64,50 @@
             "button": "Join our team"
         }
     },
+    "join": {
+        "eyebrow": "RECRUITMENT",
+        "title": "Join us",
+        "subtitle": "Looking for a team where you can apply what you learn, grow fast, and build something real? Here, we turn classes into track-ready results.",
+        "hero-action": "Apply now",
+        "future-note": "Coming soon: built-in application form on this page.",
+        "reasons": {
+            "title": "Why join the team",
+            "subtitle": "We are not just looking for grades. We are looking for attitude, consistency, and the drive to build.",
+            "item-1": "You learn in a real environment with engineering, strategy, and execution challenges.",
+            "item-2": "You work on a competitive project with visible impact on your portfolio.",
+            "item-3": "You grow in a multidisciplinary team with mentorship, ownership, and delivery pace."
+        },
+        "roles": {
+            "title": "Profiles and backgrounds we need",
+            "subtitle": "If you identify with one of these areas, we want to hear from you.",
+            "item-1": {
+                "title": "Engineering",
+                "description": "Car development, validation, and technical iteration.",
+                "skill-1": "Mechanical, Electrical, or related areas",
+                "skill-2": "CAD, manufacturing, testing, or simulation",
+                "skill-3": "Strong problem-solving mindset"
+            },
+            "item-2": {
+                "title": "Management and Operations",
+                "description": "Planning, procurement, logistics, and season organization.",
+                "skill-1": "Management, Economics, or Industrial Engineering",
+                "skill-2": "Organization, communication, and follow-through",
+                "skill-3": "Ability to execute under deadlines"
+            },
+            "item-3": {
+                "title": "Marketing and Design",
+                "description": "Brand, content, media, and public team presentation.",
+                "skill-1": "Design, Multimedia, Communication, or Marketing",
+                "skill-2": "Content creation and visual identity",
+                "skill-3": "Storytelling and partner relations"
+            }
+        },
+        "cta": {
+            "title": "Ready to join the project?",
+            "body": "Submit your application through the Google Form. It is quick and helps us route you to the right area.",
+            "action": "Open application form"
+        }
+    },
     "contacts": {
         "eyebrow": "GET IN TOUCH",
         "title": "Contacts",

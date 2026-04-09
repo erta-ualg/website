@@ -510,6 +510,31 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   align-self: flex-start;
 }
 
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(120deg, var(--site-accent), rgba(34, 197, 94, 0.9));
+  box-shadow: var(--site-glow-strong);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35);
+}
+
+.hero-cta-primary:active {
+  transform: translateY(0);
+}
+
 @media (min-width: 900px) {
   .cta-block {
     flex-direction: row;
@@ -612,6 +637,79 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
 }
 
 /* ── Contacts page ── */
+
+/* ── Join page ── */
+
+.join-hero {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 760px;
+}
+
+.join-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 1.05;
+  color: var(--site-text);
+  text-shadow: var(--site-title-shadow);
+}
+
+.join-subtitle {
+  max-width: 640px;
+}
+
+.join-hero-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.join-future-note {
+  font-size: 0.9rem;
+  color: var(--site-muted);
+}
+
+.join-reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.join-reason-card {
+  padding-top: 1.5rem;
+}
+
+.join-reason-text {
+  color: var(--site-text);
+  line-height: 1.6;
+}
+
+.join-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.join-role-card {
+  background: var(--site-surface-strong);
+  border: 1px solid var(--site-card-border);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--site-shadow);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.join-skill-list {
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
 
 .contact-hero {
   display: grid;

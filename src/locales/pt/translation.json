@@ -64,6 +64,50 @@
             "button": "Junta-te à equipa"
         }
     },
+    "join": {
+        "eyebrow": "RECRUTAMENTO",
+        "title": "Junta-te a nos",
+        "subtitle": "Procura uma equipa onde podes aplicar o que aprendes, crescer rapido e construir algo real? Aqui, transformamos aulas em pista.",
+        "hero-action": "Candidatar agora",
+        "future-note": "Em breve: formulario de candidatura integrado no site.",
+        "reasons": {
+            "title": "Porque juntar a equipa",
+            "subtitle": "Nao procuramos apenas notas altas. Procuramos atitude, consistencia e vontade de construir.",
+            "item-1": "Aprendes em contexto real com desafios de engenharia, estrategia e execucao.",
+            "item-2": "Trabalhas num projeto competitivo com impacto visivel no teu portfolio.",
+            "item-3": "Cresces numa equipa multidisciplinar com mentoria, ownership e ritmo de entrega."
+        },
+        "roles": {
+            "title": "Perfis e curriculos necessarios",
+            "subtitle": "Se te identificas com uma destas areas, queremos falar contigo.",
+            "item-1": {
+                "title": "Engenharia",
+                "description": "Desenvolvimento do carro, validacao e iteracao tecnica.",
+                "skill-1": "Mecanica, Eletrotecnia ou areas proximas",
+                "skill-2": "CAD, manufatura, testes ou simulacao",
+                "skill-3": "Mentalidade de resolucao de problemas"
+            },
+            "item-2": {
+                "title": "Gestao e Operacoes",
+                "description": "Planeamento, procurement, logistica e organizacao da epoca.",
+                "skill-1": "Gestao, Economia, Engenharia e Gestao Industrial",
+                "skill-2": "Organizacao, comunicacao e seguimento",
+                "skill-3": "Capacidade de executar sob prazos"
+            },
+            "item-3": {
+                "title": "Marketing e Design",
+                "description": "Marca, conteudo, media e apresentacao publica da equipa.",
+                "skill-1": "Design, Multimedia, Comunicacao ou Marketing",
+                "skill-2": "Criacao de conteudo e identidade visual",
+                "skill-3": "Storytelling e relacao com parceiros"
+            }
+        },
+        "cta": {
+            "title": "Pronto para entrar no projeto?",
+            "body": "Submete a tua candidatura no Google Forms. O processo e rapido e ajuda-nos a encaminhar-te para a area certa.",
+            "action": "Ir para o formulario"
+        }
+    },
     "contacts": {
         "eyebrow": "FALA CONNOSCO",
         "title": "Contactos",
