@@ -98,32 +98,35 @@ export default function Header() {
 
             <nav
                 id="mobile-nav"
+                aria-hidden={!isMenuOpen}
                 className={`mobile-nav border-t border-white/20 bg-primary/95 px-4 md:hidden ${
                     isMenuOpen ? "mobile-nav-open" : "mobile-nav-closed"
                 }`}
             >
-                <ul className="flex flex-col gap-3 py-3 text-white site-nav">
-                    {navLinks.map((link) => (
-                        <li key={link.href}>
+                {isMenuOpen && (
+                    <ul className="flex flex-col gap-3 py-3 text-white site-nav">
+                        {navLinks.map((link) => (
+                            <li key={link.href}>
+                                <a
+                                    href={link.href}
+                                    className="block rounded-md px-2 py-2 transition-colors duration-200 hover:bg-white/10"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                        <li>
                             <a
-                                href={link.href}
-                                className="block rounded-md px-2 py-2 transition-colors duration-200 hover:bg-white/10"
+                                href="/contactos"
+                                className="mt-1 inline-flex rounded-xl bg-white px-4 py-2 text-black transition-opacity duration-200 hover:opacity-90 site-header-cta"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                {link.label}
+                                {t("header.contact")}
                             </a>
                         </li>
-                    ))}
-                    <li>
-                        <a
-                            href="/contactos"
-                            className="mt-1 inline-flex rounded-xl bg-white px-4 py-2 text-black transition-opacity duration-200 hover:opacity-90 site-header-cta"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t("header.contact")}
-                        </a>
-                    </li>
-                </ul>
+                    </ul>
+                )}
             </nav>
         </header>
     );
