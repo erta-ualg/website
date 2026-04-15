@@ -51,8 +51,14 @@ export function SloganVideo() {
         }
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const handleChange = () => setReduceMotion(mediaQuery.matches);
-        mediaQuery.addEventListener("change", handleChange);
-        return () => mediaQuery.removeEventListener("change", handleChange);
+
+        if (typeof mediaQuery.addEventListener === "function") {
+            mediaQuery.addEventListener("change", handleChange);
+            return () => mediaQuery.removeEventListener("change", handleChange);
+        }
+
+        mediaQuery.addListener(handleChange);
+        return () => mediaQuery.removeListener(handleChange);
     }, []);
 
     return (
