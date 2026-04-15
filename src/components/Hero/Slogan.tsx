@@ -33,13 +33,22 @@ export function SloganVideo() {
     const { t } = useTranslation();
     const [isMuted, setIsMuted] = useState(true);
     const [reduceMotion, setReduceMotion] = useState(() => {
-        if (typeof window === "undefined") {
+        if (
+            typeof window === "undefined" ||
+            typeof window.matchMedia !== "function"
+        ) {
             return false;
         }
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     });
 
     useEffect(() => {
+        if (
+            typeof window === "undefined" ||
+            typeof window.matchMedia !== "function"
+        ) {
+            return;
+        }
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const handleChange = () => setReduceMotion(mediaQuery.matches);
         mediaQuery.addEventListener("change", handleChange);
