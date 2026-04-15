@@ -137,13 +137,14 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
 }
 
 .mobile-nav {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
   transform-origin: top;
 }
 
 .mobile-nav-open {
-  max-height: 360px;
+  max-height: calc(100vh - var(--header-height));
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
