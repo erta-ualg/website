@@ -1,5 +1,7 @@
 {
     "header": {
+        "menu": "Menu",
+        "close": "Close",
         "partners": "PARTNERS",
         "team": "THE TEAM",
         "contact": "CONTACTS",

@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Html, OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import * as THREE from "three";
 import { Suspense, useEffect, useMemo, useState } from "react";
@@ -9,13 +9,14 @@ interface WorkshopDioramaProps {
     reducedMotion?: boolean;
 }
 
-function CameraShift({ shiftX }: { shiftX: number }) {
+function CameraShift({ shiftRatio, mobileBreakpoint = 768 }: { shiftRatio: number; mobileBreakpoint?: number }) {
     const { camera, size } = useThree();
 
     useEffect(() => {
         const width = Math.max(1, Math.floor(size.width));
         const height = Math.max(1, Math.floor(size.height));
         const perspective = camera as THREE.PerspectiveCamera;
+        const shiftX = width <= mobileBreakpoint ? 0 : Math.round(shiftRatio * width);
 
         perspective.setViewOffset(width, height, shiftX, 0, width, height);
         perspective.updateProjectionMatrix();
@@ -24,7 +25,7 @@ function CameraShift({ shiftX }: { shiftX: number }) {
             perspective.clearViewOffset();
             perspective.updateProjectionMatrix();
         };
-    }, [camera, size.width, size.height, shiftX]);
+    }, [camera, size.width, size.height, shiftRatio, mobileBreakpoint]);
 
     return null;
 }
@@ -59,16 +60,14 @@ function SceneGround() {
 function WorkshopScene() {
     const { scene } = useGLTF(carModelUrl, true);
     const smoothWhiteMaterial = useMemo(() => {
-        const material = new THREE.MeshStandardMaterial({
+        return new THREE.MeshStandardMaterial({
             color: "#ff0000",
             roughness: 0.8,
             metalness: 0.2,
             transparent: false,
-            opacity: 0,
+            opacity: 1,
             side: THREE.DoubleSide,
         });
-
-        return material;
     }, []);
 
     const car = useMemo(() => {
@@ -93,12 +92,6 @@ function WorkshopScene() {
         return cloned;
     }, [scene, smoothWhiteMaterial]);
 
-    useFrame((_, delta) => {
-        if (smoothWhiteMaterial.opacity < 1) {
-            smoothWhiteMaterial.opacity = Math.min(1, smoothWhiteMaterial.opacity + delta * 1.5);
-        }
-    });
-
     return (
         <group position={[0, 0.02, 0]}>
             <primitive object={car} />
@@ -112,10 +105,6 @@ function WorkshopScene() {
 }
 
 export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps) {
-    const viewShift = useMemo(() => {
-        const width = window.innerWidth;
-        return -0.17 * width;
-    }, []);
     const [isInteracting, setIsInteracting] = useState(false);
 
     return (
@@ -126,7 +115,7 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
             gl={{ antialias: true }}
             aria-hidden="true"
         >
-            <CameraShift shiftX={viewShift} />
+            <CameraShift shiftRatio={-0.17} />
             <fog attach="fog" args={["#134B8A", 4.5, 10]} />
             <color attach="background" args={["#134B8A"]} />
             <ambientLight intensity={0.2} color="#ffffff" />

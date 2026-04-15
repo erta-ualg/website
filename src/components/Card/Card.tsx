@@ -10,10 +10,10 @@ export default function Card({ imageSrc, title, description }: CardProps) {
             <img
                 src={imageSrc}
                 alt={title} /* TODO pensar no que meter no alt */
-                className="w-full h-48 object-cover site-card-image"
+                className="w-full h-40 sm:h-48 object-cover site-card-image"
             />
 
-            <div className="p-6 text-center site-card-body">
+            <div className="p-5 sm:p-6 text-center site-card-body">
                 <h3 className="text-xl font-semibold text-primary mb-2 site-card-title">
                     {title}
                 </h3>

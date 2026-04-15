@@ -10,17 +10,18 @@ export function SloganImage() {
     return (
         <section
             /* TODO tentar meter a imagem por tras em vez de ficar "associada" à section ??? */
-            className="relative w-full h-screen flex items-center justify-center text-center"
+            className="relative w-full flex items-center justify-center text-center"
             style={{
                 backgroundImage: `url(${data.background})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                minHeight: "calc(100vh - var(--header-height))",
             }}
         >
             <div className="absolute inset-0 bg-black/50"></div>
 
             <div className="relative z-10 max-w-3xl px-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                     {t("hero.slogan.text")}
                 </h1>
             </div>
@@ -31,11 +32,15 @@ export function SloganImage() {
 export function SloganVideo() {
     const { t } = useTranslation();
     const [isMuted, setIsMuted] = useState(true);
-    const [reduceMotion, setReduceMotion] = useState(false);
+    const [reduceMotion, setReduceMotion] = useState(() => {
+        if (typeof window === "undefined") {
+            return false;
+        }
+        return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    });
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-        setReduceMotion(mediaQuery.matches);
         const handleChange = () => setReduceMotion(mediaQuery.matches);
         mediaQuery.addEventListener("change", handleChange);
         return () => mediaQuery.removeEventListener("change", handleChange);
@@ -74,7 +79,7 @@ export function SloganVideo() {
             </button>
 
             <div className="relative z-10 max-w-3xl px-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                     {t("hero.slogan.text")}
                 </h1>
             </div>

@@ -35,6 +35,10 @@ export default function CarroHero() {
         <section className="relative w-full h-[calc(100vh-5rem)] min-h-[520px] hero-diorama">
             <div className="absolute inset-0 hero-diorama-canvas">
                 <WorkshopDiorama reducedMotion={prefersReducedMotion} />
+                <div
+                    className="absolute inset-0 bg-transparent md:hidden"
+                    aria-hidden="true"
+                />
             </div>
 
             <div className="relative z-10 h-full w-full flex items-center hero-diorama-overlay">
