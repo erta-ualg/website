@@ -31,7 +31,7 @@ export default function TheCar() {
             <Header/>
             <CarroHero/>
 
-            <section className="w-full py-16">
+            <section className="w-full py-16 bg-background">
                 <div className="max-w-6xl mx-auto px-6 car-section">
                     <div className="car-intro">
                         <p className="section-eyebrow">{t("the-car.eyebrow")}</p>
@@ -81,7 +81,7 @@ export default function TheCar() {
                 </div>
             </section>
 
-            <section className="w-full py-16">
+            <section className="w-full py-16 bg-background">
                 <div className="max-w-6xl mx-auto px-6 car-section">
                     <div className="section-header">
                         <h3 className="site-heading">{t("the-car.specs.title")}</h3>
@@ -115,7 +115,7 @@ export default function TheCar() {
                 </div>
             </section>
 
-            <section className="w-full py-16">
+            <section className="w-full py-16 bg-background">
                 <div className="max-w-6xl mx-auto px-6 car-section">
                     <div className="section-header">
                         <h3 className="site-heading">{t("the-car.gallery.title")}</h3>

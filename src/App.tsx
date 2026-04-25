@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Home from "./pages/Home"
-import UnderConstruction from "./pages/UnderConstruction"
 import Join from "./pages/Join"
 import TeamPage from "./pages/Team"
 import TheCar from "./pages/TheCar"
@@ -11,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* homepage */}
-        <Route path="/" element={<UnderConstruction />} />
+        <Route path="/" element={<Home />} />
 
         {/* /join */}
         <Route path="/join" element={<Join />} />

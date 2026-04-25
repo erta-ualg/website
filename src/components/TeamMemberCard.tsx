@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import type { TeamMember } from '../data/teamData';
 
 interface TeamMemberCardProps {
@@ -8,43 +9,53 @@ interface TeamMemberCardProps {
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
+  const { t } = useTranslation();
   const { name, role, description, photoUrl, linkedin, instagram, department } = member;
 
   return (
-    <div className="group bg-zinc-100 rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md">
-      <div className="relative w-32 h-32 mb-4">
+    <article className="group team-member-card site-card flex h-full flex-col overflow-hidden text-center">
+      <div className="relative aspect-square w-full overflow-hidden">
         <img
           src={photoUrl}
           alt={`Foto de ${name}`}
-          className="w-full h-full rounded-full object-cover"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute bottom-0 right-0 flex items-center justify-center w-8 h-8 bg-primary rounded-full text-white">
-          <span className="text-xs font-bold">{department.substring(0, 2)}</span>
+        <div className="team-member-card-overlay absolute inset-0" />
+        <div className="team-member-department-chip absolute left-4 top-4 rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em]">
+          {department}
         </div>
       </div>
-      <h3 className="text-xl font-bold text-gray-900">{name}</h3>
-      <p className="text-primary italic font-semibold mb-2">{role}</p>
-      <div className="w-16 h-0.5 bg-primary mb-4 transition-all duration-300 group-hover:w-24"></div>
-      <p className="text-gray-600 text-sm mb-4 flex-grow">{description}</p>
-      <div className="flex space-x-4">
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 hover:text-primary transition-colors"
-        >
-          <FaLinkedin size={24} />
-        </a>
-        <a
-          href={instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 hover:text-primary transition-colors"
-        >
-          <FaInstagram size={24} />
-        </a>
+
+      <div className="flex flex-1 flex-col gap-4 p-6 text-left">
+        <div className="space-y-1">
+          <h3 className="site-heading text-2xl">{name}</h3>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--site-accent)]">{role}</p>
+        </div>
+
+        <p className="site-body flex-1">{description}</p>
+
+        <div className="flex items-center gap-3 pt-2">
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="team-member-social-button inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--site-card-border)] text-[var(--site-text)] hover:-translate-y-0.5 hover:border-[color:var(--site-accent)]"
+            aria-label={t('team-page.card.linkedin', { name })}
+          >
+            <FaLinkedin size={18} />
+          </a>
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="team-member-social-button inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--site-card-border)] text-[var(--site-text)] hover:-translate-y-0.5 hover:border-[color:var(--site-accent)]"
+            aria-label={t('team-page.card.instagram', { name })}
+          >
+            <FaInstagram size={18} />
+          </a>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

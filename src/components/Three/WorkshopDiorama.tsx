@@ -112,11 +112,20 @@ function WorkshopScene() {
 }
 
 export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps) {
-    const viewShift = useMemo(() => {
-        const width = window.innerWidth;
-        return -0.17 * width;
-    }, []);
+    const [viewShift, setViewShift] = useState(0);
     const [isInteracting, setIsInteracting] = useState(false);
+
+    useEffect(() => {
+        const updateShift = () => {
+            const width = window.innerWidth;
+            const ratio = width < 768 ? -0.08 : -0.17;
+            setViewShift(Math.round(width * ratio));
+        };
+
+        updateShift();
+        window.addEventListener("resize", updateShift);
+        return () => window.removeEventListener("resize", updateShift);
+    }, []);
 
     return (
         <Canvas

@@ -14,7 +14,7 @@
 
     "hero": {
         "slogan": {
-            "text": "Some super cool slogan like katchau"
+            "text": "THE SOUTH TAKES FLIGHT"
         },
         "team": {
             "title": "Built to race, engineered to win",
@@ -96,6 +96,114 @@
             "title": "Want to join the team?",
             "body": "We're always looking for passionate students in engineering, business, and design.",
             "action": "Join ERTA"
+        }
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "Formula Student EV · Algarve",
+            "title": "THE SOUTH TAKES FLIGHT.",
+            "subtitle": "The Algarve's first Formula Student EV team.",
+            "cta-sponsor": "Sponsor Us",
+            "cta-team": "The Team",
+            "pills": {
+                "powertrain": "Electric powertrain",
+                "aero": "Aerodynamic focus",
+                "rookie": "Southern Portugal rookie squad"
+            },
+            "visual": {
+                "launch": "Launch bay",
+                "electric": "100% electric",
+                "placeholder-title": "Placeholder visual",
+                "placeholder-body": "A stork silhouette, aero render, or chassis frame can sit here later."
+            }
+        },
+        "mission": {
+            "eyebrow": "The Mission",
+            "title": "Rookie underdogs from the South of Portugal building an EV race car.",
+            "body": "We are a first-year team from the Algarve building our own electric Formula Student machine with a stubborn focus on lightness, efficiency, and aerodynamic control.",
+            "placeholder-title": "Mascot placeholder",
+            "placeholder-body": "A stork render or cutout can sit here once the asset is ready.",
+            "chips": {
+                "rookie": "Rookie team",
+                "south": "South of Portugal",
+                "ev": "Electric race car"
+            }
+        },
+        "machine": {
+            "eyebrow": "The Machine",
+            "title": "Low, sharp, and built to cut through the air.",
+            "body": "The chassis render will sit in the center once the CAD asset lands.",
+            "placeholder-title": "Chassis render placeholder",
+            "placeholder-body": "A clean CAD render or hero shot can be centered here.",
+            "spec-placeholder": "Target metric placeholder until the engineering spec is locked.",
+            "specs": {
+                "weight": "Weight (kg)",
+                "power": "Power (kW)",
+                "acceleration": "0-100km/h",
+                "aero": "Aero Package",
+                "tbd": "TBD"
+            }
+        },
+        "sponsors": {
+            "eyebrow": "Sponsor Grid",
+            "title": "Partners that keep the build alive.",
+            "body": "The existing sponsor assets now sit inside a clean responsive grid with grayscale-by-default treatment and hover color recovery."
+        }
+    },
+    "team-page": {
+        "overview": {
+            "eyebrow": "Team map",
+            "title": "Meet the people building the car",
+            "body": "Use the quick links, search bar, and department filter to move straight to the people you want to find."
+        },
+        "stats": {
+            "total-members": "Total members",
+            "departments": "Departments",
+            "leadership-roles": "Leadership roles"
+        },
+        "navigation": {
+            "eyebrow": "Navigate",
+            "title": "Jump to a section"
+        },
+        "quick-links": {
+            "leadership": "Leadership",
+            "department-leads": "Department leads",
+            "departments": "Departments",
+            "join": "Join us"
+        },
+        "search": {
+            "label": "Search members",
+            "placeholder": "Name, role, department, or description"
+        },
+        "filters": {
+            "aria": "Department filters",
+            "all": "All departments"
+        },
+        "departments": {
+            "management": "Management & Finance",
+            "vehicle-dynamics": "Vehicle Dynamics",
+            "powertrain": "Powertrain & Electrical",
+            "chassis-aero": "Chassis & Aerodynamics",
+            "software": "Software & Informatics"
+        },
+        "leadership": {
+            "eyebrow": "Leadership",
+            "title": "Team Leadership",
+            "description": "The people responsible for the overall direction, technical oversight, and internal coordination."
+        },
+        "department-leaders": {
+            "eyebrow": "Department leads",
+            "title": "Department Leaders",
+            "description": "These members coordinate each technical area and keep work aligned across the car."
+        },
+        "departments-section": {
+            "eyebrow": "Department",
+            "description": "Explore the members responsible for this subsystem and jump straight to the area you need.",
+            "empty": "No members matched the current search or department filter."
+        },
+        "card": {
+            "linkedin": "{{name}} on LinkedIn",
+            "instagram": "{{name}} on Instagram"
         }
     },
     "the-car": {
