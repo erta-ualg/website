@@ -206,6 +206,57 @@
             "instagram": "{{name}} no Instagram"
         }
     },
+    "join-form": {
+        "eyebrow": "JUNTA-TE A EQUIPA",
+        "title": "Junta-te a ERTA",
+        "subtitle": "Somos a primeira equipa de Fórmula Student da Universidade do Algarve. O nosso objetivo é projetar, desenvolver e, futuramente, construir um carro de competição estudantil, aplicando o que aprendemos em engenharia, design e gestão. Todas as áreas são importantes - não é preciso ter experiência prévia.",
+        "email-subject": "Candidatura ERTA",
+        "form": {
+            "title": "Formulário de candidatura",
+            "name": "Nome completo",
+            "name-placeholder": "Nome e apelido",
+            "email": "Email",
+            "email-institutional": "institucional",
+            "email-placeholder": "a00000@ualg.pt",
+            "email-feedback-empty": "Usa o teu email institucional terminado em @ualg.pt.",
+            "email-feedback-valid": "Introduziste {{email}}. Email institucional valido.",
+            "email-feedback-invalid": "Introduziste {{email}}. Usa um endereco terminado em @ualg.pt.",
+            "email-domain-required": "Por favor, usa o teu email institucional terminado em @ualg.pt.",
+            "required-note": "Campos obrigatórios incluem nome e apelido e email institucional.",
+            "whatsapp": "Número de WhatsApp",
+            "whatsapp-placeholder": "+351 9XX XXX XXX ou formato internacional",
+            "course": "Curso universitário atual",
+            "course-placeholder": "Exemplo: Engenharia Mecânica",
+            "year": "Ano atual",
+            "year-placeholder": "Exemplo: 2o ano",
+            "extracurricular": "Já participaste em alguma atividade extracurricular relacionada com engenharia?",
+            "extracurricular-details": "Se sim, em qual/quais?",
+            "extracurricular-details-placeholder": "Partilha o nome e um breve resumo (opcional).",
+            "motivation": "Explica porque queres fazer parte do projeto",
+            "motivation-placeholder": "Conta-nos a tua motivação e como queres contribuir.",
+            "interest-areas": "Que áreas te interessam?",
+            "interest-areas-required": "Seleciona pelo menos uma area de interesse.",
+            "interest-options": {
+                "chassis-aero": "Chassis e Aerodinâmica",
+                "dynamics": "Dinâmica (Handling, suspensão, travões)",
+                "powertrain-motor": "Powertrain e Eletrónica",
+                "software-it": "Software e Informática",
+                "management-finances": "Gestão e Finanças",
+                "marketing": "Marketing e Design"
+            },
+            "in-person": "Tens disponibilidade para reuniões presenciais?",
+            "select-option": "Seleciona uma opção",
+            "yes": "Sim",
+            "no": "Nao",
+            "yes-no-required": "Por favor responde a todas as perguntas de sim/nao.",
+            "extracurricular-details-required": "Por favor descreve o que fizeste na tua atividade extracurricular de engenharia.",
+            "none": "Nenhuma",
+            "send": "Submeter candidatura",
+            "sending": "A submeter...",
+            "success": "Candidatura enviada com sucesso! Vamos entrar em contacto em breve.",
+            "error": "Algo correu mal. Tenta novamente ou envia-nos um email diretamente."
+        }
+    },
     "the-car": {
         "eyebrow": "O CARRO",
         "hero": {

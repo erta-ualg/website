@@ -206,6 +206,57 @@
             "instagram": "{{name}} on Instagram"
         }
     },
+    "join-form": {
+        "eyebrow": "JOIN THE TEAM",
+        "title": "Join ERTA",
+        "subtitle": "We are the first Formula Student team from the University of the Algarve. Our goal is to design, develop and, in the future, build a student racing car, applying what we learn in engineering, design and management. All areas are important - no prior experience needed.",
+        "email-subject": "ERTA Join Application",
+        "form": {
+            "title": "Application form",
+            "name": "Full name",
+            "name-placeholder": "Name and surname",
+            "email": "Email",
+            "email-institutional": "institutional",
+            "email-placeholder": "a00000@ualg.pt",
+            "email-feedback-empty": "Use your institutional email ending in @ualg.pt.",
+            "email-feedback-valid": "You entered {{email}}. Valid institutional email.",
+            "email-feedback-invalid": "You entered {{email}}. Please use an address ending in @ualg.pt.",
+            "email-domain-required": "Please use your institutional email ending in @ualg.pt.",
+            "required-note": "Required fields include name and surname and institutional email.",
+            "whatsapp": "WhatsApp phone number",
+            "whatsapp-placeholder": "+351 9XX XXX XXX or international format",
+            "course": "Current university course",
+            "course-placeholder": "Example: Mechanical Engineering",
+            "year": "Current year",
+            "year-placeholder": "Example: 2nd year",
+            "extracurricular": "Have you ever been part of an extracurricular activity related to engineering?",
+            "extracurricular-details": "If yes, which one(s)?",
+            "extracurricular-details-placeholder": "Share the name and a quick summary (optional).",
+            "motivation": "Explain why you want to be part of the project",
+            "motivation-placeholder": "Tell us your motivation and how you want to contribute.",
+            "interest-areas": "What areas interest you?",
+            "interest-areas-required": "Please select at least one area of interest.",
+            "interest-options": {
+                "chassis-aero": "Chassis and aerodynamics",
+                "dynamics": "Dynamics (Handling, suspension, brakes)",
+                "powertrain-motor": "Powertrain and Electronics",
+                "software-it": "Software and IT",
+                "management-finances": "Management and Finances",
+                "marketing": "Marketing and Design"
+            },
+            "in-person": "Are you available to attend in-person meetings?",
+            "select-option": "Select an option",
+            "yes": "Yes",
+            "no": "No",
+            "yes-no-required": "Please answer all yes/no questions.",
+            "extracurricular-details-required": "Please describe what you have done in your engineering extracurricular activity.",
+            "none": "None",
+            "send": "Submit application",
+            "sending": "Submitting...",
+            "success": "Application sent successfully! We will contact you soon.",
+            "error": "Something went wrong. Please try again or email us directly."
+        }
+    },
     "the-car": {
         "eyebrow": "THE CAR",
         "hero": {
