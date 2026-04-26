@@ -94,7 +94,7 @@ export default function Header() {
 
     const navigationLinks = [
         { key: "the-car", href: "/carro", label: t("header.the-car") },
-        { key: "partners", href: "/#partners", label: t("header.partners") },
+        { key: "partners", href: "/partners", label: t("header.partners") },
         { key: "team", href: "/team", label: t("header.team") },
     ];
 

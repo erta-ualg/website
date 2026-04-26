@@ -5,29 +5,11 @@
         "contact": "CONTACTS",
         "the-car": "THE CAR"
     },
-
     "footer": {
         "contact": "Contact us",
         "email": "erta@ualg.pt",
-        "location": "Universidade do Algarve, Faro, Portugal"
+        "location": "University of the Algarve, Faro, Portugal"
     },
-
-    "hero": {
-        "slogan": {
-            "text": "THE SOUTH TAKES FLIGHT"
-        },
-        "team": {
-            "title": "Built to race, engineered to win",
-            "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
-            "explore": "Explore",
-            "learn-more": "Learn more"
-        },
-        "video": {
-            "mute": "Mute",
-            "unmute": "Unmute"
-        }
-    },
-
     "feature": {
         "about-us": {
             "title": "About us",
@@ -105,6 +87,12 @@
             "subtitle": "The Algarve's first Formula Student EV team.",
             "cta-sponsor": "Sponsor Us",
             "cta-team": "The Team",
+            "video": {
+                "controls": "Audio controls",
+                "volume": "Volume",
+                "mute": "Mute",
+                "unmute": "Unmute"
+            },
             "pills": {
                 "powertrain": "Electric powertrain",
                 "aero": "Aerodynamic focus",
@@ -147,10 +135,62 @@
         "sponsors": {
             "eyebrow": "Sponsor Grid",
             "title": "Partners that keep the build alive.",
-            "body": "The existing sponsor assets now sit inside a clean responsive grid with grayscale-by-default treatment and hover color recovery."
+            "body": "Our new two-tier partner system highlights the Gold Partner and supporting partners in a cleaner, more focused showcase."
+        }
+    },
+    "partners-page": {
+        "hero": {
+            "eyebrow": "Partners",
+            "title": "Two tiers. One team.",
+            "body": "Our partner network is now organized into Partner and Gold Partner tiers so the page can properly spotlight the organizations helping the project move forward.",
+            "placeholder-title": "Partner showcase placeholder",
+            "placeholder-body": "A team photo, sponsor wall, or partner montage can live here later."
+        },
+        "stats": {
+            "gold": "Gold partners",
+            "supporting": "Supporting partners",
+            "total": "Total partners"
+        },
+        "tiers": {
+            "gold": "Gold Partner",
+            "partner": "Partner"
+        },
+        "tier-descriptions": {
+            "gold": "Top-tier partner with prominent placement across the project.",
+            "partner": "Supporting partner helping the team build and grow."
+        },
+        "card-label": "Partner",
+        "compact-label": "Tier",
+        "visit": "Visit site",
+        "card": {
+            "open": "Open {{name}} website"
+        },
+        "preview-label": "New showcase",
+        "preview-copy": "See the full tiered partner lineup on the dedicated page.",
+        "preview-action": "Open partners page",
+        "gold": {
+            "eyebrow": "Gold partner",
+            "title": "Our Gold Partner",
+            "body": "The Gold Partner gets the highest visibility and sits at the top of the showcase."
+        },
+        "supporting": {
+            "title": "Supporting partners",
+            "body": "These partners make up the rest of the network and keep the project moving."
+        },
+        "cta": {
+            "eyebrow": "Become a partner",
+            "title": "Want to join the lineup?",
+            "body": "If you’d like to support the team, we’d love to hear from you.",
+            "contact": "Contact us"
         }
     },
     "team-page": {
+        "hero": {
+            "title": "Built to race, engineered to win",
+            "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
+            "explore": "Explore",
+            "learn-more": "Learn more"
+        },
         "overview": {
             "eyebrow": "Team map",
             "title": "Meet the people building the car",
@@ -166,9 +206,7 @@
             "title": "Jump to a section"
         },
         "quick-links": {
-            "leadership": "Leadership",
             "department-leads": "Department leads",
-            "departments": "Departments",
             "join": "Join us"
         },
         "search": {
@@ -181,6 +219,7 @@
         },
         "departments": {
             "management": "Management & Finance",
+            "marketing": "Marketing",
             "vehicle-dynamics": "Vehicle Dynamics",
             "powertrain": "Powertrain & Electrical",
             "chassis-aero": "Chassis & Aerodynamics",

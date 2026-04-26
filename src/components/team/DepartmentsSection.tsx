@@ -27,7 +27,7 @@ const DepartmentsSection: React.FC<DepartmentsSectionProps> = ({ departmentMembe
         >
           <div className="mb-8 flex flex-col gap-3">
             <p className="section-eyebrow">{t('team-page.departments-section.eyebrow')}</p>
-            <h3 className="site-heading text-center text-3xl sm:text-left">{department.name}</h3>
+            <h3 className="site-heading team-category-title text-center text-3xl sm:text-left">{department.name}</h3>
             <p className="site-body max-w-2xl text-center sm:text-left">
               {t('team-page.departments-section.description')}
             </p>

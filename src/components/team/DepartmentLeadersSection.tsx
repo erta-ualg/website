@@ -15,7 +15,7 @@ const DepartmentLeadersSection: React.FC<DepartmentLeadersSectionProps> = ({ dep
     <section className="site-panel team-section-shell">
       <div className="mb-8 flex flex-col gap-3">
         <p className="section-eyebrow">{t('team-page.department-leaders.eyebrow')}</p>
-        <h3 className="site-heading text-3xl">{t('team-page.department-leaders.title')}</h3>
+        <h3 className="site-heading team-category-title text-3xl">{t('team-page.department-leaders.title')}</h3>
         <p className="site-body max-w-2xl">
           {t('team-page.department-leaders.description')}
         </p>

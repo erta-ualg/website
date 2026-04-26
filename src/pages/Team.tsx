@@ -11,11 +11,12 @@ import TeamHero from '../components/Hero/TeamHero';
 import JoinCTA from '../components/CTA/JoinCTA';
 
 const departments = [
-  { sourceName: 'Gestão e Finanças', translationKey: 'team-page.departments.management' },
+  { sourceName: 'Gestão / Finanças', translationKey: 'team-page.departments.management' },
+  { sourceName: 'Marketing', translationKey: 'team-page.departments.marketing' },
   { sourceName: 'Vehicle Dynamics', translationKey: 'team-page.departments.vehicle-dynamics' },
-  { sourceName: 'Power Train & Elétrica', translationKey: 'team-page.departments.powertrain' },
-  { sourceName: 'Chassi & Aerodinâmica', translationKey: 'team-page.departments.chassis-aero' },
-  { sourceName: 'Software & Informática', translationKey: 'team-page.departments.software' },
+  { sourceName: 'Powertrain / Elétrica', translationKey: 'team-page.departments.powertrain' },
+  { sourceName: 'Chassis / Aerodinâmica', translationKey: 'team-page.departments.chassis-aero' },
+  { sourceName: 'Software / Informática', translationKey: 'team-page.departments.software' },
 ];
 
 const toDepartmentId = (department: string) =>
@@ -26,11 +27,12 @@ const TeamPage = () => {
   const [search, setSearch] = useState('');
   const [activeDepartment, setActiveDepartment] = useState('all');
 
-  const leadership = teamData.filter(
-    (member) => member.department === 'Team Leaders' || member.department === 'Chief Engineer'
+  const leadership = teamData.filter((member) =>
+    member.department === 'Team Leaders' || member.role.toLowerCase().includes('engenheiro chefe')
   );
-  const departmentLeaders = teamData.filter(
-    (member) => member.department === 'Department Leaders'
+
+  const departmentLeaders = teamData.filter((member) =>
+    member.department !== 'Team Leaders' && member.role.toLowerCase().includes('líder de departamento')
   );
 
   const filteredLeadership = useMemo(() => {
@@ -40,7 +42,7 @@ const TeamPage = () => {
         return true;
       }
 
-      return [member.name, member.role, member.description, member.department]
+      return [member.name, member.role, member.descriptionPt, member.descriptionEn, member.department]
         .join(' ')
         .toLowerCase()
         .includes(query);
@@ -54,7 +56,7 @@ const TeamPage = () => {
         return true;
       }
 
-      return [member.name, member.role, member.description, member.department]
+      return [member.name, member.role, member.descriptionPt, member.descriptionEn, member.department]
         .join(' ')
         .toLowerCase()
         .includes(query);
@@ -80,7 +82,7 @@ const TeamPage = () => {
             return true;
           }
 
-          return [member.name, member.role, member.description, member.department]
+          return [member.name, member.role, member.descriptionPt, member.descriptionEn, member.department]
             .join(' ')
             .toLowerCase()
             .includes(query);
@@ -92,13 +94,16 @@ const TeamPage = () => {
   const stats = [
     { label: t('team-page.stats.total-members'), value: String(teamData.length) },
     { label: t('team-page.stats.departments'), value: String(departments.length) },
-    { label: t('team-page.stats.leadership-roles'), value: String(leadership.length + departmentLeaders.length) },
+    {
+      label: t('team-page.stats.leadership-roles'),
+      value: String(new Set([...leadership.map((member) => member.id), ...departmentLeaders.map((member) => member.id)]).size),
+    },
   ];
 
   const quickLinks = [
-    { label: t('team-page.quick-links.leadership'), href: '#team-leadership' },
+    { label: t('team-page.leadership.eyebrow'), href: '#team-leadership' },
     { label: t('team-page.quick-links.department-leads'), href: '#department-leaders' },
-    { label: t('team-page.quick-links.departments'), href: '#team-departments' },
+    { label: t('team-page.stats.departments'), href: '#team-departments' },
     { label: t('team-page.quick-links.join'), href: '#join-team' },
   ];
 

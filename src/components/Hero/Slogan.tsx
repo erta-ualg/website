@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -7,7 +7,10 @@ import data from "../../data/Slogan";
 
 export default function Slogan() {
     const { t } = useTranslation();
-    const [isMuted, setIsMuted] = useState(true);
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const iframeRef = useRef<HTMLIFrameElement | null>(null);
+    const lastVolumeRef = useRef(0.7);
+    const [volume, setVolume] = useState(0);
     const [reduceMotion, setReduceMotion] = useState(() => {
         if (typeof window === "undefined" || !window.matchMedia) {
             return false;
@@ -16,7 +19,8 @@ export default function Slogan() {
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     });
     const isYoutube = data.provider === "youtube";
-    const youtubeSrc = `https://www.youtube.com/embed/${data.youtubeVideoId}?autoplay=${reduceMotion ? 0 : 1}&mute=1&loop=1&playlist=${data.youtubeVideoId}&controls=0&modestbranding=1&playsinline=1&fs=0&rel=0`;
+    const isMuted = volume === 0;
+    const youtubeSrc = `https://www.youtube.com/embed/${data.youtubeVideoId}?autoplay=${reduceMotion ? 0 : 1}&mute=${isMuted ? 1 : 0}&loop=1&playlist=${data.youtubeVideoId}&controls=0&modestbranding=1&playsinline=1&fs=0&rel=0&enablejsapi=1&origin=${typeof window !== "undefined" ? window.location.origin : ""}`;
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -32,11 +36,53 @@ export default function Slogan() {
         return () => mediaQuery.removeListener(handleChange);
     }, []);
 
+    useEffect(() => {
+        const currentVolume = volume / 100;
+
+        if (!isYoutube && videoRef.current) {
+            videoRef.current.volume = currentVolume;
+            videoRef.current.muted = volume === 0;
+            return;
+        }
+
+        if (isYoutube && iframeRef.current?.contentWindow) {
+            iframeRef.current.contentWindow.postMessage(
+                JSON.stringify({
+                    event: "command",
+                    func: volume === 0 ? "mute" : "unMute",
+                    args: [],
+                }),
+                "*"
+            );
+
+            iframeRef.current.contentWindow.postMessage(
+                JSON.stringify({
+                    event: "command",
+                    func: "setVolume",
+                    args: [volume],
+                }),
+                "*"
+            );
+        }
+    }, [isYoutube, volume]);
+
+    const handleToggleMute = () => {
+        setVolume((current) => {
+            if (current === 0) {
+                return Math.round(lastVolumeRef.current * 100);
+            }
+
+            lastVolumeRef.current = current / 100;
+            return 0;
+        });
+    };
+
     return (
         <section className="relative hero-video w-full flex items-center justify-center text-center overflow-hidden">
             {isYoutube ? (
                 <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
                     <iframe
+                        ref={iframeRef}
                         src={youtubeSrc}
                         title="Hero Video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -57,6 +103,7 @@ export default function Slogan() {
                 </div>
             ) : (
                 <video
+                    ref={videoRef}
                     className="hero-video-media"
                     autoPlay={!reduceMotion}
                     muted={isMuted}
@@ -71,20 +118,42 @@ export default function Slogan() {
             )}
             <div className="hero-video-overlay" aria-hidden="true" />
 
-            {!isYoutube && (
+            <div className="hero-video-audio" aria-label={t("home.hero.video.controls")}>
                 <button
                     type="button"
-                    className="hero-video-audio"
-                    onClick={() => setIsMuted((current) => !current)}
-                    aria-label={isMuted ? t("hero.video.unmute") : t("hero.video.mute")}
+                    className="hero-video-audio-toggle"
+                    onClick={handleToggleMute}
+                    aria-label={isMuted ? t("home.hero.video.unmute") : t("home.hero.video.mute")}
                     aria-pressed={!isMuted}
                 >
-                    {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                    {isMuted ? <FaVolumeMute className="hero-video-audio-icon" /> : <FaVolumeUp className="hero-video-audio-icon" />}
                     <span className="hero-video-audio-label">
-                        {isMuted ? t("hero.video.unmute") : t("hero.video.mute")}
+                        {isMuted ? t("home.hero.video.unmute") : t("home.hero.video.mute")}
                     </span>
                 </button>
-            )}
+
+                <label className="hero-video-volume" aria-label={t("home.hero.video.volume")}>
+                    <span className="sr-only">{t("home.hero.video.volume")}</span>
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value={volume}
+                        onChange={(event) => {
+                            const nextVolume = Number(event.target.value);
+                            setVolume(nextVolume);
+
+                            if (nextVolume > 0) {
+                                lastVolumeRef.current = nextVolume / 100;
+                            }
+                        }}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-valuenow={volume}
+                    />
+                </label>
+            </div>
 
             <div className="relative z-10 mx-auto max-w-5xl px-6">
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200/85">
@@ -98,7 +167,7 @@ export default function Slogan() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-white">
-                    <Link to="/join" className="hero-cta-primary">
+                    <Link to="/partners" className="hero-cta-primary">
                         {t("home.hero.cta-sponsor")}
                     </Link>
                     <Link

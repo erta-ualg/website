@@ -5,29 +5,11 @@
         "contact": "CONTACTOS",
         "the-car": "O CARRO"
     },
-
     "footer": {
         "contact": "Contacta-nos",
         "email": "erta@ualg.pt",
         "location": "Universidade do Algarve, Faro, Portugal"
     },
-
-    "hero": {
-        "slogan": {
-            "text": "O SUL LEVANTA VOO"
-        },
-        "team": {
-            "title": "Construído para correr, projetado para vencer",
-            "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
-            "explore": "Explorar",
-            "learn-more": "Saber mais"
-        },
-        "video": {
-            "mute": "Desativar som",
-            "unmute": "Ativar som"
-        }
-    },
-
     "feature": {
         "about-us": {
             "title": "Quem somos",
@@ -101,10 +83,16 @@
     "home": {
         "hero": {
             "eyebrow": "Formula Student EV · Algarve",
-            "title": "O SUL LEVANTA VOO.",
+            "title": "O SUL LEVANTA VOO",
             "subtitle": "A primeira equipa de Formula Student EV do Algarve.",
             "cta-sponsor": "Patrocina-nos",
             "cta-team": "A Equipa",
+            "video": {
+                "controls": "Controlos de áudio",
+                "volume": "Volume",
+                "mute": "Desativar som",
+                "unmute": "Ativar som"
+            },
             "pills": {
                 "powertrain": "Powertrain elétrico",
                 "aero": "Foco aerodinâmico",
@@ -113,16 +101,16 @@
             "visual": {
                 "launch": "Baía de lançamento",
                 "electric": "100% elétrico",
-                "placeholder-title": "Visual placeholder",
+                "placeholder-title": "Espaço reservado visual",
                 "placeholder-body": "Uma silhueta da cegonha, render aerodinâmico ou estrutura do chassis pode entrar aqui depois."
             }
         },
         "mission": {
             "eyebrow": "A Missão",
-            "title": "Rookies underdogs do sul de Portugal a construir um EV de competição.",
-            "body": "Somos uma equipa de primeiro ano do Algarve a construir a nossa própria máquina elétrica de Formula Student, com foco teimoso em leveza, eficiência e controlo aerodinâmico.",
-            "placeholder-title": "Placeholder da mascote",
-            "placeholder-body": "Um render ou recorte da cegonha pode ficar aqui quando o asset estiver pronto.",
+            "title": "Rookies do sul de Portugal a construir um EV de Competição.",
+            "body": "Somos a primeira equipa do Algarve a construir a nossa própria máquina elétrica de Formula Student, com foco teimoso em leveza, eficiência e controlo aerodinâmico.",
+            "placeholder-title": "Espaço reservado da mascote",
+            "placeholder-body": "Uma renderização ou recorte da cegonha pode ficar aqui quando o recurso estiver pronto.",
             "chips": {
                 "rookie": "Equipa rookie",
                 "south": "Sul de Portugal",
@@ -132,10 +120,10 @@
         "machine": {
             "eyebrow": "A Máquina",
             "title": "Baixa, afiada e feita para cortar o ar.",
-            "body": "O render do chassis ficará ao centro assim que o asset CAD estiver pronto.",
-            "placeholder-title": "Placeholder do render do chassis",
-            "placeholder-body": "Um render CAD limpo ou hero shot pode ser centrado aqui.",
-            "spec-placeholder": "Placeholder de métrica até a especificação de engenharia ficar fechada.",
+            "body": "A renderização do chassis ficará ao centro assim que o recurso CAD estiver pronto.",
+            "placeholder-title": "Espaço reservado da renderização do chassis",
+            "placeholder-body": "Uma renderização CAD limpa ou imagem principal pode ser centrada aqui.",
+            "spec-placeholder": "Espaço reservado de métrica até a especificação de engenharia ficar fechada.",
             "specs": {
                 "weight": "Peso (kg)",
                 "power": "Potência (kW)",
@@ -147,10 +135,62 @@
         "sponsors": {
             "eyebrow": "Grelha de Parceiros",
             "title": "Parceiros que mantêm o projeto vivo.",
-            "body": "Os assets de parceiros existentes estão agora numa grelha responsiva com grayscale por defeito e recuperação de cor no hover."
+            "body": "O sistema de níveis destaca os nossos parceiros de apoio numa apresentação mais limpa e focada."
+        }
+    },
+    "partners-page": {
+        "hero": {
+            "eyebrow": "Parceiros",
+            "title": "Cinco níveis. Uma equipa.",
+            "body": "A nossa rede de parceiros está agora organizada em níveis Partner e Gold Partner para dar o destaque certo às organizações que ajudam o projeto a avançar.",
+            "placeholder-title": "Espaço reservado da montra de parceiros",
+            "placeholder-body": "Uma foto da equipa, parede de patrocinadores ou montagem de parceiros pode entrar aqui depois."
+        },
+        "stats": {
+            "gold": "Parceiros Gold",
+            "supporting": "Parceiros de apoio",
+            "total": "Total de parceiros"
+        },
+        "tiers": {
+            "gold": "Gold Partner",
+            "partner": "Partner"
+        },
+        "tier-descriptions": {
+            "gold": "Parceiro de topo com destaque principal em todo o projeto.",
+            "partner": "Parceiro de apoio que ajuda a equipa a construir e crescer."
+        },
+        "card-label": "Parceiro",
+        "compact-label": "Nível",
+        "visit": "Visitar site",
+        "card": {
+            "open": "Abrir o site de {{name}}"
+        },
+        "preview-label": "Nova montra",
+        "preview-copy": "Vê a lista completa e organizada por níveis na página dedicada.",
+        "preview-action": "Abrir página de parceiros",
+        "gold": {
+            "eyebrow": "Parceiro Gold",
+            "title": "O nosso Gold Partner",
+            "body": "O Gold Partner recebe a maior visibilidade e fica no topo da montra."
+        },
+        "supporting": {
+            "title": "Parceiros de apoio",
+            "body": "Estes parceiros formam o resto da rede e ajudam o projeto a avançar."
+        },
+        "cta": {
+            "eyebrow": "Torna-te parceiro",
+            "title": "Queres entrar na lista?",
+            "body": "Se quiseres apoiar a equipa, teremos todo o gosto em falar contigo.",
+            "contact": "Contacta-nos"
         }
     },
     "team-page": {
+        "hero": {
+            "title": "Construído para correr, projetado para vencer",
+            "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
+            "explore": "Explorar",
+            "learn-more": "Saber mais"
+        },
         "overview": {
             "eyebrow": "Mapa da equipa",
             "title": "Conhece as pessoas que estão a construir o carro",
@@ -166,9 +206,7 @@
             "title": "Ir para uma secção"
         },
         "quick-links": {
-            "leadership": "Liderança",
             "department-leads": "Líderes de departamento",
-            "departments": "Departamentos",
             "join": "Junta-te"
         },
         "search": {
@@ -181,8 +219,9 @@
         },
         "departments": {
             "management": "Gestão e Finanças",
-            "vehicle-dynamics": "Vehicle Dynamics",
-            "powertrain": "Power Train e Elétrica",
+            "marketing": "Marketing",
+            "vehicle-dynamics": "Dinâmica do Veículo",
+            "powertrain": "Powertrain e Elétrica",
             "chassis-aero": "Chassi e Aerodinâmica",
             "software": "Software e Informática"
         },
@@ -207,7 +246,7 @@
         }
     },
     "join-form": {
-        "eyebrow": "JUNTA-TE A EQUIPA",
+        "eyebrow": "JUNTA-TE À EQUIPA",
         "title": "Junta-te a ERTA",
         "subtitle": "Somos a primeira equipa de Fórmula Student da Universidade do Algarve. O nosso objetivo é projetar, desenvolver e, futuramente, construir um carro de competição estudantil, aplicando o que aprendemos em engenharia, design e gestão. Todas as áreas são importantes - não é preciso ter experiência prévia.",
         "email-subject": "Candidatura ERTA",
@@ -219,8 +258,8 @@
             "email-institutional": "institucional",
             "email-placeholder": "a00000@ualg.pt",
             "email-feedback-empty": "Usa o teu email institucional terminado em @ualg.pt.",
-            "email-feedback-valid": "Introduziste {{email}}. Email institucional valido.",
-            "email-feedback-invalid": "Introduziste {{email}}. Usa um endereco terminado em @ualg.pt.",
+            "email-feedback-valid": "Introduziste {{email}}. Email institucional válido.",
+            "email-feedback-invalid": "Introduziste {{email}}. Usa um endereço terminado em @ualg.pt.",
             "email-domain-required": "Por favor, usa o teu email institucional terminado em @ualg.pt.",
             "required-note": "Campos obrigatórios incluem nome e apelido e email institucional.",
             "whatsapp": "Número de WhatsApp",
@@ -228,14 +267,14 @@
             "course": "Curso universitário atual",
             "course-placeholder": "Exemplo: Engenharia Mecânica",
             "year": "Ano atual",
-            "year-placeholder": "Exemplo: 2o ano",
+            "year-placeholder": "Exemplo: 2.º ano",
             "extracurricular": "Já participaste em alguma atividade extracurricular relacionada com engenharia?",
             "extracurricular-details": "Se sim, em qual/quais?",
             "extracurricular-details-placeholder": "Partilha o nome e um breve resumo (opcional).",
             "motivation": "Explica porque queres fazer parte do projeto",
             "motivation-placeholder": "Conta-nos a tua motivação e como queres contribuir.",
             "interest-areas": "Que áreas te interessam?",
-            "interest-areas-required": "Seleciona pelo menos uma area de interesse.",
+            "interest-areas-required": "Seleciona pelo menos uma área de interesse.",
             "interest-options": {
                 "chassis-aero": "Chassis e Aerodinâmica",
                 "dynamics": "Dinâmica (Handling, suspensão, travões)",
@@ -247,8 +286,8 @@
             "in-person": "Tens disponibilidade para reuniões presenciais?",
             "select-option": "Seleciona uma opção",
             "yes": "Sim",
-            "no": "Nao",
-            "yes-no-required": "Por favor responde a todas as perguntas de sim/nao.",
+            "no": "Não",
+            "yes-no-required": "Por favor responde a todas as perguntas de sim/não.",
             "extracurricular-details-required": "Por favor descreve o que fizeste na tua atividade extracurricular de engenharia.",
             "none": "Nenhuma",
             "send": "Submeter candidatura",
@@ -260,7 +299,6 @@
     "the-car": {
         "eyebrow": "O CARRO",
         "hero": {
-            "eyebrow": "O CARRO",
             "title": "O carro",
             "subtitle": "Lorem ipsum dolor sit amet."
         },

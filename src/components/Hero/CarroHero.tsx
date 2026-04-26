@@ -44,7 +44,7 @@ export default function CarroHero() {
 
             <div className="relative z-20 h-full w-full flex items-center hero-diorama-overlay">
                 <div className="hero-diorama-text">
-                    <p className="hero-eyebrow">{t("the-car.hero.eyebrow")}</p>
+                    <p className="hero-eyebrow">{t("the-car.eyebrow")}</p>
                     <h1 className="hero-title">
                         {t("the-car.hero.title")}
                     </h1>

@@ -143,21 +143,24 @@ export default function JoinForm() {
     };
 
     return (
-        <div>
+        <div className="bg-background text-text">
             <Header />
 
-            <section className="w-full pt-32 pb-16">
-                <div className="max-w-6xl mx-auto px-6 contact-hero">
+            <main className="overflow-hidden">
+            <section className="bg-background px-6 pb-12 pt-32 text-text lg:pb-16">
+                <div className="mx-auto max-w-7xl contact-hero">
                     <p className="section-eyebrow">{t("join-form.eyebrow")}</p>
-                    <h1 className="contact-title">{t("join-form.title")}</h1>
-                    <p className="site-body max-w-xl">{t("join-form.subtitle")}</p>
+                    <h1 className="max-w-3xl text-4xl font-black uppercase leading-[0.92] tracking-[0.06em] text-text md:text-6xl">
+                        {t("join-form.title")}
+                    </h1>
+                    <p className="max-w-3xl text-lg leading-8 text-text-secondary md:text-xl">{t("join-form.subtitle")}</p>
                 </div>
             </section>
 
-            <section className="w-full py-16">
-                <div className="max-w-5xl mx-auto px-6">
+            <section className="bg-background px-6 py-12 text-text lg:py-16">
+                <div className="mx-auto max-w-7xl">
                     <div className="contact-form-wrapper max-w-3xl mx-auto">
-                        <form onSubmit={handleSubmit} className="site-panel contact-form">
+                        <form onSubmit={handleSubmit} className="site-panel contact-form rounded-[1.5rem] p-6">
                             <h2 className="site-heading text-lg mb-6">{t("join-form.form.title")}</h2>
                             <p className="site-body mb-2">{t("join-form.form.required-note")}</p>
 
@@ -390,6 +393,7 @@ export default function JoinForm() {
                     </div>
                 </div>
             </section>
+            </main>
 
             <Footer />
         </div>

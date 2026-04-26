@@ -1,10 +1,9 @@
 import Header from "../components/Header/Header";
 import Slogan from "../components/Hero/Slogan";
 import Footer from "../components/Footer/Footer";
-import partnersData from "../data/Partners";
+import PartnersSection from "../components/Feature/Partners";
+import WorkshopDiorama from "../components/Three/WorkshopDiorama";
 import { useTranslation } from "react-i18next";
-
-const sponsorLogos = Object.values(partnersData);
 
 function MissionSection() {
     const { t } = useTranslation();
@@ -85,15 +84,8 @@ function MachineSection() {
 
                 <div className="site-panel mt-10 rounded-[2rem] p-4 shadow-[0_0_60px_rgba(8,145,178,0.10)] backdrop-blur-xl">
                     <div className="flex min-h-[24rem] items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
-                        {/* INSERT CAD RENDER HERE */}
-                        <div className="px-8">
-                            <div className="mx-auto mb-4 h-24 w-24 rounded-full border border-cyan-300/35 bg-cyan-300/10" />
-                            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
-                                {t("home.machine.placeholder-title")}
-                            </p>
-                            <p className="mt-3 text-sm leading-6 text-text-secondary">
-                                {t("home.machine.placeholder-body")}
-                            </p>
+                        <div className="h-[20rem] w-full overflow-hidden rounded-[1.25rem]">
+                            <WorkshopDiorama mode="compact" />
                         </div>
                     </div>
 
@@ -121,46 +113,6 @@ function MachineSection() {
     );
 }
 
-function SponsorGridSection() {
-    const { t } = useTranslation();
-
-    return (
-        <section id="partners" className="site-partners-anchor bg-background px-6 py-20 text-text lg:py-28">
-            <div className="mx-auto max-w-7xl">
-                <div className="max-w-3xl space-y-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
-                        {t("home.sponsors.eyebrow")}
-                    </p>
-                    <h2 className="text-3xl font-black uppercase leading-[0.95] tracking-[0.06em] text-text md:text-5xl">
-                        {t("home.sponsors.title")}
-                    </h2>
-                    <p className="text-lg leading-8 text-text-secondary md:text-xl">
-                        {t("home.sponsors.body")}
-                    </p>
-                </div>
-
-                <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-4">
-                    {sponsorLogos.map((sponsor, index) => (
-                        <a
-                            key={`${sponsor.displayName}-${index}`}
-                            href={sponsor.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="group flex min-h-32 items-center justify-center rounded-2xl border border-cyan-300/15 bg-[color:var(--site-surface-strong)] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]"
-                        >
-                            <img
-                                src={sponsor.image}
-                                alt={sponsor.displayName}
-                                className="max-h-12 w-full object-contain grayscale opacity-70 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-                            />
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-}
-
 export default function Home() {
     return (
         <div className="bg-background text-text">
@@ -170,7 +122,7 @@ export default function Home() {
                 <Slogan />
                 <MissionSection />
                 <MachineSection />
-                <SponsorGridSection />
+                <PartnersSection />
             </main>
 
             <Footer />

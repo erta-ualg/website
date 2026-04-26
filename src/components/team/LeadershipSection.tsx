@@ -15,7 +15,7 @@ const LeadershipSection: React.FC<LeadershipSectionProps> = ({ leadership }) => 
     <section className="site-panel team-section-shell">
       <div className="mb-8 flex flex-col gap-3">
         <p className="section-eyebrow">{t('team-page.leadership.eyebrow')}</p>
-        <h3 className="site-heading text-3xl">{t('team-page.leadership.title')}</h3>
+        <h3 className="site-heading team-category-title text-3xl">{t('team-page.leadership.title')}</h3>
         <p className="site-body max-w-2xl">
           {t('team-page.leadership.description')}
         </p>

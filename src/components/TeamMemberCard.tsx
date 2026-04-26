@@ -9,8 +9,11 @@ interface TeamMemberCardProps {
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
-  const { t } = useTranslation();
-  const { name, role, description, photoUrl, linkedin, instagram, department } = member;
+  const { t, i18n } = useTranslation();
+  const { name, role, photoUrl, linkedin, instagram, department, descriptionPt, descriptionEn } = member;
+  const activeLanguage = i18n.resolvedLanguage || i18n.language;
+  const localizedDescription = activeLanguage.startsWith('pt') ? descriptionPt : descriptionEn;
+  const cardCopy = localizedDescription.trim() || descriptionPt;
 
   return (
     <article className="group team-member-card site-card flex h-full flex-col overflow-hidden text-center">
@@ -32,7 +35,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--site-accent)]">{role}</p>
         </div>
 
-        <p className="site-body flex-1">{description}</p>
+        <p className="site-body flex-1">{cardCopy}</p>
 
         <div className="flex items-center gap-3 pt-2">
           <a

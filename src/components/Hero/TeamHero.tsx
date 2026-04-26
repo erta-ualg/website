@@ -10,18 +10,18 @@ export default function TeamHero() {
                 {/* Text Content */}
                 <div className="max-w-2xl mb-12">
                     <h1 className="team-hero-title mb-6 leading-tight">
-                        {t("hero.team.title")}
+                        {t("team-page.hero.title")}
                     </h1>
                     <p className="team-hero-copy mb-8 leading-relaxed">
-                        {t("hero.team.description")}
+                        {t("team-page.hero.description")}
                     </p>
                     
                     <div className="flex flex-wrap justify-center gap-4">
                         <a href="#team-leadership" className="team-hero-primary-button inline-flex items-center justify-center px-8 py-3 font-medium transition-colors">
-                            {t("hero.team.explore")}
+                            {t("team-page.hero.explore")}
                         </a>
                         <a href="#team-departments" className="team-hero-secondary-button inline-flex items-center justify-center px-8 py-3 font-medium transition-colors">
-                            {t("hero.team.learn-more")}
+                            {t("team-page.hero.learn-more")}
                         </a>
                     </div>
                 </div>
