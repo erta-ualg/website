@@ -68,7 +68,7 @@ export default function SponsorWallCanvas({ partners }: SponsorWallCanvasProps) 
                     key={partner.name}
                     href={partner.link}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className={`flex h-16 items-center justify-center rounded-xl bg-white ease-in-out border px-3 transition duration-200 hover:-translate-y-0.5 ${
                         partner.tier === "gold"
                             ? "border-amber-300/60 shadow-[0_0_0_1px_rgba(251,191,36,0.28)]"
