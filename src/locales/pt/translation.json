@@ -199,7 +199,8 @@
         "stats": {
             "total-members": "Total de membros",
             "departments": "Departamentos",
-            "leadership-roles": "Funções de liderança"
+            "leadership-roles": "Funções de liderança",
+            "courses": "Cursos"
         },
         "navigation": {
             "eyebrow": "Navegar",
@@ -294,6 +295,37 @@
             "sending": "A submeter...",
             "success": "Candidatura enviada com sucesso! Vamos entrar em contacto em breve.",
             "error": "Algo correu mal. Tenta novamente ou envia-nos um email diretamente."
+        }
+    },
+    "not-found": {
+        "eyebrow": "ERRO 404",
+        "title": "Página não encontrada",
+        "description": "O endereço que procuraste não existe ou já não está disponível. Volta ao início ou segue para uma secção ativa do site.",
+        "home": "Voltar ao início",
+        "team": "Ver equipa",
+        "contact": "Contactos",
+        "panel": {
+            "eyebrow": "Navegação ERTA",
+            "title": "Rota indisponível",
+            "status-label": "Estado"
+        },
+        "links": {
+            "home": {
+                "label": "Início",
+                "description": "Voltar para a página principal."
+            },
+            "team": {
+                "label": "Equipa",
+                "description": "Conhece as pessoas por detrás do projeto."
+            },
+            "join": {
+                "label": "Junta-te",
+                "description": "Candidata-te à equipa."
+            },
+            "contact": {
+                "label": "Contactos",
+                "description": "Encontra o canal de contacto certo."
+            }
         }
     },
     "the-car": {

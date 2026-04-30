@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 // import Join from "./pages/Join"
 import JoinForm from "./pages/JoinForm"
@@ -6,6 +6,7 @@ import TeamPage from "./pages/Team"
 import PartnersPage from "./pages/Partners"
 import TheCar from "./pages/TheCar"
 import Contactos from "./pages/Contactos"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -30,11 +31,11 @@ function App() {
         {/* the car */}
         <Route path="/carro" element={<TheCar />} />
 
-        {/* default */}
-        <Route path="*" element={<Navigate to="/" />} />
-
         {/* contactos */}
         <Route path="/contactos" element={<Contactos />} />
+
+        {/* default */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

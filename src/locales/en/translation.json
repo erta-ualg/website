@@ -199,7 +199,8 @@
         "stats": {
             "total-members": "Total members",
             "departments": "Departments",
-            "leadership-roles": "Leadership roles"
+            "leadership-roles": "Leadership roles",
+            "courses": "Courses"
         },
         "navigation": {
             "eyebrow": "Navigate",
@@ -294,6 +295,37 @@
             "sending": "Submitting...",
             "success": "Application sent successfully! We will contact you soon.",
             "error": "Something went wrong. Please try again or email us directly."
+        }
+    },
+    "not-found": {
+        "eyebrow": "404 ERROR",
+        "title": "Page not found",
+        "description": "The address you tried to reach does not exist or is no longer available. Go back home or jump to an active section of the site.",
+        "home": "Back to home",
+        "team": "View team",
+        "contact": "Contacts",
+        "panel": {
+            "eyebrow": "ERTA navigation",
+            "title": "Route unavailable",
+            "status-label": "Status"
+        },
+        "links": {
+            "home": {
+                "label": "Home",
+                "description": "Return to the front page."
+            },
+            "team": {
+                "label": "Team",
+                "description": "Meet the people behind the project."
+            },
+            "join": {
+                "label": "Join",
+                "description": "Apply to the team."
+            },
+            "contact": {
+                "label": "Contacts",
+                "description": "Find the right contact channel."
+            }
         }
     },
     "the-car": {

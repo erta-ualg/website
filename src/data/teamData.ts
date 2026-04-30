@@ -1,3 +1,20 @@
+import fotoVicenteLamy from '../assets/team/fotoVicenteLamyERTA.jpg';
+import fotoJanLeon from '../assets/team/fotoJanLeonERTA.png';
+import fotoBarbaraPereira from '../assets/team/fotoBárbaraPereiraERTA.png';
+import fotoCorinaSampaio from '../assets/team/fotoCorinaSampaioERTA.png';
+import fotoBeatrizCorreia from '../assets/team/fotoBeatrizCorreiaERTA.png';
+import fotoDiogoFonseca from '../assets/team/fotoDiogoFonsecaERTA.png';
+import fotoAlexandreSilva from '../assets/team/fotoAlexandreSilvaERTA.jpg';
+import fotoDavidSilvestre from '../assets/team/fotoDavidSilvestreERTA.png';
+import fotoAfonsoFigueiredo from '../assets/team/fotoAfonsoFigueiredoERTA.png';
+import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpeg';
+import fotoAndreCristina from '../assets/team/fotoAndréCristinaERTA.jpg';
+import fotoGuilhermeSilvestre from '../assets/team/fotoGuilhermeSilvestreERTA.png';
+import fotoGumersindoCosta from '../assets/team/fotoGumersindoCostaERTA.jpeg';
+import fotoGoncaloFigueiredo from '../assets/team/fotoGoncaloFigueiredoERTA.jpeg';
+import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpeg';
+import fotoChristianFarfan from '../assets/team/fotoChristianFarfanERTA.jpeg';
+import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpeg';
 
 export interface TeamMember {
   id: number;
@@ -22,7 +39,7 @@ const teamData: TeamMember[] = [
     department: "Team Leaders",
     descriptionPt: "Direção geral da equipa. Engenharia Mecânica. Membro desde 30/10/2025.",
     descriptionEn: "",
-    photoUrl: avatarFor("Vicente Lamy"),
+    photoUrl: fotoVicenteLamy,
     linkedin: "https://www.linkedin.com/in/vicente-lamy-384422268",
     instagram: "https://www.instagram.com/vicentelamy/",
   },
@@ -33,7 +50,7 @@ const teamData: TeamMember[] = [
     department: "Team Leaders",
     descriptionPt: "Direção geral da equipa. Engenharia Mecânica. Membro desde 30/10/2025.",
     descriptionEn: "",
-    photoUrl: avatarFor("Jan Leon Sousa"),
+    photoUrl: fotoJanLeon,
     linkedin: "https://www.linkedin.com/in/jan-leon-99544039a/",
     instagram: "https://www.instagram.com/jan.fe.leon/",
   },
@@ -44,7 +61,7 @@ const teamData: TeamMember[] = [
     department: "Gestão / Finanças",
     descriptionPt: "Engenharia Informática. Membro desde 04/01/2026. Departamento secundário: Marketing.",
     descriptionEn: "",
-    photoUrl: avatarFor("Bárbara Pereira"),
+    photoUrl: fotoBarbaraPereira,
     linkedin: "https://www.linkedin.com/in/bárbara-pereira-955949361",
     instagram: "https://www.instagram.com/barbara_p.23/",
   },
@@ -55,7 +72,7 @@ const teamData: TeamMember[] = [
     department: "Gestão / Finanças",
     descriptionPt: "Gestão de Empresas. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Corina Sampaio"),
+    photoUrl: fotoCorinaSampaio,
     linkedin: emailLink("a84280@ualg.pt"),
     instagram: emailLink("corisampaio05@gmail.com"),
   },
@@ -66,7 +83,7 @@ const teamData: TeamMember[] = [
     department: "Marketing",
     descriptionPt: "Marketing. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Beatriz Correia"),
+    photoUrl: fotoBeatrizCorreia,
     linkedin: emailLink("a89332@ualg.pt"),
     instagram: emailLink("beatriizsiilvac@gmail.com"),
   },
@@ -88,7 +105,7 @@ const teamData: TeamMember[] = [
     department: "Powertrain / Elétrica",
     descriptionPt: "Engenharia Eletrotécnica e de Computadores. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Diogo Fonseca"),
+    photoUrl: fotoDiogoFonseca,
     linkedin: emailLink("a91031@ualg.pt"),
     instagram: emailLink("fonsecadiogo215@gmail.com"),
   },
@@ -110,7 +127,7 @@ const teamData: TeamMember[] = [
     department: "Powertrain / Elétrica",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Alexandre Silva"),
+    photoUrl: fotoAlexandreSilva,
     linkedin: emailLink("a89282@ualg.pt"),
     instagram: emailLink("alexandreescolavirtual@gmail.com"),
   },
@@ -132,7 +149,7 @@ const teamData: TeamMember[] = [
     department: "Software / Informática",
     descriptionPt: "Engenharia Informática. Membro desde 04/01/2026. Departamento secundário: Powertrain / Eletrónica.",
     descriptionEn: "",
-    photoUrl: avatarFor("David Silvestre"),
+    photoUrl: fotoDavidSilvestre,
     linkedin: emailLink("a83938@ualg.pt"),
     instagram: emailLink("david@davidsilvestre.com"),
   },
@@ -143,7 +160,7 @@ const teamData: TeamMember[] = [
     department: "Software / Informática",
     descriptionPt: "Engenharia de Sistemas e Tecnologias Informáticas. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Afonso Figueiredo"),
+    photoUrl: fotoAfonsoFigueiredo,
     linkedin: "https://www.linkedin.com/in/afonso-figueiredo-195a3515a/",
     instagram: "https://www.instagram.com/afonsof.12/",
   },
@@ -154,7 +171,7 @@ const teamData: TeamMember[] = [
     department: "Software / Informática",
     descriptionPt: "Engenharia Informática. Membro desde 17/02/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Bruno Fernandes"),
+    photoUrl: fotoBrunoFernandes,
     linkedin: "https://www.linkedin.com/in/brnfrnnds/",
     instagram: "https://www.instagram.com/brnfrnds",
   },
@@ -165,7 +182,7 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("David Silva"),
+    photoUrl: fotoDavidSilva,
     linkedin: "https://www.linkedin.com/in/david-silva",
     instagram: "https://www.instagram.com/david._silvaa_",
   },
@@ -176,7 +193,7 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026. Departamento secundário: Chassis / Aerodinâmica.",
     descriptionEn: "",
-    photoUrl: avatarFor("André Cristina"),
+    photoUrl: fotoAndreCristina,
     linkedin: "https://www.linkedin.com/in/andré-cristina-8383a03a3/",
     instagram: "https://www.instagram.com/_driny___/",
   },
@@ -187,7 +204,7 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Guilherme Silvestre"),
+    photoUrl: fotoGuilhermeSilvestre,
     linkedin: emailLink("a83798@ualg.pt"),
     instagram: "https://www.instagram.com/guilhermecsilvestre?igsh=MWFnczZwemdxYmFlcA%3D%3D&utm_source=qr",
   },
@@ -198,7 +215,7 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Técnico de Manutenção Automóvel. Estado atual: stand by.",
     descriptionEn: "",
-    photoUrl: avatarFor("Gumersindo Costa"),
+    photoUrl: fotoGumersindoCosta,
     linkedin: emailLink("a94137@ualg.pt"),
     instagram: "#",
   },
@@ -231,7 +248,7 @@ const teamData: TeamMember[] = [
     department: "Chassis / Aerodinâmica",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Gonçalo Figueiredo"),
+    photoUrl: fotoGoncaloFigueiredo,
     linkedin: "https://www.linkedin.com/in/gon%C3%A7alo-figueiredo-a27481160/",
     instagram: "https://www.instagram.com/goncalo.figueiredoo?igsh=dmNxOXlydmowcTJt&utm_source=qr",
   },
@@ -242,7 +259,7 @@ const teamData: TeamMember[] = [
     department: "Chassis / Aerodinâmica",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Miguel Claro"),
+    photoUrl: fotoMiguelClaro,
     linkedin: emailLink("a93547@ualg.pt"),
     instagram: emailLink("miguelclaro128@gmail.com"),
   },
@@ -253,7 +270,7 @@ const teamData: TeamMember[] = [
     department: "Chassis / Aerodinâmica",
     descriptionPt: "Engenharia Mecânica. Membro desde 04/01/2026.",
     descriptionEn: "",
-    photoUrl: avatarFor("Christian Farfan"),
+    photoUrl: fotoChristianFarfan,
     linkedin: "https://www.linkedin.com/in/christian-farfan-roca-02461a2a5",
     instagram: "https://www.instagram.com/christian_farfan25/",
   },

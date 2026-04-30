@@ -9,6 +9,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import TeamHero from '../components/Hero/TeamHero';
 import JoinCTA from '../components/CTA/JoinCTA';
+import { coursesCount } from '../data/siteStats';
 
 const departments = [
   { sourceName: 'Gestão / Finanças', translationKey: 'team-page.departments.management' },
@@ -95,8 +96,8 @@ const TeamPage = () => {
     { label: t('team-page.stats.total-members'), value: String(teamData.length) },
     { label: t('team-page.stats.departments'), value: String(departments.length) },
     {
-      label: t('team-page.stats.leadership-roles'),
-      value: String(new Set([...leadership.map((member) => member.id), ...departmentLeaders.map((member) => member.id)]).size),
+      label: t('team-page.stats.courses'),
+      value: String(coursesCount),
     },
   ];
 
