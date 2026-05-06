@@ -37,7 +37,7 @@ function MissionSection() {
                         {t("home.mission.body")}
                     </p>
 
-                    <div className="grid gap-4 sm:grid-cols-3">
+                    {/* <div className="grid gap-4 sm:grid-cols-3">
                         {[
                             t("home.mission.chips.rookie"),
                             t("home.mission.chips.south"),
@@ -50,7 +50,7 @@ function MissionSection() {
                                 {chip}
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

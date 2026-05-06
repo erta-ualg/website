@@ -7,34 +7,24 @@ import PartnersPage from "./pages/Partners"
 import TheCar from "./pages/TheCar"
 import Contactos from "./pages/Contactos"
 import NotFound from "./pages/NotFound"
+import UnderConstruction from "./pages/UnderConstruction"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* homepage */}
         <Route path="/" element={<Home />} />
 
-        {/* /join */}
-        {/* <Route path="/join" element={<Join />} /> */}
-
-        {/* /joinForm */}
         <Route path="/join" element={<JoinForm />} />
-
-        {/* HACK apenas para expor o que ja temos e os placeholders para design e marketing trocarem */}
-        <Route path="/demo-homepage" element={<Home />} />
 
         <Route path="/partners" element={<PartnersPage />} />
 
         <Route path="/team" element={<TeamPage />} />
 
-        {/* the car */}
-        <Route path="/carro" element={<TheCar />} />
+        <Route path="/carro" element={<UnderConstruction />} />
 
-        {/* contactos */}
         <Route path="/contactos" element={<Contactos />} />
 
-        {/* default */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

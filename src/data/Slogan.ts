@@ -4,7 +4,7 @@ const data = {
     provider: "youtube" as "video" | "youtube",
     background: background,
     video: "https://woolyss.com/f/av1-opus-sita.webm",
-    youtubeVideoId: "ZXGE71nxxGE",
+    youtubeVideoId: "FJVQAfrsBm0",
     // To switch to YouTube, set provider to "youtube"
 }
 
