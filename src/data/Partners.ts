@@ -1,20 +1,56 @@
-import image1 from "../assets/sponsor/image1.png"
-import image2 from "../assets/sponsor/image2.png"
-import image3 from "../assets/sponsor/image3.png"
-import image4 from "../assets/sponsor/image4.png"
+export type PartnerTier = "partner" | "gold";
 
-const link1 = "https://fs-erta.com/";
-const link2 = "https://fs-erta.com/";
-const link3 = "https://fs-erta.com/";
-const link4 = "https://fs-erta.com/";
-
-// um for loop aqui talvez nao fosse má ideia :>
-
-const data = {
-    sponsor1: {image: image1, link: link1, displayName: "FS-ERTA"},
-    sponsor2: {image: image2, link: link2, displayName: "FS-ERTA"},
-    sponsor3: {image: image3, link: link3, displayName: "FS-ERTA"},
-    sponsor4: {image: image4, link: link4, displayName: "FS-ERTA"}
+export interface Partner {
+    name: string;
+    tier: PartnerTier;
+    link: string;
+    logo?: string;
 }
 
-export default data;
+import dassault from "../assets/sponsor/dassault.png";
+import ualg from "../assets/sponsor/ualg.png";
+import ualgise from "../assets/sponsor/ualgise.png";
+import ualgcria from "../assets/sponsor/ualgcria.png";
+import ansys from "../assets/sponsor/ansys.png";
+import aerofaro from "../assets/sponsor/aerofaro.png";
+
+const partners: Partner[] = [
+    {
+        name: "Dassault Systèmes",
+        tier: "partner",
+        link: "https://www.3ds.com/",
+        logo: dassault,
+    },
+    {
+        name: "UALG",
+        tier: "gold",
+        link: "https://www.ualg.pt/",
+        logo: ualg,
+    },
+    {
+        name: "UALG ISE",
+        tier: "partner",
+        link: "https://www.ualg.pt/",
+        logo: ualgise,
+    },
+    {
+        name: "CRIA",
+        tier: "partner",
+        link: "https://www.cria.pt/",
+        logo: ualgcria,
+    },
+    {
+        name: "Ansys",
+        tier: "partner",
+        link: "https://www.ansys.com/",
+        logo: ansys,
+    },
+    {
+        name: "Aeroporto de Faro",
+        tier: "partner",
+        link: "https://www.aeroportofaro.pt/pt/fao/home",
+        logo: aerofaro,
+    },
+];
+
+export default partners;

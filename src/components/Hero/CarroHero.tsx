@@ -37,9 +37,14 @@ export default function CarroHero() {
                 <WorkshopDiorama reducedMotion={prefersReducedMotion} />
             </div>
 
-            <div className="relative z-10 h-full w-full flex items-center hero-diorama-overlay">
+            <div
+                className="absolute inset-0 z-10 bg-transparent touch-pan-y md:hidden hero-diorama-touch-shield"
+                aria-hidden="true"
+            />
+
+            <div className="relative z-20 h-full w-full flex items-center hero-diorama-overlay">
                 <div className="hero-diorama-text">
-                    <p className="hero-eyebrow">{t("the-car.hero.eyebrow")}</p>
+                    <p className="hero-eyebrow">{t("the-car.eyebrow")}</p>
                     <h1 className="hero-title">
                         {t("the-car.hero.title")}
                     </h1>

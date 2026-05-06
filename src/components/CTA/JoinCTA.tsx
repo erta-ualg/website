@@ -5,19 +5,19 @@ const JoinCTA = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-gray-50 py-16 sm:py-24">
+    <section className="py-16 sm:py-24 join-cta-shell">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center site-panel join-cta-panel">
+          <h2 className="join-cta-title text-3xl font-bold tracking-tight sm:text-4xl">
             {t('feature.join-cta.title')}
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+          <p className="join-cta-copy mx-auto mt-6 max-w-xl text-lg leading-8">
             {t('feature.join-cta.description')}
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               to="/join"
-              className="rounded-md bg-gray-200 px-6 py-3 text-sm font-semibold text-white-200 shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+              className="hero-cta-primary join-cta-button"
             >
               {t('feature.join-cta.button')}
             </Link>

@@ -5,29 +5,11 @@
         "contact": "CONTACTS",
         "the-car": "THE CAR"
     },
-
     "footer": {
         "contact": "Contact us",
         "email": "erta@ualg.pt",
-        "location": "Universidade do Algarve, Faro, Portugal"
+        "location": "University of the Algarve, Faro, Portugal"
     },
-
-    "hero": {
-        "slogan": {
-            "text": "Some super cool slogan like katchau"
-        },
-        "team": {
-            "title": "Built to race, engineered to win",
-            "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
-            "explore": "Explore",
-            "learn-more": "Learn more"
-        },
-        "video": {
-            "mute": "Mute",
-            "unmute": "Unmute"
-        }
-    },
-
     "feature": {
         "about-us": {
             "title": "About us",
@@ -96,6 +78,254 @@
             "title": "Want to join the team?",
             "body": "We're always looking for passionate students in engineering, business, and design.",
             "action": "Join ERTA"
+        }
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "Formula Student EV · Algarve",
+            "title": "THE SOUTH TAKES FLIGHT.",
+            "subtitle": "The Algarve's first Formula Student EV team.",
+            "cta-sponsor": "Sponsor Us",
+            "cta-team": "The Team",
+            "video": {
+                "controls": "Audio controls",
+                "volume": "Volume",
+                "mute": "Mute",
+                "unmute": "Unmute"
+            },
+            "pills": {
+                "powertrain": "Electric powertrain",
+                "aero": "Aerodynamic focus",
+                "rookie": "Southern Portugal rookie squad"
+            },
+            "visual": {
+                "launch": "Launch bay",
+                "electric": "100% electric",
+                "placeholder-title": "Placeholder visual",
+                "placeholder-body": "A stork silhouette, aero render, or chassis frame can sit here later."
+            }
+        },
+        "mission": {
+            "eyebrow": "The Mission",
+            "title": "Rookie underdogs from the South of Portugal building an EV race car.",
+            "body": "We are a first-year team from the Algarve building our own electric Formula Student machine with a stubborn focus on lightness, efficiency, and aerodynamic control.",
+            "placeholder-title": "Mascot placeholder",
+            "placeholder-body": "A stork render or cutout can sit here once the asset is ready.",
+            "chips": {
+                "rookie": "Rookie team",
+                "south": "South of Portugal",
+                "ev": "Electric race car"
+            }
+        },
+        "machine": {
+            "eyebrow": "The Machine",
+            "title": "Low, sharp, and built to cut through the air.",
+            "body": "The chassis render will sit in the center once the CAD asset lands.",
+            "placeholder-title": "Chassis render placeholder",
+            "placeholder-body": "A clean CAD render or hero shot can be centered here.",
+            "spec-placeholder": "Target metric placeholder until the engineering spec is locked.",
+            "specs": {
+                "weight": "Weight (kg)",
+                "power": "Power (kW)",
+                "acceleration": "0-100km/h",
+                "aero": "Aero Package",
+                "tbd": "TBD"
+            }
+        },
+        "sponsors": {
+            "eyebrow": "Sponsor Grid",
+            "title": "Partners that keep the build alive.",
+            "body": "Our new two-tier partner system highlights the Gold Partner and supporting partners in a cleaner, more focused showcase."
+        }
+    },
+    "partners-page": {
+        "hero": {
+            "eyebrow": "Partners",
+            "title": "Two tiers. One team.",
+            "body": "Our partner network is now organized into Partner and Gold Partner tiers so the page can properly spotlight the organizations helping the project move forward.",
+            "placeholder-title": "Partner showcase placeholder",
+            "placeholder-body": "A team photo, sponsor wall, or partner montage can live here later."
+        },
+        "stats": {
+            "gold": "Gold partners",
+            "supporting": "Supporting partners",
+            "total": "Total partners"
+        },
+        "tiers": {
+            "gold": "Gold Partner",
+            "partner": "Partner"
+        },
+        "tier-descriptions": {
+            "gold": "Top-tier partner with prominent placement across the project.",
+            "partner": "Supporting partner helping the team build and grow."
+        },
+        "card-label": "Partner",
+        "compact-label": "Tier",
+        "visit": "Visit site",
+        "card": {
+            "open": "Open {{name}} website"
+        },
+        "preview-label": "New showcase",
+        "preview-copy": "See the full tiered partner lineup on the dedicated page.",
+        "preview-action": "Open partners page",
+        "gold": {
+            "eyebrow": "Gold partner",
+            "title": "Our Gold Partner",
+            "body": "The Gold Partner gets the highest visibility and sits at the top of the showcase."
+        },
+        "supporting": {
+            "title": "Supporting partners",
+            "body": "These partners make up the rest of the network and keep the project moving."
+        },
+        "cta": {
+            "eyebrow": "Become a partner",
+            "title": "Want to join the lineup?",
+            "body": "If you’d like to support the team, we’d love to hear from you.",
+            "contact": "Contact us"
+        }
+    },
+    "team-page": {
+        "hero": {
+            "title": "Built to race, engineered to win",
+            "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
+            "explore": "Explore",
+            "learn-more": "Learn more"
+        },
+        "overview": {
+            "eyebrow": "Team map",
+            "title": "Meet the people building the car",
+            "body": "Use the quick links, search bar, and department filter to move straight to the people you want to find."
+        },
+        "stats": {
+            "total-members": "Total members",
+            "departments": "Departments",
+            "leadership-roles": "Leadership roles",
+            "courses": "Courses"
+        },
+        "navigation": {
+            "eyebrow": "Navigate",
+            "title": "Jump to a section"
+        },
+        "quick-links": {
+            "department-leads": "Department leads",
+            "join": "Join us"
+        },
+        "search": {
+            "label": "Search members",
+            "placeholder": "Name, role, department, or description"
+        },
+        "filters": {
+            "aria": "Department filters",
+            "all": "All departments"
+        },
+        "departments": {
+            "management": "Management & Finance",
+            "marketing": "Marketing",
+            "vehicle-dynamics": "Vehicle Dynamics",
+            "powertrain": "Powertrain & Electrical",
+            "chassis-aero": "Chassis & Aerodynamics",
+            "software": "Software & Informatics"
+        },
+        "leadership": {
+            "eyebrow": "Leadership",
+            "title": "Team Leadership",
+            "description": "The people responsible for the overall direction, technical oversight, and internal coordination."
+        },
+        "department-leaders": {
+            "eyebrow": "Department leads",
+            "title": "Department Leaders",
+            "description": "These members coordinate each technical area and keep work aligned across the car."
+        },
+        "departments-section": {
+            "eyebrow": "Department",
+            "description": "Explore the members responsible for this subsystem and jump straight to the area you need.",
+            "empty": "No members matched the current search or department filter."
+        },
+        "card": {
+            "linkedin": "{{name}} on LinkedIn",
+            "instagram": "{{name}} on Instagram"
+        }
+    },
+    "join-form": {
+        "eyebrow": "JOIN THE TEAM",
+        "title": "Join ERTA",
+        "subtitle": "We are the first Formula Student team from the University of the Algarve. Our goal is to design, develop and, in the future, build a student racing car, applying what we learn in engineering, design and management. All areas are important - no prior experience needed.",
+        "email-subject": "ERTA Join Application",
+        "form": {
+            "title": "Application form",
+            "name": "Full name",
+            "name-placeholder": "Name and surname",
+            "email": "Email",
+            "email-institutional": "institutional",
+            "email-placeholder": "a00000@ualg.pt",
+            "email-feedback-empty": "Use your institutional email ending in @ualg.pt.",
+            "email-feedback-valid": "You entered {{email}}. Valid institutional email.",
+            "email-feedback-invalid": "You entered {{email}}. Please use an address ending in @ualg.pt.",
+            "email-domain-required": "Please use your institutional email ending in @ualg.pt.",
+            "required-note": "Required fields include name and surname and institutional email.",
+            "whatsapp": "WhatsApp phone number",
+            "whatsapp-placeholder": "+351 9XX XXX XXX or international format",
+            "course": "Current university course",
+            "course-placeholder": "Example: Mechanical Engineering",
+            "year": "Current year",
+            "year-placeholder": "Example: 2nd year",
+            "extracurricular": "Have you ever been part of an extracurricular activity related to engineering?",
+            "extracurricular-details": "If yes, which one(s)?",
+            "extracurricular-details-placeholder": "Share the name and a quick summary (optional).",
+            "motivation": "Explain why you want to be part of the project",
+            "motivation-placeholder": "Tell us your motivation and how you want to contribute.",
+            "interest-areas": "What areas interest you?",
+            "interest-areas-required": "Please select at least one area of interest.",
+            "interest-options": {
+                "chassis-aero": "Chassis and aerodynamics",
+                "dynamics": "Dynamics (Handling, suspension, brakes)",
+                "powertrain-motor": "Powertrain and Electronics",
+                "software-it": "Software and IT",
+                "management-finances": "Management and Finances",
+                "marketing": "Marketing and Design"
+            },
+            "in-person": "Are you available to attend in-person meetings?",
+            "select-option": "Select an option",
+            "yes": "Yes",
+            "no": "No",
+            "yes-no-required": "Please answer all yes/no questions.",
+            "extracurricular-details-required": "Please describe what you have done in your engineering extracurricular activity.",
+            "none": "None",
+            "send": "Submit application",
+            "sending": "Submitting...",
+            "success": "Application sent successfully! We will contact you soon.",
+            "error": "Something went wrong. Please try again or email us directly."
+        }
+    },
+    "not-found": {
+        "eyebrow": "404 ERROR",
+        "title": "Page not found",
+        "description": "The address you tried to reach does not exist or is no longer available. Go back home or jump to an active section of the site.",
+        "home": "Back to home",
+        "team": "View team",
+        "contact": "Contacts",
+        "panel": {
+            "eyebrow": "ERTA navigation",
+            "title": "Route unavailable",
+            "status-label": "Status"
+        },
+        "links": {
+            "home": {
+                "label": "Home",
+                "description": "Return to the front page."
+            },
+            "team": {
+                "label": "Team",
+                "description": "Meet the people behind the project."
+            },
+            "join": {
+                "label": "Join",
+                "description": "Apply to the team."
+            },
+            "contact": {
+                "label": "Contacts",
+                "description": "Find the right contact channel."
+            }
         }
     },
     "the-car": {

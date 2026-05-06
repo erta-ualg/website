@@ -1,7 +1,9 @@
-import logo from "../assets/header/logo.svg"
+import logoMark from "../assets/header/logo.png"
+import logoText from "../assets/header/logo.svg"
 
 const data = {
-    logo: logo
+    logoMark: logoMark,
+    logoText: logoText
 }
 
 export default data;

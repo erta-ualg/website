@@ -5,29 +5,11 @@
         "contact": "CONTACTOS",
         "the-car": "O CARRO"
     },
-
     "footer": {
         "contact": "Contacta-nos",
         "email": "erta@ualg.pt",
         "location": "Universidade do Algarve, Faro, Portugal"
     },
-
-    "hero": {
-        "slogan": {
-            "text": "Algum slogan bue fixe tipo katchau"
-        },
-        "team": {
-            "title": "Construído para correr, projetado para vencer",
-            "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
-            "explore": "Explorar",
-            "learn-more": "Saber mais"
-        },
-        "video": {
-            "mute": "Desativar som",
-            "unmute": "Ativar som"
-        }
-    },
-
     "feature": {
         "about-us": {
             "title": "Quem somos",
@@ -98,11 +80,258 @@
             "action": "Junta-te à ERTA"
         }
     },
+    "home": {
+        "hero": {
+            "eyebrow": "Formula Student EV · Algarve",
+            "title": "O SUL LEVANTA VOO",
+            "subtitle": "A primeira equipa de Formula Student EV do Algarve.",
+            "cta-sponsor": "Patrocina-nos",
+            "cta-team": "A Equipa",
+            "video": {
+                "controls": "Controlos de áudio",
+                "volume": "Volume",
+                "mute": "Desativar som",
+                "unmute": "Ativar som"
+            },
+            "pills": {
+                "powertrain": "Powertrain elétrico",
+                "aero": "Foco aerodinâmico",
+                "rookie": "Equipa rookie do sul"
+            },
+            "visual": {
+                "launch": "Baía de lançamento",
+                "electric": "100% elétrico",
+                "placeholder-title": "Espaço reservado visual",
+                "placeholder-body": "Uma silhueta da cegonha, render aerodinâmico ou estrutura do chassis pode entrar aqui depois."
+            }
+        },
+        "mission": {
+            "eyebrow": "A Missão",
+            "title": "Rookies do sul de Portugal a construir um EV de Competição.",
+            "body": "Somos a primeira equipa do Algarve a construir a nossa própria máquina elétrica de Formula Student, com foco teimoso em leveza, eficiência e controlo aerodinâmico.",
+            "placeholder-title": "Espaço reservado da mascote",
+            "placeholder-body": "Uma renderização ou recorte da cegonha pode ficar aqui quando o recurso estiver pronto.",
+            "chips": {
+                "rookie": "Equipa rookie",
+                "south": "Sul de Portugal",
+                "ev": "Carro de corrida elétrico"
+            }
+        },
+        "machine": {
+            "eyebrow": "A Máquina",
+            "title": "Baixa, afiada e feita para cortar o ar.",
+            "body": "A renderização do chassis ficará ao centro assim que o recurso CAD estiver pronto.",
+            "placeholder-title": "Espaço reservado da renderização do chassis",
+            "placeholder-body": "Uma renderização CAD limpa ou imagem principal pode ser centrada aqui.",
+            "spec-placeholder": "Espaço reservado de métrica até a especificação de engenharia ficar fechada.",
+            "specs": {
+                "weight": "Peso (kg)",
+                "power": "Potência (kW)",
+                "acceleration": "0-100km/h",
+                "aero": "Pacote aerodinâmico",
+                "tbd": "TBD"
+            }
+        },
+        "sponsors": {
+            "eyebrow": "Grelha de Parceiros",
+            "title": "Parceiros que mantêm o projeto vivo.",
+            "body": "O sistema de níveis destaca os nossos parceiros de apoio numa apresentação mais limpa e focada."
+        }
+    },
+    "partners-page": {
+        "hero": {
+            "eyebrow": "Parceiros",
+            "title": "Cinco níveis. Uma equipa.",
+            "body": "A nossa rede de parceiros está agora organizada em níveis Partner e Gold Partner para dar o destaque certo às organizações que ajudam o projeto a avançar.",
+            "placeholder-title": "Espaço reservado da montra de parceiros",
+            "placeholder-body": "Uma foto da equipa, parede de patrocinadores ou montagem de parceiros pode entrar aqui depois."
+        },
+        "stats": {
+            "gold": "Parceiros Gold",
+            "supporting": "Parceiros de apoio",
+            "total": "Total de parceiros"
+        },
+        "tiers": {
+            "gold": "Gold Partner",
+            "partner": "Partner"
+        },
+        "tier-descriptions": {
+            "gold": "Parceiro de topo com destaque principal em todo o projeto.",
+            "partner": "Parceiro de apoio que ajuda a equipa a construir e crescer."
+        },
+        "card-label": "Parceiro",
+        "compact-label": "Nível",
+        "visit": "Visitar site",
+        "card": {
+            "open": "Abrir o site de {{name}}"
+        },
+        "preview-label": "Nova montra",
+        "preview-copy": "Vê a lista completa e organizada por níveis na página dedicada.",
+        "preview-action": "Abrir página de parceiros",
+        "gold": {
+            "eyebrow": "Parceiro Gold",
+            "title": "O nosso Gold Partner",
+            "body": "O Gold Partner recebe a maior visibilidade e fica no topo da montra."
+        },
+        "supporting": {
+            "title": "Parceiros de apoio",
+            "body": "Estes parceiros formam o resto da rede e ajudam o projeto a avançar."
+        },
+        "cta": {
+            "eyebrow": "Torna-te parceiro",
+            "title": "Queres entrar na lista?",
+            "body": "Se quiseres apoiar a equipa, teremos todo o gosto em falar contigo.",
+            "contact": "Contacta-nos"
+        }
+    },
+    "team-page": {
+        "hero": {
+            "title": "Construído para correr, projetado para vencer",
+            "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
+            "explore": "Explorar",
+            "learn-more": "Saber mais"
+        },
+        "overview": {
+            "eyebrow": "Mapa da equipa",
+            "title": "Conhece as pessoas que estão a construir o carro",
+            "body": "Usa os atalhos, a pesquisa e o filtro por departamento para chegares rapidamente às pessoas que procuras."
+        },
+        "stats": {
+            "total-members": "Total de membros",
+            "departments": "Departamentos",
+            "leadership-roles": "Funções de liderança",
+            "courses": "Cursos"
+        },
+        "navigation": {
+            "eyebrow": "Navegar",
+            "title": "Ir para uma secção"
+        },
+        "quick-links": {
+            "department-leads": "Líderes de departamento",
+            "join": "Junta-te"
+        },
+        "search": {
+            "label": "Pesquisar membros",
+            "placeholder": "Nome, função, departamento ou descrição"
+        },
+        "filters": {
+            "aria": "Filtros de departamento",
+            "all": "Todos os departamentos"
+        },
+        "departments": {
+            "management": "Gestão e Finanças",
+            "marketing": "Marketing",
+            "vehicle-dynamics": "Dinâmica do Veículo",
+            "powertrain": "Powertrain e Elétrica",
+            "chassis-aero": "Chassi e Aerodinâmica",
+            "software": "Software e Informática"
+        },
+        "leadership": {
+            "eyebrow": "Liderança",
+            "title": "Liderança da equipa",
+            "description": "As pessoas responsáveis pela direção geral, supervisão técnica e coordenação interna."
+        },
+        "department-leaders": {
+            "eyebrow": "Líderes de departamento",
+            "title": "Liderança de departamentos",
+            "description": "Estes membros coordenam cada área técnica e mantêm o trabalho alinhado em todo o carro."
+        },
+        "departments-section": {
+            "eyebrow": "Departamento",
+            "description": "Explora os membros responsáveis por este subsistema e vai diretamente para a área que precisas.",
+            "empty": "Nenhum membro correspondeu à pesquisa ou ao filtro de departamento."
+        },
+        "card": {
+            "linkedin": "{{name}} no LinkedIn",
+            "instagram": "{{name}} no Instagram"
+        }
+    },
+    "join-form": {
+        "eyebrow": "JUNTA-TE À EQUIPA",
+        "title": "Junta-te a ERTA",
+        "subtitle": "Somos a primeira equipa de Fórmula Student da Universidade do Algarve. O nosso objetivo é projetar, desenvolver e, futuramente, construir um carro de competição estudantil, aplicando o que aprendemos em engenharia, design e gestão. Todas as áreas são importantes - não é preciso ter experiência prévia.",
+        "email-subject": "Candidatura ERTA",
+        "form": {
+            "title": "Formulário de candidatura",
+            "name": "Nome completo",
+            "name-placeholder": "Nome e apelido",
+            "email": "Email",
+            "email-institutional": "institucional",
+            "email-placeholder": "a00000@ualg.pt",
+            "email-feedback-empty": "Usa o teu email institucional terminado em @ualg.pt.",
+            "email-feedback-valid": "Introduziste {{email}}. Email institucional válido.",
+            "email-feedback-invalid": "Introduziste {{email}}. Usa um endereço terminado em @ualg.pt.",
+            "email-domain-required": "Por favor, usa o teu email institucional terminado em @ualg.pt.",
+            "required-note": "Campos obrigatórios incluem nome e apelido e email institucional.",
+            "whatsapp": "Número de WhatsApp",
+            "whatsapp-placeholder": "+351 9XX XXX XXX ou formato internacional",
+            "course": "Curso universitário atual",
+            "course-placeholder": "Exemplo: Engenharia Mecânica",
+            "year": "Ano atual",
+            "year-placeholder": "Exemplo: 2.º ano",
+            "extracurricular": "Já participaste em alguma atividade extracurricular relacionada com engenharia?",
+            "extracurricular-details": "Se sim, em qual/quais?",
+            "extracurricular-details-placeholder": "Partilha o nome e um breve resumo (opcional).",
+            "motivation": "Explica porque queres fazer parte do projeto",
+            "motivation-placeholder": "Conta-nos a tua motivação e como queres contribuir.",
+            "interest-areas": "Que áreas te interessam?",
+            "interest-areas-required": "Seleciona pelo menos uma área de interesse.",
+            "interest-options": {
+                "chassis-aero": "Chassis e Aerodinâmica",
+                "dynamics": "Dinâmica (Handling, suspensão, travões)",
+                "powertrain-motor": "Powertrain e Eletrónica",
+                "software-it": "Software e Informática",
+                "management-finances": "Gestão e Finanças",
+                "marketing": "Marketing e Design"
+            },
+            "in-person": "Tens disponibilidade para reuniões presenciais?",
+            "select-option": "Seleciona uma opção",
+            "yes": "Sim",
+            "no": "Não",
+            "yes-no-required": "Por favor responde a todas as perguntas de sim/não.",
+            "extracurricular-details-required": "Por favor descreve o que fizeste na tua atividade extracurricular de engenharia.",
+            "none": "Nenhuma",
+            "send": "Submeter candidatura",
+            "sending": "A submeter...",
+            "success": "Candidatura enviada com sucesso! Vamos entrar em contacto em breve.",
+            "error": "Algo correu mal. Tenta novamente ou envia-nos um email diretamente."
+        }
+    },
+    "not-found": {
+        "eyebrow": "ERRO 404",
+        "title": "Página não encontrada",
+        "description": "O endereço que procuraste não existe ou já não está disponível. Volta ao início ou segue para uma secção ativa do site.",
+        "home": "Voltar ao início",
+        "team": "Ver equipa",
+        "contact": "Contactos",
+        "panel": {
+            "eyebrow": "Navegação ERTA",
+            "title": "Rota indisponível",
+            "status-label": "Estado"
+        },
+        "links": {
+            "home": {
+                "label": "Início",
+                "description": "Voltar para a página principal."
+            },
+            "team": {
+                "label": "Equipa",
+                "description": "Conhece as pessoas por detrás do projeto."
+            },
+            "join": {
+                "label": "Junta-te",
+                "description": "Candidata-te à equipa."
+            },
+            "contact": {
+                "label": "Contactos",
+                "description": "Encontra o canal de contacto certo."
+            }
+        }
+    },
     "the-car": {
         "eyebrow": "O CARRO",
         "hero": {
-            "eyebrow": "O CARRO",
-            "title": "The car",
+            "title": "O carro",
             "subtitle": "Lorem ipsum dolor sit amet."
         },
         "title": "Protótipo EV — Classe 2",

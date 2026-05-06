@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 
@@ -55,24 +56,28 @@ export default function Contactos() {
     };
 
     return (
-        <div>
+        <div className="bg-background text-text">
             <Header />
 
+            <main className="overflow-hidden">
+
             {/* Hero */}
-            <section className="w-full pt-32 pb-16">
-                <div className="max-w-6xl mx-auto px-6 contact-hero">
+            <section className="bg-background px-6 pb-12 pt-32 text-text lg:pb-16">
+                <div className="mx-auto max-w-7xl contact-hero">
                     <p className="section-eyebrow">{t("contacts.eyebrow")}</p>
-                    <h1 className="contact-title">{t("contacts.title")}</h1>
-                    <p className="site-body max-w-xl">{t("contacts.subtitle")}</p>
+                    <h1 className="max-w-3xl text-4xl font-black uppercase leading-[0.92] tracking-[0.06em] text-text md:text-6xl">
+                        {t("contacts.title")}
+                    </h1>
+                    <p className="max-w-2xl text-lg leading-8 text-text-secondary md:text-xl">{t("contacts.subtitle")}</p>
                 </div>
             </section>
 
             {/* Info + Form grid */}
-            <section className="w-full py-16">
-                <div className="max-w-6xl mx-auto px-6 contact-grid">
+            <section className="bg-background px-6 py-12 text-text lg:py-16">
+                <div className="mx-auto max-w-7xl contact-grid">
                     {/* Contact info sidebar */}
                     <div className="contact-info">
-                        <div className="site-panel contact-info-panel">
+                        <div className="site-panel contact-info-panel rounded-[1.5rem] p-6">
                             <h2 className="site-heading text-lg mb-6">{t("contacts.info.title")}</h2>
 
                             <div className="contact-info-items">
@@ -123,7 +128,7 @@ export default function Contactos() {
 
                     {/* Contact form */}
                     <div className="contact-form-wrapper">
-                        <form onSubmit={handleSubmit} className="site-panel contact-form">
+                        <form onSubmit={handleSubmit} className="site-panel contact-form rounded-[1.5rem] p-6">
                             <h2 className="site-heading text-lg mb-6">{t("contacts.form.title")}</h2>
 
                             {/* Honeypot — hidden from humans, catches bots */}
@@ -215,8 +220,8 @@ export default function Contactos() {
             </section>
 
             {/* Map */}
-            <section className="w-full py-16 bg-background">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="bg-background px-6 py-12 text-text lg:py-16">
+                <div className="mx-auto max-w-7xl">
                     <div className="section-header">
                         <h2 className="site-heading">{t("contacts.map.title")}</h2>
                     </div>
@@ -236,17 +241,19 @@ export default function Contactos() {
             </section>
 
             {/* CTA */}
-            <section className="w-full py-16">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="bg-background px-6 py-16 text-text lg:py-24">
+                <div className="mx-auto max-w-7xl">
                     <div className="cta-block">
                         <div>
                             <h3 className="site-heading">{t("contacts.cta.title")}</h3>
                             <p className="site-body">{t("contacts.cta.body")}</p>
                         </div>
-                        <a href="/join" className="hero-cta-primary">{t("contacts.cta.action")}</a>
+                        <Link to="/join" className="hero-cta-primary">{t("contacts.cta.action")}</Link>
                     </div>
                 </div>
             </section>
+
+            </main>
 
             <Footer />
         </div>

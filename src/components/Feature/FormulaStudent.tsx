@@ -26,7 +26,7 @@ export default function FormulaStudent() {
     ];
 
     return (
-        <section className="w-full bg-surface py-16" /* XXX bg-background */ >
+        <section className="w-full bg-background py-16" /* XXX bg-background */ >
             <div className="max-w-6xl mx-auto px-6 text-center site-section-inner">
                 <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 site-heading">
                     {t("feature.formula-student.title")}

@@ -2,7 +2,7 @@ import Sponsor from "./Sponsor";
 import data from "../../data/Partners";
 
 export default function PartnerSlide() {
-    const sponsors = Object.values(data);
+    const sponsors = data.filter((partner) => Boolean(partner.logo));
 
     // nao me orgulho nem um pouco disto, mas tambem nao estou a ver outra forma (lmao, no probs)
     const repeated = [
@@ -51,9 +51,9 @@ export default function PartnerSlide() {
                     {repeated.map((sponsor, index) => (
                         <Sponsor
                             key={index}
-                            imageSrc={sponsor.image}
+                            imageSrc={sponsor.logo || ""}
                             link={sponsor.link}
-                            displayName={sponsor.displayName}
+                            displayName={sponsor.name}
                         />
                     ))}
                 </div>

@@ -7,6 +7,7 @@ import carModelUrl from "../../assets/car/tapado.glb";
 
 interface WorkshopDioramaProps {
     reducedMotion?: boolean;
+    mode?: "hero" | "compact";
 }
 
 function CameraShift({ shiftX }: { shiftX: number }) {
@@ -111,23 +112,38 @@ function WorkshopScene() {
     );
 }
 
-export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps) {
-    const viewShift = useMemo(() => {
-        const width = window.innerWidth;
-        return -0.17 * width;
-    }, []);
+export default function WorkshopDiorama({ reducedMotion, mode = "hero" }: WorkshopDioramaProps) {
+    const [viewShift, setViewShift] = useState(0);
     const [isInteracting, setIsInteracting] = useState(false);
+    const isCompact = mode === "compact";
+
+    useEffect(() => {
+        if (isCompact) {
+            setViewShift(0);
+            return;
+        }
+
+        const updateShift = () => {
+            const width = window.innerWidth;
+            const ratio = width < 768 ? -0.08 : -0.17;
+            setViewShift(Math.round(width * ratio));
+        };
+
+        updateShift();
+        window.addEventListener("resize", updateShift);
+        return () => window.removeEventListener("resize", updateShift);
+    }, [isCompact]);
 
     return (
         <Canvas
             shadows="soft"
-            camera={{ position: [3.4, 1.7, 2.6], fov: 42 }}
+            camera={isCompact ? { position: [2.7, 1.45, 2.2], fov: 38 } : { position: [3.4, 1.7, 2.6], fov: 42 }}
             style={{ width: "100%", height: "100%" }}
             gl={{ antialias: true }}
             aria-hidden="true"
         >
             <CameraShift shiftX={viewShift} />
-            <fog attach="fog" args={["#134B8A", 4.5, 10]} />
+            <fog attach="fog" args={isCompact ? ["#134B8A", 3.8, 8.5] : ["#134B8A", 4.5, 10]} />
             <color attach="background" args={["#134B8A"]} />
             <ambientLight intensity={0.2} color="#ffffff" />
             <directionalLight
@@ -156,13 +172,13 @@ export default function WorkshopDiorama({ reducedMotion }: WorkshopDioramaProps)
                 enablePan={false}
                 enableZoom={false}
                 enableRotate
-                autoRotate={!reducedMotion && !isInteracting}
-                autoRotateSpeed={0.6}
+                autoRotate={!reducedMotion && (!isInteracting || isCompact)}
+                autoRotateSpeed={isCompact ? 0.75 : 0.6}
                 enableDamping
                 dampingFactor={0.1}
-                rotateSpeed={0.35}
-                minPolarAngle={Math.PI / 2.6}
-                maxPolarAngle={Math.PI / 2.15}
+                rotateSpeed={isCompact ? 0.2 : 0.35}
+                minPolarAngle={isCompact ? Math.PI / 2.45 : Math.PI / 2.6}
+                maxPolarAngle={isCompact ? Math.PI / 2.25 : Math.PI / 2.15}
                 target={[0, 0, 0]}
                 onStart={() => setIsInteracting(true)}
                 onEnd={() => setIsInteracting(false)}
