@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HelmetProvider } from "react-helmet-async"
 import Home from "./pages/Home"
 // import Join from "./pages/Join"
 import JoinForm from "./pages/JoinForm"
@@ -10,8 +11,9 @@ import NotFound from "./pages/NotFound"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
         {/* homepage */}
         <Route path="/" element={<Home />} />
 
@@ -38,6 +40,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

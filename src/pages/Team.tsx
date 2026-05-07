@@ -10,6 +10,7 @@ import Footer from '../components/Footer/Footer';
 import TeamHero from '../components/Hero/TeamHero';
 import JoinCTA from '../components/CTA/JoinCTA';
 import { coursesCount } from '../data/siteStats';
+import { SEO } from '../hooks/useSEO';
 
 const departments = [
   { sourceName: 'Gestão / Finanças', translationKey: 'team-page.departments.management' },
@@ -110,6 +111,20 @@ const TeamPage = () => {
 
   return (
     <>
+      <SEO
+        title="Team"
+        description="Meet ERTA's team - 80+ engineering students across 6 departments working on Formula Student competition."
+        keywords="ERTA team, Formula Student, UAlg, engineering, management, powertrain, chassis, software"
+        ogUrl="https://fs-erta.com/team"
+        canonicalUrl="https://fs-erta.com/team"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "ERTA Team",
+          "description": "Meet ERTA's team of 80+ engineering students",
+          "url": "https://fs-erta.com/team",
+        }}
+      />
       <Header />
       <TeamHero />
 

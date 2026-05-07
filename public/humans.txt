@@ -1,0 +1,21 @@
+/* HUMANS.TXT */
+/* The humans.txt file is an initiative for knowing the people behind a website */
+
+/* Team */
+Team: ERTA - UAlg Formula Student Team
+Site: https://fs-erta.com
+Twitter: @erta.ualg
+Location: Faro, Algarve, Portugal
+
+/* Site */
+Language: English, Portuguese
+Standards: HTML5, CSS3, JavaScript (React), TypeScript
+Components: Vite, React Router, TailwindCSS, Three.js
+Last Update: 2025-05-07
+Standards Compliance: HTML5, WCAG 2.1 AA
+
+/* Thanks */
+Thanks to all the team members, sponsors, and supporters making ERTA possible.
+
+/* Contact */
+Email: contact@fs-erta.com

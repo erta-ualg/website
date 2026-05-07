@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import CarroHero from "../components/Hero/CarroHero";
 import Footer from "../components/Footer/Footer";
+import { SEO } from "../hooks/useSEO";
 
 export default function TheCar() {
     const { t } = useTranslation();
@@ -29,6 +30,20 @@ export default function TheCar() {
 
     return (
         <div className="bg-background text-text">
+            <SEO
+                title="The Car"
+                description="Discover ERTA's electric Formula Student racing car. Learn about its innovative design, specs, and engineering."
+                keywords="ERTA car, Formula Student car, electric vehicle, racing car, engineering, specs"
+                ogUrl="https://fs-erta.com/carro"
+                canonicalUrl="https://fs-erta.com/carro"
+                structuredData={{
+                  "@context": "https://schema.org",
+                  "@type": "WebPage",
+                  "name": "ERTA Race Car",
+                  "description": "ERTA's Formula Student racing car",
+                  "url": "https://fs-erta.com/carro",
+                }}
+            />
             <Header />
             <CarroHero />
 

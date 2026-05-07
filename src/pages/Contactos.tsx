@@ -8,6 +8,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import footerData from "../data/Footer";
 import contactsData from "../data/Contacts";
+import { SEO } from "../hooks/useSEO";
 
 export default function Contactos() {
     const { t } = useTranslation();
@@ -57,6 +58,20 @@ export default function Contactos() {
 
     return (
         <div className="bg-background text-text">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with ERTA. We'd love to hear from you about sponsorships, partnerships, or any inquiries."
+                keywords="contact ERTA, Formula Student contact, sponsorship, partnership inquiry"
+                ogUrl="https://fs-erta.com/contactos"
+                canonicalUrl="https://fs-erta.com/contactos"
+                structuredData={{
+                  "@context": "https://schema.org",
+                  "@type": "WebPage",
+                  "name": "Contact ERTA",
+                  "description": "Contact ERTA Formula Student Team",
+                  "url": "https://fs-erta.com/contactos",
+                }}
+            />
             <Header />
 
             <main className="overflow-hidden">

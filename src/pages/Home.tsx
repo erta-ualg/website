@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import PartnersSection from "../components/Feature/Partners";
 import WorkshopDiorama from "../components/Three/WorkshopDiorama";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../hooks/useSEO";
 
 function MissionSection() {
     const { t } = useTranslation();
@@ -116,6 +117,20 @@ function MachineSection() {
 export default function Home() {
     return (
         <div className="bg-background text-text">
+            <SEO
+                title="Home"
+                description="ERTA - UAlg Formula Student Team. Discover our mission, innovative race car, and join Portugal's premier Formula Student team."
+                keywords="ERTA, Formula Student, UAlg, Algarve, race car, engineering, motorsport, student team"
+                ogUrl="https://fs-erta.com/"
+                canonicalUrl="https://fs-erta.com/"
+                structuredData={{
+                  "@context": "https://schema.org",
+                  "@type": "WebPage",
+                  "name": "ERTA - UAlg Formula Student Team",
+                  "description": "ERTA is the University of Algarve's Formula Student racing team competing at international level",
+                  "url": "https://fs-erta.com/",
+                }}
+            />
             <Header />
 
             <main className="overflow-hidden">

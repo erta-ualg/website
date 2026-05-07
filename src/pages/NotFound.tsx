@@ -3,12 +3,20 @@ import { useTranslation } from "react-i18next";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { SEO } from "../hooks/useSEO";
 
 export default function NotFound() {
     const { t } = useTranslation();
 
     return (
         <div className="bg-background text-text">
+            <SEO
+                title="Page Not Found"
+                description="The page you're looking for doesn't exist. Return to ERTA's homepage."
+                keywords="404, not found, error"
+                ogUrl="https://fs-erta.com"
+                canonicalUrl="https://fs-erta.com"
+            />
             <Header />
 
             <main className="relative overflow-hidden px-6 py-20 text-text lg:py-28">
