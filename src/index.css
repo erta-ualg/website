@@ -1099,6 +1099,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.contact-input option {
+  color: black;
+  background: white;
+}
+
 .contact-input::placeholder {
   color: rgba(71, 85, 105, 0.5);
 }

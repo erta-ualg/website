@@ -302,8 +302,8 @@ export default function JoinForm() {
                                                 key={area}
                                                 className={`group relative flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 transition-all duration-200 ${
                                                     checked
-                                                        ? "border-[var(--site-accent)] bg-[linear-gradient(135deg,rgba(59,130,246,0.16),rgba(34,197,94,0.12))] shadow-[0_8px_22px_rgba(59,130,246,0.18)]"
-                                                        : "border-[var(--site-panel-border)] bg-[rgba(245,248,255,0.55)] hover:border-[var(--site-accent)] hover:bg-[rgba(245,248,255,0.85)]"
+                                                        ? "border-[var(--site-accent)] bg-[linear-gradient(135deg,rgba(59,130,246,0.2),rgba(34,197,94,0.15))] shadow-[0_8px_22px_rgba(59,130,246,0.18)] dark:bg-[linear-gradient(135deg,rgba(59,130,246,0.25),rgba(34,197,94,0.2))]"
+                                                        : "border-[var(--site-panel-border)] bg-[rgba(60,70,80,0.35)] hover:border-[var(--site-accent)] hover:bg-[rgba(60,70,80,0.5)] dark:bg-[rgba(120,130,140,0.45)] dark:hover:bg-[rgba(120,130,140,0.6)]"
                                                 }`}
                                             >
                                                 <input
@@ -317,7 +317,7 @@ export default function JoinForm() {
                                                     className={`grid h-5 w-5 place-items-center rounded-md border transition-all duration-200 ${
                                                         checked
                                                             ? "border-[var(--site-accent)] bg-[var(--site-accent)] text-white"
-                                                            : "border-[var(--site-panel-border)] bg-white text-transparent group-hover:border-[var(--site-accent)]"
+                                                            : "border-[var(--site-panel-border)] bg-white text-transparent group-hover:border-[var(--site-accent)] dark:bg-[rgba(120,130,140,0.6)] dark:border-[var(--site-panel-border)]"
                                                     }`}
                                                 >
                                                     <svg viewBox="0 0 16 16" className={`h-3.5 w-3.5 transition-transform duration-200 ${checked ? "scale-100" : "scale-75"}`}>
@@ -331,7 +331,7 @@ export default function JoinForm() {
                                                         />
                                                     </svg>
                                                 </span>
-                                                <span className={`text-sm transition-colors ${checked ? "text-[var(--site-text)] font-medium" : "site-body"}`}>
+                                                <span className={`text-sm transition-colors ${checked ? "text-[var(--site-text)] font-medium" : "text-[var(--site-text)] dark:text-[var(--site-text)]"}`}>
                                                     {t(`join-form.form.interest-options.${area}`)}
                                                 </span>
                                             </label>
