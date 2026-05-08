@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { HiOutlinePhotograph } from "react-icons/hi";
+// import { HiOutlinePhotograph } from "react-icons/hi";
+
+import teamPhoto from "../../data/Team";
 
 import teamPhoto from "../../data/Team";
 

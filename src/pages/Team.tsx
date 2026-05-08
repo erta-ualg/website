@@ -9,7 +9,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import TeamHero from '../components/Hero/TeamHero';
 import JoinCTA from '../components/CTA/JoinCTA';
-import { coursesCount } from '../data/siteStats';
+// import { coursesCount } from '../data/siteStats';
 import { SEO } from '../hooks/useSEO';
 
 const departments = [
@@ -26,8 +26,8 @@ const toDepartmentId = (department: string) =>
 
 const TeamPage = () => {
   const { t } = useTranslation();
-  const [search, setSearch] = useState('');
-  const [activeDepartment, setActiveDepartment] = useState('all');
+  const [search /* , setSearch */] = useState('');
+  const [activeDepartment /* , setActiveDepartment */] = useState('all');
 
   const leadership = teamData.filter((member) =>
     member.department === 'Team Leaders' || member.role.toLowerCase().includes('engenheiro chefe')
@@ -93,7 +93,7 @@ const TeamPage = () => {
       .filter((department) => department.members.length > 0);
   }, [activeDepartment, search, t]);
 
-  const stats = [
+  /* const stats = [
     { label: t('team-page.stats.total-members'), value: String(teamData.length) },
     { label: t('team-page.stats.departments'), value: String(departments.length) },
     {
@@ -107,7 +107,7 @@ const TeamPage = () => {
     { label: t('team-page.quick-links.department-leads'), href: '#department-leaders' },
     { label: t('team-page.stats.departments'), href: '#team-departments' },
     { label: t('team-page.quick-links.join'), href: '#join-team' },
-  ];
+  ]; */
 
   return (
     <>
