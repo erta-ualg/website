@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import teamPhoto from "../../data/Team";
 
-import teamPhoto from "../../data/Team";
-
 export default function TeamHero() {
     const { t } = useTranslation();
 
