@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import PartnerCard from "../components/Card/PartnerCard";
 import SponsorWallCanvas from "../components/Feature/SponsorWallCanvas";
 import partners from "../data/Partners";
+import { SEO } from "../hooks/useSEO";
 
 export default function PartnersPage() {
     const { t } = useTranslation();
@@ -20,6 +21,20 @@ export default function PartnersPage() {
 
     return (
         <div className="bg-background text-text">
+            <SEO
+                title="Partners & Sponsors"
+                description="Discover ERTA's sponsors and partners supporting our Formula Student mission. Join our growing network of companies."
+                keywords="ERTA partners, sponsors, Formula Student, UAlg, motorsport sponsors"
+                ogUrl="https://fs-erta.com/partners"
+                canonicalUrl="https://fs-erta.com/partners"
+                structuredData={{
+                  "@context": "https://schema.org",
+                  "@type": "WebPage",
+                  "name": "ERTA Partners & Sponsors",
+                  "description": "ERTA partners and sponsors",
+                  "url": "https://fs-erta.com/partners",
+                }}
+            />
             <Header />
 
             <main className="overflow-hidden">

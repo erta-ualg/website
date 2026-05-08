@@ -1,0 +1,27 @@
+# ERTA - UAlg Formula Student Team
+# Generated for SEO optimization
+
+# Allow all bots
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Specify sitemap
+Sitemap: https://fs-erta.com/sitemap.xml
+
+# Crawl delay (optional - prevents server overload)
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
