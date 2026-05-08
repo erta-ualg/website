@@ -3,18 +3,19 @@ import fotoJanLeon from '../assets/team/fotoJanLeonERTA.png';
 import fotoBarbaraPereira from '../assets/team/fotoBárbaraPereiraERTA.png';
 import fotoCorinaSampaio from '../assets/team/fotoCorinaSampaioERTA.png';
 import fotoBeatrizCorreia from '../assets/team/fotoBeatrizCorreiaERTA.png';
-import fotoDiogoFonseca from '../assets/team/fotoDiogoFonsecaERTA.png';
 import fotoAlexandreSilva from '../assets/team/fotoAlexandreSilvaERTA.jpg';
+import fotoRaquelNunes from '../assets/team/fotoRaquelNunesERTA.jpg'
 import fotoDavidSilvestre from '../assets/team/fotoDavidSilvestreERTA.png';
 import fotoAfonsoFigueiredo from '../assets/team/fotoAfonsoFigueiredoERTA.png';
-import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpeg';
+import fotoDiogoFonseca from '../assets/team/fotoDiogoFonsecaERTA.png';
 import fotoAndreCristina from '../assets/team/fotoAndréCristinaERTA.jpg';
 import fotoGuilhermeSilvestre from '../assets/team/fotoGuilhermeSilvestreERTA.png';
+import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpeg';
 import fotoGumersindoCosta from '../assets/team/fotoGumersindoCostaERTA.jpeg';
 import fotoGoncaloFigueiredo from '../assets/team/fotoGoncaloFigueiredoERTA.jpeg';
+import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpeg';
 import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpeg';
 import fotoChristianFarfan from '../assets/team/fotoChristianFarfanERTA.jpeg';
-import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpeg';
 
 export interface TeamMember {
   id: number;
@@ -80,7 +81,7 @@ const teamData: TeamMember[] = [
     id: 5,
     name: "Beatriz Correia",
     role: "Líder de Departamento",
-    department: "Marketing",
+    department: "Marketing / Design",
     descriptionPt: "Marketing. Membro desde 04/01/2026.",
     descriptionEn: "Marketing. Member since 04/01/2026.",
     photoUrl: fotoBeatrizCorreia,
@@ -91,12 +92,12 @@ const teamData: TeamMember[] = [
     id: 6,
     name: "Raquel Nunes",
     role: "Membro",
-    department: "Marketing",
-    descriptionPt: "Engenharia Informática. Membro desde 04/01/2026.",
-    descriptionEn: "Computer Engineering. Member since 04/01/2026.",
-    photoUrl: avatarFor("Raquel Nunes"),
+    department: "Marketing / Design",
+    descriptionPt: "Engenharia Informática. Membro desde 30/10/2025.",
+    descriptionEn: "Computer Engineering. Member since 30/10/2025.",
+    photoUrl: fotoRaquelNunes,
     linkedin: emailLink("a83883@ualg.pt"),
-    instagram: emailLink("raquel.vnunes108@gmail.com"),
+    instagram: "https://www.instagram.com/rach.el.108/",
   },
   {
     id: 7,
@@ -147,11 +148,11 @@ const teamData: TeamMember[] = [
     name: "David Silvestre",
     role: "Líder de Departamento",
     department: "Software / Informática",
-    descriptionPt: "Engenharia Informática. Membro desde 04/01/2026. Departamento secundário: Powertrain / Eletrónica.",
-    descriptionEn: "Computer Engineering. Member since 04/01/2026. Secondary department: Powertrain / Electronics.",
+    descriptionPt: "Engenharia Informática. Membro desde 30/10/2025. Departamento secundário: Marketing / Design.",
+    descriptionEn: "Computer Engineering. Member since 30/10/2025. Secondary department: Marketing / Design.",
     photoUrl: fotoDavidSilvestre,
     linkedin: emailLink("a83938@ualg.pt"),
-    instagram: emailLink("david@davidsilvestre.com"),
+    instagram: "https://www.instagram.com/daviid.sil/",
   },
   {
     id: 12,

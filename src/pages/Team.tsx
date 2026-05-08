@@ -14,7 +14,7 @@ import { SEO } from '../hooks/useSEO';
 
 const departments = [
   { sourceName: 'Gestão / Finanças', translationKey: 'team-page.departments.management' },
-  { sourceName: 'Marketing', translationKey: 'team-page.departments.marketing' },
+  { sourceName: 'Marketing / Design', translationKey: 'team-page.departments.marketing' },
   { sourceName: 'Vehicle Dynamics', translationKey: 'team-page.departments.vehicle-dynamics' },
   { sourceName: 'Powertrain / Elétrica', translationKey: 'team-page.departments.powertrain' },
   { sourceName: 'Chassis / Aerodinâmica', translationKey: 'team-page.departments.chassis-aero' },
@@ -113,7 +113,7 @@ const TeamPage = () => {
     <>
       <SEO
         title="Team"
-        description="Meet ERTA's team - 80+ engineering students across 6 departments working on Formula Student competition."
+        description="Meet ERTA's team - 20+ engineering students across 6 departments working on Formula Student competition."
         keywords="ERTA team, Formula Student, UAlg, engineering, management, powertrain, chassis, software"
         ogUrl="https://fs-erta.com/team"
         canonicalUrl="https://fs-erta.com/team"
@@ -121,7 +121,7 @@ const TeamPage = () => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "ERTA Team",
-          "description": "Meet ERTA's team of 80+ engineering students",
+          "description": "Meet ERTA's team",
           "url": "https://fs-erta.com/team",
         }}
       />
@@ -129,7 +129,10 @@ const TeamPage = () => {
       <TeamHero />
 
       <main className="team-page-shell">
-        <section id="team-overview" className="team-page-section py-12 sm:py-16 scroll-mt-28">
+
+        {/* HACK disabled for now, on marketing and design request */}
+
+        {/* <section id="team-overview" className="team-page-section py-12 sm:py-16 scroll-mt-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
               <div className="site-panel team-overview-panel">
@@ -199,7 +202,7 @@ const TeamPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="team-leadership" className="team-page-section py-8 sm:py-10 scroll-mt-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">

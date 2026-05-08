@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { HiOutlinePhotograph } from "react-icons/hi";
 
+import teamPhoto from "../../data/Team";
+
 export default function TeamHero() {
     const { t } = useTranslation();
 
@@ -28,7 +30,11 @@ export default function TeamHero() {
 
                 {/* Hero Image Placeholder */}
                 <div className="team-hero-media w-full aspect-video flex items-center justify-center rounded-sm">
-                    <HiOutlinePhotograph className="team-hero-media-icon text-8xl" />
+                    <img
+                            src={teamPhoto.photo}
+                            alt={teamPhoto.photo || "Team"}
+                            className=""
+                        />
                 </div>
             </div>
         </section>

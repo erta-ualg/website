@@ -6,6 +6,8 @@ import WorkshopDiorama from "../components/Three/WorkshopDiorama";
 import { useTranslation } from "react-i18next";
 import { SEO } from "../hooks/useSEO";
 
+import MissionData from "../data/Mission";
+
 function MissionSection() {
     const { t } = useTranslation();
 
@@ -13,9 +15,14 @@ function MissionSection() {
         <section className="bg-background px-6 py-20 text-text lg:py-28">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div className="site-panel rounded-[2rem] p-4 shadow-[0_0_60px_rgba(8,145,178,0.10)] backdrop-blur-xl">
-                    <div className="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
-                        {/* INSERT STORK MASCOT HERE */}
-                        <div className="px-8">
+                    {/* <div className="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
+
+                        <img
+                            src={MissionData.photo}
+                            alt={MissionData.photo || "Sponsor"}
+                            className=""
+                        />
+                        {/* <div className="px-8">
                             <div className="mx-auto mb-4 h-20 w-20 rounded-full border border-cyan-300/35 bg-cyan-300/10" />
                             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
                                 {t("home.mission.placeholder-title")}
@@ -23,8 +30,13 @@ function MissionSection() {
                             <p className="mt-3 text-sm leading-6 text-text-secondary">
                                 {t("home.mission.placeholder-body")}
                             </p>
-                        </div>
-                    </div>
+                        </div> }
+                    </div> */}
+                    <img
+                            src={MissionData.photo}
+                            alt={MissionData.photo || "Obrinha"}
+                            className=""
+                        />
                 </div>
 
                 <div className="space-y-6">
@@ -62,10 +74,22 @@ function MachineSection() {
     const { t } = useTranslation();
 
     const targetSpecs = [
-        { label: t("home.machine.specs.weight"), value: t("home.machine.specs.tbd") },
-        { label: t("home.machine.specs.power"), value: t("home.machine.specs.tbd") },
-        { label: t("home.machine.specs.acceleration"), value: t("home.machine.specs.tbd") },
-        { label: t("home.machine.specs.aero"), value: t("home.machine.specs.tbd") },
+        {
+            label: t("home.machine.specs.weight"),
+            value: t("home.machine.specs.tbd"),
+        },
+        {
+            label: t("home.machine.specs.power"),
+            value: t("home.machine.specs.tbd"),
+        },
+        {
+            label: t("home.machine.specs.acceleration"),
+            value: t("home.machine.specs.tbd"),
+        },
+        {
+            label: t("home.machine.specs.aero"),
+            value: t("home.machine.specs.tbd"),
+        },
     ];
 
     return (
@@ -124,11 +148,12 @@ export default function Home() {
                 ogUrl="https://fs-erta.com/"
                 canonicalUrl="https://fs-erta.com/"
                 structuredData={{
-                  "@context": "https://schema.org",
-                  "@type": "WebPage",
-                  "name": "ERTA - UAlg Formula Student Team",
-                  "description": "ERTA is the University of Algarve's Formula Student racing team competing at international level",
-                  "url": "https://fs-erta.com/",
+                    "@context": "https://schema.org",
+                    "@type": "WebPage",
+                    name: "ERTA - UAlg Formula Student Team",
+                    description:
+                        "ERTA is the University of Algarve's Formula Student racing team competing at international level",
+                    url: "https://fs-erta.com/",
                 }}
             />
             <Header />
