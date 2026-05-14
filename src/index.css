@@ -1933,11 +1933,11 @@ html[data-theme="dark"] .team-filter-chip {
 }
 
 .team-member-card-overlay {
-  background: linear-gradient(180deg, rgba(2, 6, 23, 0.02), rgba(2, 6, 23, 0.2));
+  background: transparent;
 }
 
 html[data-theme="dark"] .team-member-card-overlay {
-  background: linear-gradient(180deg, rgba(2, 6, 23, 0.02), rgba(2, 6, 23, 0.4));
+  background: transparent;
 }
 
 .team-member-department-chip {

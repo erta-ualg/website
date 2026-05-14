@@ -1,4 +1,4 @@
-import photo from "../assets/team/team.png"
+import photo from "../assets/team/team.jpg"
 
 const data = {
     photo: photo,
