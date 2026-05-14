@@ -1,21 +1,24 @@
 import fotoVicenteLamy from '../assets/team/fotoVicenteLamyERTA.jpg';
-import fotoJanLeon from '../assets/team/fotoJanLeonERTA.png';
-import fotoBarbaraPereira from '../assets/team/fotoBárbaraPereiraERTA.png';
-import fotoCorinaSampaio from '../assets/team/fotoCorinaSampaioERTA.png';
-import fotoBeatrizCorreia from '../assets/team/fotoBeatrizCorreiaERTA.png';
+import fotoJanLeon from '../assets/team/fotoJanLeonERTA.jpg';
+import fotoBarbaraPereira from '../assets/team/fotoBárbaraPereiraERTA.jpg';
+import fotoCorinaSampaio from '../assets/team/fotoCorinaSampaioERTA.jpg';
+import fotoBeatrizCorreia from '../assets/team/fotoBeatrizCorreiaERTA.jpg';
 import fotoAlexandreSilva from '../assets/team/fotoAlexandreSilvaERTA.jpg';
-import fotoRaquelNunes from '../assets/team/fotoRaquelNunesERTA.jpg'
-import fotoDavidSilvestre from '../assets/team/fotoDavidSilvestreERTA.png';
-import fotoAfonsoFigueiredo from '../assets/team/fotoAfonsoFigueiredoERTA.png';
-import fotoDiogoFonseca from '../assets/team/fotoDiogoFonsecaERTA.png';
+import fotoRaquelNunes from '../assets/team/fotoRaquelNunesERTA.jpg';
+import fotoDavidSilvestre from '../assets/team/fotoDavidSilvestreERTA.jpg';
+import fotoAfonsoFigueiredo from '../assets/team/fotoAfonsoFigueiredoERTA.jpg';
+import fotoDiogoFonseca from '../assets/team/fotoDiogoFonsecaERTA.jpg';
 import fotoAndreCristina from '../assets/team/fotoAndréCristinaERTA.jpg';
-import fotoGuilhermeSilvestre from '../assets/team/fotoGuilhermeSilvestreERTA.png';
-import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpeg';
-import fotoGumersindoCosta from '../assets/team/fotoGumersindoCostaERTA.jpeg';
-import fotoGoncaloFigueiredo from '../assets/team/fotoGoncaloFigueiredoERTA.jpeg';
-import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpeg';
-import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpeg';
-import fotoChristianFarfan from '../assets/team/fotoChristianFarfanERTA.jpeg';
+import fotoGuilhermeSilvestre from '../assets/team/fotoGuilhermeSilvestreERTA.jpg';
+import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpg';
+import fotoGumersindoCosta from '../assets/team/fotoGumersindoCostaERTA.jpg';
+import fotoGoncaloFigueiredo from '../assets/team/fotoGoncaloFigueiredoERTA.jpg';
+import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpg';
+import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpg';
+import fotoChristianFarfan from '../assets/team/fotoChristianFarfanERTA.jpg';
+import fotoBernardoMartins from '../assets/team/fotoBernardoMartinsERTA.jpg';
+import fotoAfonsoRodrigues from '../assets/team/fotoAfonsoRodriguesERTA.jpg';
+import fotoMateoAcha from '../assets/team/fatoMateoAchaERTA.jpg';
 
 export interface TeamMember {
   id: number;
@@ -75,7 +78,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Business Management. Member since 04/01/2026.",
     photoUrl: fotoCorinaSampaio,
     linkedin: emailLink("a84280@ualg.pt"),
-    instagram: emailLink("corisampaio05@gmail.com"),
+    instagram: emailLink("a84280@ualg.pt"),
   },
   {
     id: 5,
@@ -86,7 +89,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Marketing. Member since 04/01/2026.",
     photoUrl: fotoBeatrizCorreia,
     linkedin: emailLink("a89332@ualg.pt"),
-    instagram: emailLink("beatriizsiilvac@gmail.com"),
+    instagram: emailLink("a89332@ualg.pt"),
   },
   {
     id: 6,
@@ -108,7 +111,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Electrical and Computer Engineering. Member since 04/01/2026.",
     photoUrl: fotoDiogoFonseca,
     linkedin: emailLink("a91031@ualg.pt"),
-    instagram: emailLink("fonsecadiogo215@gmail.com"),
+    instagram: emailLink("a91031@ualg.pt"),
   },
   {
     id: 8,
@@ -119,7 +122,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Electrical and Computer Engineering. Member since 04/01/2026.",
     photoUrl: avatarFor("Gonçalo Pacheco"),
     linkedin: emailLink("a89296@ualg.pt"),
-    instagram: emailLink("Goncalo_pacheco@outlook.com"),
+    instagram: emailLink("a89296@ualg.pt"),
   },
   {
     id: 9,
@@ -130,7 +133,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Mechanical Engineering. Member since 04/01/2026.",
     photoUrl: fotoAlexandreSilva,
     linkedin: emailLink("a89282@ualg.pt"),
-    instagram: emailLink("alexandreescolavirtual@gmail.com"),
+    instagram: emailLink("a89282@ualg.pt"),
   },
   {
     id: 10,
@@ -139,7 +142,7 @@ const teamData: TeamMember[] = [
     department: "Powertrain / Elétrica",
     descriptionPt: "Engenharia Eletrotécnica e de Computadores. Membro desde 09/03/2026.",
     descriptionEn: "Electrical and Computer Engineering. Member since 09/03/2026.",
-    photoUrl: avatarFor("Bernardo Martins"),
+    photoUrl: fotoBernardoMartins,
     linkedin: "https://www.linkedin.com/in/bernardo-martins-58438a3b6/",
     instagram: "https://www.instagram.com/_beni_m23/",
   },
@@ -227,9 +230,9 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Engenharia Mecânica. Membro desde 17/02/2026.",
     descriptionEn: "Mechanical Engineering. Member since 17/02/2026.",
-    photoUrl: avatarFor("Afonso Rodrigues"),
+    photoUrl: fotoAfonsoRodrigues,
     linkedin: emailLink("a79464@ualg.pt"),
-    instagram: emailLink("afonsobeloromao@gmal.com"),
+    instagram: emailLink("a79464@ualg.pt"),
   },
   {
     id: 19,
@@ -238,7 +241,7 @@ const teamData: TeamMember[] = [
     department: "Vehicle Dynamics",
     descriptionPt: "Engenharia Mecânica. Membro desde 17/02/2026.",
     descriptionEn: "Mechanical Engineering. Member since 17/02/2026.",
-    photoUrl: avatarFor("Mateo Achá"),
+    photoUrl: fotoMateoAcha,
     linkedin: emailLink("a91337@ualg.pt"),
     instagram: "https://www.instagram.com/mateo.acha?utm_source=qr",
   },
@@ -262,7 +265,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Mechanical Engineering. Member since 04/01/2026.",
     photoUrl: fotoMiguelClaro,
     linkedin: emailLink("a93547@ualg.pt"),
-    instagram: emailLink("miguelclaro128@gmail.com"),
+    instagram: emailLink("a93547@ualg.pt"),
   },
   {
     id: 22,
@@ -284,7 +287,7 @@ const teamData: TeamMember[] = [
     descriptionEn: "Mechanical Engineering. Member since 17/02/2026.",
     photoUrl: avatarFor("Afonso Inez"),
     linkedin: emailLink("a88362@ualg.pt"),
-    instagram: emailLink("afonsoinez@gmail.com"),
+    instagram: emailLink("a88362@ualg.pt"),
   },
 ];
 
