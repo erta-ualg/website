@@ -14,7 +14,7 @@ import fotoBrunoFernandes from '../assets/team/fotoBrunoFernandesERTA.jpg';
 import fotoGumersindoCosta from '../assets/team/fotoGumersindoCostaERTA.jpg';
 import fotoGoncaloFigueiredo from '../assets/team/fotoGoncaloFigueiredoERTA.jpg';
 import fotoDavidSilva from '../assets/team/fotoDavidSilvaERTA.jpg';
-import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpeg';
+import fotoMiguelClaro from '../assets/team/fotoMiguelClaroERTA.jpg';
 import fotoChristianFarfan from '../assets/team/fotoChristianFarfanERTA.jpg';
 import fotoBernardoMartins from '../assets/team/fotoBernardoMartinsERTA.jpg';
 import fotoAfonsoRodrigues from '../assets/team/fotoAfonsoRodriguesERTA.jpg';
