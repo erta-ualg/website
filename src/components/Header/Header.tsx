@@ -188,6 +188,12 @@ export default function Header() {
                 <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 site-header-inner">
                     <a href="/" className="flex items-center logo-link">
                         <img
+                            src={data.smLogo}
+                            alt="ERTA"
+                            className="h-8 w-auto object-contain site-logo mr-2"
+                        />
+
+                        <img
                             src={data.logoText}
                             alt="ERTA"
                             className="h-8 w-auto object-contain site-logo"
