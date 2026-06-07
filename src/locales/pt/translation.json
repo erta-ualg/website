@@ -91,7 +91,9 @@
                 "controls": "Controlos de áudio",
                 "volume": "Volume",
                 "mute": "Desativar som",
-                "unmute": "Ativar som"
+                "unmute": "Ativar som",
+                "fullscreen": "Ecrã inteiro",
+                "exit-fullscreen": "Sair do ecrã inteiro"
             },
             "pills": {
                 "powertrain": "Powertrain elétrico",

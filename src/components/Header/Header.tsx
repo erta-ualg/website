@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { changeLanguage } from "i18next";
-import i18n from "i18next";
 import { HiBars3, HiMoon, HiSun, HiXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
 
 import data from "../../data/Header";
 
 export default function Header() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [isHydrated, setIsHydrated] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [theme, setTheme] = useState<"light" | "dark">(() => {
@@ -99,7 +97,7 @@ export default function Header() {
     ];
 
     const handleLanguageChange = (lang: "en" | "pt") => {
-        changeLanguage(lang);
+        i18n.changeLanguage(lang);
         localStorage.setItem("lang", lang);
         document.documentElement.lang = lang;
     };
@@ -188,15 +186,15 @@ export default function Header() {
                 <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 site-header-inner">
                     <a href="/" className="flex items-center logo-link">
                         <img
-                            src={data.smLogo}
-                            alt="ERTA"
-                            className="h-8 w-auto object-contain site-logo mr-2"
-                        />
-
-                        <img
                             src={data.logoText}
                             alt="ERTA"
                             className="h-8 w-auto object-contain site-logo"
+                        />
+
+                        <img
+                            src={data.smLogo}
+                            alt="ERTA"
+                            className="h-8 w-auto object-contain site-logo ml-2"
                         />
                     </a>
 

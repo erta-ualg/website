@@ -12,7 +12,7 @@ interface SEOProps {
   structuredData?: Record<string, unknown>;
 }
 
-export const SEO = ({
+export default function SEO({
   title,
   description,
   keywords = "Formula Student, UAlg, ERTA, motorsport, engineering",
@@ -22,7 +22,7 @@ export const SEO = ({
   canonicalUrl = "https://fs-erta.com",
   ogUrl = "https://fs-erta.com",
   structuredData,
-}: SEOProps) => {
+}: SEOProps) {
   return (
     <Helmet>
       <title>{title}</title>
@@ -43,4 +43,4 @@ export const SEO = ({
       )}
     </Helmet>
   );
-};
+}

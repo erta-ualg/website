@@ -3,9 +3,9 @@ import logoText from "../assets/header/logo.svg"
 import smLogo from "../assets/header/smLogo.svg"
 
 const data = {
-    logoMark: logoMark,
-    logoText: logoText,
-    smLogo: smLogo,
+    logoMark,
+    logoText,
+    smLogo,
 }
 
 export default data;

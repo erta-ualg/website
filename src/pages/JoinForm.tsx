@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 // Note: This key is intentionally not stored in an environment variable since it's meant to be public and used client-side.
 const formAccessKey = "01f1b5b7-0278-43a2-b31f-42763de02328";

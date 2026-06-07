@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import CarroHero from "../components/Hero/CarroHero";
 import Footer from "../components/Footer/Footer";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 export default function TheCar() {
     const { t } = useTranslation();

@@ -6,7 +6,7 @@ import Footer from "../components/Footer/Footer";
 import PartnerCard from "../components/Card/PartnerCard";
 import SponsorWallCanvas from "../components/Feature/SponsorWallCanvas";
 import partners from "../data/Partners";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 export default function PartnersPage() {
     const { t } = useTranslation();

@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-// import { Link } from "react-router-dom";
 
 import partners from "../../data/Partners";
 import PartnerCard from "../Card/PartnerCard";
@@ -48,21 +47,6 @@ export default function Partners() {
                     </div>
                 )}
 
-                {/* TODO rever, talvez rever o texto */}
-                {/* <div className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-[var(--site-card-border)] bg-[color:var(--site-surface-strong)] px-6 py-5">
-                    <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--site-muted)]">
-                            {t("partners-page.preview-label")}
-                        </p>
-                        <p className="mt-2 text-base text-[color:var(--site-text)]">
-                            {t("partners-page.preview-copy")}
-                        </p>
-                    </div>
-
-                    <Link to="/partners" className="hero-cta-primary">
-                        {t("partners-page.preview-action")}
-                    </Link>
-                </div> */}
             </div>
         </section>
     );

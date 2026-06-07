@@ -1,18 +1,16 @@
-
-import React from 'react';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
-import type { TeamMember } from '../data/teamData';
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import type { TeamMember } from "../data/teamData";
 
 interface TeamMemberCardProps {
   member: TeamMember;
 }
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
+export default function TeamMemberCard({ member }: TeamMemberCardProps) {
   const { t, i18n } = useTranslation();
   const { name, role, photoUrl, linkedin, instagram, department, descriptionPt, descriptionEn } = member;
   const activeLanguage = i18n.resolvedLanguage || i18n.language;
-  const localizedDescription = activeLanguage.startsWith('pt') ? descriptionPt : descriptionEn;
+  const localizedDescription = activeLanguage.startsWith("pt") ? descriptionPt : descriptionEn;
   const cardCopy = localizedDescription.trim() || descriptionPt;
 
   return (
@@ -43,7 +41,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="team-member-social-button inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--site-card-border)] text-[var(--site-text)] hover:-translate-y-0.5 hover:border-[color:var(--site-accent)]"
-            aria-label={t('team-page.card.linkedin', { name })}
+            aria-label={t("team-page.card.linkedin", { name })}
           >
             <FaLinkedin size={18} />
           </a>
@@ -52,7 +50,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="team-member-social-button inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--site-card-border)] text-[var(--site-text)] hover:-translate-y-0.5 hover:border-[color:var(--site-accent)]"
-            aria-label={t('team-page.card.instagram', { name })}
+            aria-label={t("team-page.card.instagram", { name })}
           >
             <FaInstagram size={18} />
           </a>
@@ -60,6 +58,4 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
       </div>
     </article>
   );
-};
-
-export default TeamMemberCard;
+}

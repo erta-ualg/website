@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 export default function NotFound() {
     const { t } = useTranslation();
