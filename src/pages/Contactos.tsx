@@ -8,7 +8,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import footerData from "../data/Footer";
 import contactsData from "../data/Contacts";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 export default function Contactos() {
     const { t } = useTranslation();

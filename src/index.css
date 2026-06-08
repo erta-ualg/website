@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/*
+ * ── Design Tokens (CSS Custom Properties) ──
+ *
+ * :root        – light theme defaults
+ * [data-theme="dark"] – dark theme overrides (defined below)
+ *
+ * Naming convention:
+ *   --color-*     → Tailwind-compatible color tokens
+ *   --site-*      → ERTA-specific component tokens
+ *   --font-*      → Font family tokens
+ *   --radius-*    → Border radius tokens
+ */
+
 :root {
   --color-primary: #134B8A;
   --color-secondary: #A9D8F6;
@@ -11,13 +24,8 @@
   --color-error: #EF4444;
   --color-success: #22C55E;
   --color-warning: #FACC15;
+
   --header-height: 5rem;
-  --site-bg: #f3f7ff;
-  --site-surface: rgba(245, 248, 255, 0.85);
-  --site-surface-strong: rgba(233, 240, 252, 0.95);
-  --site-border: rgba(59, 130, 246, 0.35);
-  --site-accent: #3b82f6;
-  --site-accent-strong: #22c55e;
   --site-bg: #eef4ff;
   --site-surface: rgba(255, 255, 255, 0.84);
   --site-surface-strong: rgba(250, 252, 255, 0.96);
@@ -69,9 +77,9 @@
   --radius-pill: 999px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/*
+ * ── Base & Reset ──
+ */
 
 *,
 *::before,
@@ -282,9 +290,17 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   color: #0b1b37;
 }
 
+/*
+ * ── Shared Section Helpers ──
+ */
+
 .site-partners-anchor {
   scroll-margin-top: calc(var(--header-height) + 0.75rem);
 }
+
+/*
+ * ── 404 / Not Found Page ──
+ */
 
 .not-found-orb {
   position: absolute;
@@ -359,6 +375,10 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   }
 }
 
+/*
+ * ── Hero: Video Section ──
+ * Full-viewport video hero with audio controls and fullscreen support.
+ */
 
 .hero-video {
   position: relative;
@@ -370,8 +390,41 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  height: 100%;
   object-fit: cover;
+}
+
+.hero-video-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-video-close {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-video-container:fullscreen .hero-video-close {
+  display: inline-flex;
+}
+
+.hero-video-close:hover {
+  background: rgba(2, 6, 23, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .hero-video-overlay {
@@ -501,6 +554,32 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   outline: none;
 }
 
+.hero-video-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.hero-video-fullscreen:hover,
+.hero-video-fullscreen:focus-visible {
+  opacity: 1;
+}
+
+/*
+ * ── Hero: 3D Model Loading State ──
+ * Displayed while the Three.js workshop diorama loads.
+ */
+
 .hero-loader {
   color: var(--site-text);
   font-family: var(--font-display);
@@ -550,6 +629,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
 }
 
 
+
+/*
+ * ── Hero: 3D Workshop Diorama ──
+ * Three.js interactive canvas with the ERTA car model.
+ */
 
 .hero-diorama {
   overflow: hidden;
@@ -626,9 +710,18 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
 
 
 
+/*
+ * ── Shared Section Layout ──
+ */
+
 .site-section-inner {
   position: relative;
 }
+
+/*
+ * ── Site Panel System ──
+ * Reusable container with border, shadow, and corner decoration.
+ */
 
 .site-panel {
   background: var(--site-surface-strong);
@@ -681,6 +774,10 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   color: var(--site-text);
   box-shadow: none;
 }
+
+/*
+ * ── Car Page ──
+ */
 
 .car-section {
   display: grid;
@@ -802,6 +899,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.06);
 }
 
+/*
+ * ── Timeline ──
+ * Vertical timeline used on the Car page.
+ */
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -824,6 +926,10 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   color: var(--site-text);
 }
 
+/*
+ * ── Gallery Grid ──
+ */
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -836,6 +942,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(34, 197, 94, 0.08));
   border: 1px dashed rgba(59, 130, 246, 0.2);
 }
+
+/*
+ * ── CTA Block ──
+ * Call-to-action panel used across multiple pages (Car, Contacts, etc.).
+ */
 
 .cta-block {
   display: flex;
@@ -861,6 +972,10 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   }
 }
 
+/*
+ * ── Media Components ──
+ */
+
 .site-media {
   position: relative;
 }
@@ -869,6 +984,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   border: 1px solid var(--site-media-border);
   box-shadow: var(--site-shadow);
 }
+
+/*
+ * ── Card Components ──
+ * Generic card with hover lift effect.
+ */
 
 .site-card {
   background: var(--site-surface-strong);
@@ -892,6 +1012,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   color: var(--site-text);
 }
 
+/*
+ * ── Sponsor Track (Marquee) ──
+ * Infinite-scrolling sponsor logo carousel on the homepage.
+ */
+
 .site-sponsor-track {
   border: 1px solid var(--site-sponsor-track-border);
   border-radius: var(--radius-lg);
@@ -907,6 +1032,10 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
 .site-sponsor-logo {
   opacity: 0.8;
 }
+
+/*
+ * ── Footer ──
+ */
 
 .site-footer {
   background: linear-gradient(120deg, var(--site-footer-bg-start), var(--site-footer-bg-end));
@@ -954,7 +1083,9 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   }
 }
 
-/* ── Contacts page ── */
+/*
+ * ── Contacts Page ──
+ */
 
 .contact-hero {
   display: grid;
@@ -1168,6 +1299,11 @@ button:focus-visible, [role="button"]:focus-visible, a:focus-visible {
   overflow: hidden;
 }
 
+/*
+ * ── Dark Theme ──
+ * Overrides design tokens when <html data-theme="dark"> is active.
+ */
+
 html[data-theme="dark"] {
   --site-bg: #0e1420;
   --site-surface: rgba(24, 31, 46, 0.86);
@@ -1214,6 +1350,12 @@ html[data-theme="dark"] {
   --color-text-secondary: var(--site-muted);
 }
 
+/*
+ * ── Enhanced Base Styles ──
+ * These override / supplement the legacy base styles above.
+ * Applied after the dark theme tokens so cascade works correctly.
+ */
+
 html {
   background: var(--site-bg);
 }
@@ -1221,6 +1363,11 @@ html {
 html[data-theme="dark"] {
   color-scheme: dark;
 }
+
+/*
+ * ── Body Background & Effects ──
+ * Layered gradients, noise grid, and light leak overlay.
+ */
 
 body {
   position: relative;
@@ -1259,17 +1406,10 @@ body::after {
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 72%);
 }
 
-a {
-  color: inherit;
-}
-
-button:focus-visible,
-[role="button"]:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--site-focus-ring);
-  outline-offset: 4px;
-  border-radius: 0.5rem;
-}
+/*
+ * ── Enhanced Header & Navigation ──
+ * Refined header styles applied after the legacy header rules.
+ */
 
 .site-header {
   background: linear-gradient(120deg, var(--site-header-bg-start), var(--site-header-bg-end));
@@ -1367,6 +1507,10 @@ a:focus-visible {
   filter: saturate(1.05);
 }
 
+/*
+ * ── Homepage: Hero Shell ──
+ */
+
 .home-hero-shell {
   background:
     radial-gradient(circle at top left, var(--site-bg-accent-primary), transparent 28%),
@@ -1429,6 +1573,12 @@ html[data-theme="dark"] .contact-input {
   background: linear-gradient(180deg, rgba(16, 23, 38, 0.96), rgba(11, 16, 29, 0.92));
   border-color: rgba(111, 160, 229, 0.18);
 }
+
+/*
+ * ── Enhanced Shared Component Styles ──
+ * Gradient backgrounds, decorative borders, and consistent
+ * typography for panels, cards, buttons, and text elements.
+ */
 
 .hero-loader-panel {
   position: relative;
@@ -1589,6 +1739,12 @@ html[data-theme="dark"] .gallery-card {
     repeating-linear-gradient(135deg, transparent 0 16px, rgba(255, 255, 255, 0.06) 16px 18px);
 }
 
+/*
+ * ── Hero CTA Button ──
+ * Primary call-to-action button used across hero sections
+ * (homepage, car page, not-found, etc.).
+ */
+
 .hero-cta-primary {
   display: inline-flex;
   align-items: center;
@@ -1675,13 +1831,13 @@ html[data-theme="dark"] .site-footer .text-sm {
   color: rgba(226, 232, 240, 0.88);
 }
 
+/*
+ * ── Team Page ──
+ * Hero, overview, navigation, member cards, and search/filter UI.
+ */
+
 .team-hero-shell,
 .join-cta-shell {
-  background: var(--color-background);
-}
-
-html[data-theme="dark"] .team-hero-shell,
-html[data-theme="dark"] .join-cta-shell {
   background: var(--color-background);
 }
 
@@ -2028,6 +2184,11 @@ html[data-theme="dark"] .contact-submit {
   color: #08111f;
 }
 
+/*
+ * ── Accessibility: Reduced Motion ──
+ * Disables animations/transitions for users who prefer reduced motion.
+ */
+
 @media (prefers-reduced-motion: reduce) {
   body::after {
     background-image: none;
@@ -2044,8 +2205,11 @@ html[data-theme="dark"] .contact-submit {
   }
 }
 
-/* ── tailwind utilities ── */
-/* tailwind utilities */
+/*
+ * ── Tailwind CSS Utility Extensions ──
+ * Maps ERTA's custom properties to tailwind-style utility classes.
+ * These are needed because Tailwind v4 doesn't generate them automatically.
+ */
 .bg-primary { background-color: var(--color-primary); }
 .text-primary { color: var(--color-primary); }
 

@@ -91,7 +91,9 @@
                 "controls": "Audio controls",
                 "volume": "Volume",
                 "mute": "Mute",
-                "unmute": "Unmute"
+                "unmute": "Unmute",
+                "fullscreen": "Fullscreen",
+                "exit-fullscreen": "Exit fullscreen"
             },
             "pills": {
                 "powertrain": "Electric powertrain",

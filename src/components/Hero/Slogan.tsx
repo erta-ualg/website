@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import { HiArrowsPointingOut, HiArrowsPointingIn, HiXMark } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 import data from "../../data/Slogan";
@@ -8,9 +9,10 @@ import data from "../../data/Slogan";
 export default function Slogan() {
     const { t } = useTranslation();
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const iframeRef = useRef<HTMLIFrameElement | null>(null);
+    const videoContainerRef = useRef<HTMLDivElement | null>(null);
     const lastVolumeRef = useRef(0.7);
     const [volume, setVolume] = useState(0);
+    const [isFullscreen, setIsFullscreen] = useState(false);
     const [reduceMotion, setReduceMotion] = useState(() => {
         if (typeof window === "undefined" || !window.matchMedia) {
             return false;
@@ -18,9 +20,7 @@ export default function Slogan() {
 
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     });
-    const isYoutube = data.provider === "youtube";
     const isMuted = volume === 0;
-    const youtubeSrc = `https://www.youtube.com/embed/${data.youtubeVideoId}?autoplay=${reduceMotion ? 0 : 1}&mute=${isMuted ? 1 : 0}&loop=1&playlist=${data.youtubeVideoId}&controls=0&modestbranding=1&playsinline=1&fs=0&rel=0&enablejsapi=1&origin=${typeof window !== "undefined" ? window.location.origin : ""}`;
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -37,34 +37,28 @@ export default function Slogan() {
     }, []);
 
     useEffect(() => {
-        const currentVolume = volume / 100;
-
-        if (!isYoutube && videoRef.current) {
-            videoRef.current.volume = currentVolume;
+        if (videoRef.current) {
+            videoRef.current.volume = volume / 100;
             videoRef.current.muted = volume === 0;
-            return;
         }
+    }, [volume]);
 
-        if (isYoutube && iframeRef.current?.contentWindow) {
-            iframeRef.current.contentWindow.postMessage(
-                JSON.stringify({
-                    event: "command",
-                    func: volume === 0 ? "mute" : "unMute",
-                    args: [],
-                }),
-                "*"
-            );
+    useEffect(() => {
+        const onFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
+        };
 
-            iframeRef.current.contentWindow.postMessage(
-                JSON.stringify({
-                    event: "command",
-                    func: "setVolume",
-                    args: [volume],
-                }),
-                "*"
-            );
+        document.addEventListener("fullscreenchange", onFullscreenChange);
+        return () => document.removeEventListener("fullscreenchange", onFullscreenChange);
+    }, []);
+
+    const handleToggleFullscreen = () => {
+        if (!document.fullscreenElement && videoContainerRef.current) {
+            videoContainerRef.current.requestFullscreen();
+        } else {
+            document.exitFullscreen();
         }
-    }, [isYoutube, volume]);
+    };
 
     const handleToggleMute = () => {
         setVolume((current) => {
@@ -79,29 +73,7 @@ export default function Slogan() {
 
     return (
         <section className="relative hero-video w-full flex items-center justify-center text-center overflow-hidden">
-            {isYoutube ? (
-                <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-                    <iframe
-                        ref={iframeRef}
-                        src={youtubeSrc}
-                        title="Hero Video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{
-                            border: "none",
-                            pointerEvents: "none",
-                            position: "absolute",
-                            top: "50%",
-                            left: "50%",
-                            width: "100vw",
-                            height: "56.25vw",
-                            minHeight: "100vh",
-                            minWidth: "177.78vh",
-                            transform: "translate(-50%, -50%)",
-                        }}
-                    />
-                </div>
-            ) : (
+            <div ref={videoContainerRef} className="absolute inset-0 overflow-hidden hero-video-container">
                 <video
                     ref={videoRef}
                     className="hero-video-media"
@@ -115,7 +87,17 @@ export default function Slogan() {
                 >
                     <source src={data.video} type="video/webm" />
                 </video>
-            )}
+
+                <button
+                    type="button"
+                    className="hero-video-close"
+                    onClick={() => document.exitFullscreen()}
+                    aria-label={t("home.hero.video.exit-fullscreen")}
+                    title={t("home.hero.video.exit-fullscreen")}
+                >
+                    <HiXMark className="h-6 w-6" />
+                </button>
+            </div>
             <div className="hero-video-overlay" aria-hidden="true" />
 
             <div className="hero-video-audio" aria-label={t("home.hero.video.controls")}>
@@ -153,6 +135,16 @@ export default function Slogan() {
                         aria-valuenow={volume}
                     />
                 </label>
+
+                <button
+                    type="button"
+                    className="hero-video-fullscreen"
+                    onClick={handleToggleFullscreen}
+                    aria-label={isFullscreen ? t("home.hero.video.exit-fullscreen") : t("home.hero.video.fullscreen")}
+                    title={isFullscreen ? t("home.hero.video.exit-fullscreen") : t("home.hero.video.fullscreen")}
+                >
+                    {isFullscreen ? <HiArrowsPointingIn className="hero-video-audio-icon" /> : <HiArrowsPointingOut className="hero-video-audio-icon" />}
+                </button>
             </div>
 
             <div className="relative z-10 mx-auto max-w-5xl px-6">

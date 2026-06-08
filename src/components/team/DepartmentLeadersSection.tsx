@@ -1,23 +1,21 @@
-
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import type { TeamMember } from '../../data/teamData';
-import TeamMemberCard from '../TeamMemberCard';
+import { useTranslation } from "react-i18next";
+import type { TeamMember } from "../../data/teamData";
+import TeamMemberCard from "../TeamMemberCard";
 
 interface DepartmentLeadersSectionProps {
   departmentLeaders: TeamMember[];
 }
 
-const DepartmentLeadersSection: React.FC<DepartmentLeadersSectionProps> = ({ departmentLeaders }) => {
+export default function DepartmentLeadersSection({ departmentLeaders }: DepartmentLeadersSectionProps) {
   const { t } = useTranslation();
 
   return (
     <section className="site-panel team-section-shell">
       <div className="mb-8 flex flex-col gap-3">
-        <p className="section-eyebrow">{t('team-page.department-leaders.eyebrow')}</p>
-        <h3 className="site-heading team-category-title text-3xl">{t('team-page.department-leaders.title')}</h3>
+        <p className="section-eyebrow">{t("team-page.department-leaders.eyebrow")}</p>
+        <h3 className="site-heading team-category-title text-3xl">{t("team-page.department-leaders.title")}</h3>
         <p className="site-body max-w-2xl">
-          {t('team-page.department-leaders.description')}
+          {t("team-page.department-leaders.description")}
         </p>
       </div>
 
@@ -28,6 +26,4 @@ const DepartmentLeadersSection: React.FC<DepartmentLeadersSectionProps> = ({ dep
       </div>
     </section>
   );
-};
-
-export default DepartmentLeadersSection;
+}

@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer";
 import PartnersSection from "../components/Feature/Partners";
 import WorkshopDiorama from "../components/Three/WorkshopDiorama";
 import { useTranslation } from "react-i18next";
-import { SEO } from "../hooks/useSEO";
+import SEO from "../hooks/useSEO";
 
 import MissionData from "../data/Mission";
 
@@ -15,23 +15,6 @@ function MissionSection() {
         <section className="bg-background px-6 py-20 text-text lg:py-28">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div className="site-panel rounded-[2rem] p-4 shadow-[0_0_60px_rgba(8,145,178,0.10)] backdrop-blur-xl">
-                    {/* <div className="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
-
-                        <img
-                            src={MissionData.photo}
-                            alt={MissionData.photo || "Sponsor"}
-                            className=""
-                        />
-                        {/* <div className="px-8">
-                            <div className="mx-auto mb-4 h-20 w-20 rounded-full border border-cyan-300/35 bg-cyan-300/10" />
-                            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
-                                {t("home.mission.placeholder-title")}
-                            </p>
-                            <p className="mt-3 text-sm leading-6 text-text-secondary">
-                                {t("home.mission.placeholder-body")}
-                            </p>
-                        </div> }
-                    </div> */}
                     <img
                             src={MissionData.photo}
                             alt={MissionData.photo || "Obrinha"}
@@ -49,21 +32,6 @@ function MissionSection() {
                     <p className="max-w-2xl text-lg leading-8 text-text-secondary md:text-xl">
                         {t("home.mission.body")}
                     </p>
-
-                    {/* <div className="grid gap-4 sm:grid-cols-3">
-                        {[
-                            t("home.mission.chips.rookie"),
-                            t("home.mission.chips.south"),
-                            t("home.mission.chips.ev"),
-                        ].map((chip) => (
-                            <div
-                                key={chip}
-                                className="rounded-2xl border border-cyan-300/15 bg-[color:var(--site-surface-strong)] px-4 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-text"
-                            >
-                                {chip}
-                            </div>
-                        ))}
-                    </div> */}
                 </div>
             </div>
         </section>

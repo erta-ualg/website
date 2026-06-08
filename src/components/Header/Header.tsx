@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { changeLanguage } from "i18next";
-import i18n from "i18next";
 import { HiBars3, HiMoon, HiSun, HiXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
 
 import data from "../../data/Header";
 
 export default function Header() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [isHydrated, setIsHydrated] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [theme, setTheme] = useState<"light" | "dark">(() => {
@@ -99,7 +97,7 @@ export default function Header() {
     ];
 
     const handleLanguageChange = (lang: "en" | "pt") => {
-        changeLanguage(lang);
+        i18n.changeLanguage(lang);
         localStorage.setItem("lang", lang);
         document.documentElement.lang = lang;
     };
@@ -191,6 +189,12 @@ export default function Header() {
                             src={data.logoText}
                             alt="ERTA"
                             className="h-8 w-auto object-contain site-logo"
+                        />
+
+                        <img
+                            src={data.smLogo}
+                            alt="ERTA"
+                            className="h-8 w-auto object-contain site-logo ml-2"
                         />
                     </a>
 
