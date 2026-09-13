@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import Header from "../components/Header/Header";
@@ -44,6 +44,7 @@ const interestAreaKeys = [
 ] as const;
 
 const institutionalEmailRegex = /^[^@\s]+@ualg\.pt$/i;
+const usePaperform = true;
 
 export default function JoinForm() {
     const { t } = useTranslation();
@@ -54,6 +55,18 @@ export default function JoinForm() {
     const normalizedInstitutionalEmail = formData.institutionalEmail.trim();
     const hasInstitutionalEmail = normalizedInstitutionalEmail.length > 0;
     const isInstitutionalEmailValid = institutionalEmailRegex.test(normalizedInstitutionalEmail);
+
+    useEffect(() => {
+        const scriptSource = "https://paperform.co/__embed.min.js";
+        if (document.querySelector(`script[src="${scriptSource}"]`)) {
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = scriptSource;
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -162,6 +175,14 @@ export default function JoinForm() {
             <Header />
 
             <main className="overflow-hidden">
+            {usePaperform ? (
+                <section className="bg-background px-6 py-12 text-text lg:py-16">
+                    <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[1.5rem]">
+                        <div data-paperform-id="bsop7jz9" className="w-full" />
+                    </div>
+                </section>
+            ) : (
+                <>
             <section className="bg-background px-6 pb-12 pt-32 text-text lg:pb-16">
                 <div className="mx-auto max-w-7xl contact-hero">
                     <p className="section-eyebrow">{t("join-form.eyebrow")}</p>
@@ -408,6 +429,8 @@ export default function JoinForm() {
                     </div>
                 </div>
             </section>
+                </>
+            )}
             </main>
 
             <Footer />

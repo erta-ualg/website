@@ -2,6 +2,7 @@
     "header": {
         "partners": "PARTNERS",
         "team": "THE TEAM",
+        "join": "JOIN THE TEAM",
         "contact": "CONTACTS",
         "the-car": "THE CAR"
     },
@@ -85,6 +86,7 @@
             "eyebrow": "Formula Student EV · Algarve",
             "title": "THE SOUTH TAKES FLIGHT.",
             "subtitle": "The Algarve's first Formula Student EV team.",
+            "cta-join": "Join the team",
             "cta-sponsor": "Sponsor Us",
             "cta-team": "The Team",
             "video": {

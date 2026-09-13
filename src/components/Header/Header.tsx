@@ -96,6 +96,7 @@ export default function Header() {
         { key: "the-car", href: "/carro", label: t("header.the-car") },
         { key: "partners", href: "/partners", label: t("header.partners") },
         { key: "team", href: "/team", label: t("header.team") },
+        { key: "join", href: "/join", label: t("header.join") },
     ];
 
     const handleLanguageChange = (lang: "en" | "pt") => {

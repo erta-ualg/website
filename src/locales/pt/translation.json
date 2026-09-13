@@ -2,6 +2,7 @@
     "header": {
         "partners": "PARCEIROS",
         "team": "A EQUIPA",
+        "join": "JUNTA-TE À EQUIPA",
         "contact": "CONTACTOS",
         "the-car": "O CARRO"
     },
@@ -85,6 +86,7 @@
             "eyebrow": "Formula Student EV · Algarve",
             "title": "O SUL LEVANTA VOO",
             "subtitle": "A primeira equipa de Formula Student EV do Algarve.",
+            "cta-join": "Junta-te à equipa",
             "cta-sponsor": "Patrocina-nos",
             "cta-team": "A Equipa",
             "video": {

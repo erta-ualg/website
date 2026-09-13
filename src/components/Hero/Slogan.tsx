@@ -167,7 +167,13 @@ export default function Slogan() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-white">
-                    <Link to="/partners" className="hero-cta-primary">
+                    <Link to="/join" className="hero-cta-primary">
+                        {t("home.hero.cta-join")}
+                    </Link>
+                    <Link
+                        to="/partners"
+                        className="inline-flex items-center justify-center rounded-md border border-cyan-300/40 bg-slate-900/45 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] hover:-translate-y-0.5 hover:border-cyan-300/70 hover:bg-slate-900/70"
+                    >
                         {t("home.hero.cta-sponsor")}
                     </Link>
                     <Link
