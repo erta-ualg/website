@@ -44,7 +44,7 @@ const interestAreaKeys = [
 ] as const;
 
 const institutionalEmailRegex = /^[^@\s]+@ualg\.pt$/i;
-const usePaperform = true;
+const joinFormProvider = "google" as "google" | "paperform" | "web3forms";
 
 export default function JoinForm() {
     const { t } = useTranslation();
@@ -57,6 +57,10 @@ export default function JoinForm() {
     const isInstitutionalEmailValid = institutionalEmailRegex.test(normalizedInstitutionalEmail);
 
     useEffect(() => {
+        if (joinFormProvider !== "paperform") {
+            return;
+        }
+
         const scriptSource = "https://paperform.co/__embed.min.js";
         if (document.querySelector(`script[src="${scriptSource}"]`)) {
             return;
@@ -174,8 +178,21 @@ export default function JoinForm() {
             />
             <Header />
 
-            <main className="overflow-hidden">
-            {usePaperform ? (
+            <main className={joinFormProvider === "google" ? "h-[calc(100vh-var(--header-height))] overflow-hidden" : "overflow-hidden"}>
+            {joinFormProvider === "google" ? (
+                <section className="h-full min-h-0 overflow-hidden bg-background px-4 py-4 text-text lg:px-6 lg:py-6">
+                    <div className="mx-auto h-full w-full max-w-5xl overflow-hidden rounded-[1.5rem]">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSeqHlz2TAePptqzRKZv_Jd32ZVKGEP6vIePEx3CqmWwk6-a1A/viewform?embedded=true"
+                            title="ERTA recruitment form"
+                            className="block h-full min-h-0 w-full border-0"
+                            loading="lazy"
+                        >
+                            A carregar…
+                        </iframe>
+                    </div>
+                </section>
+            ) : joinFormProvider === "paperform" ? (
                 <section className="bg-background px-6 py-12 text-text lg:py-16">
                     <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[1.5rem]">
                         <div data-paperform-id="bsop7jz9" className="w-full" />
@@ -433,7 +450,7 @@ export default function JoinForm() {
             )}
             </main>
 
-            <Footer />
+            {joinFormProvider !== "google" && <Footer />}
         </div>
     );
 }
