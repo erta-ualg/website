@@ -2,9 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
-import "./i18n";
+import i18n from "./i18n";
 
 import App from "./App.tsx";
+
+document.documentElement.lang = i18n.language || "pt";
+
+i18n.on("languageChanged", (language) => {
+    document.documentElement.lang = language;
+});
 
 const themeQuery = window.matchMedia?.("(prefers-color-scheme: dark)");
 const storedTheme = localStorage.getItem("theme");

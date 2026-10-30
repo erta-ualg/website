@@ -1,0 +1,21 @@
+# Fallback rewrites for static hosts that do not support Cloudflare Pages Functions.
+# On Cloudflare Pages, functions/_middleware.js handles SPA routes and real 404s.
+# Keep the route list in sync with src/App.tsx.
+
+/team /index.html 200
+/team/ /team 301
+
+/partners /index.html 200
+/partners/ /partners 301
+
+/results /index.html 200
+/results/ /results 301
+
+/carro /index.html 200
+/carro/ /carro 301
+
+/contactos /index.html 200
+/contactos/ /contactos 301
+
+/join /index.html 200
+/join/ /join 301

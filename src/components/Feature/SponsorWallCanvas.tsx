@@ -62,14 +62,14 @@ export default function SponsorWallCanvas({ partners }: SponsorWallCanvasProps) 
     );
 
     return (
-        <div className={`grid h-full gap-3 p-4 ${gridClasses}`} role="list" aria-label="Sponsor wall">
+        <div className={`grid h-full auto-rows-fr gap-3 p-4 ${gridClasses}`} role="list" aria-label="Sponsor wall">
             {logoPartners.map((partner) => (
                 <a
                     key={partner.name}
                     href={partner.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex h-16 items-center justify-center rounded-xl bg-white ease-in-out border px-3 transition duration-200 hover:-translate-y-0.5 ${
+                    className={`flex h-full min-h-[4rem] items-center justify-center rounded-xl bg-white ease-in-out border px-3 transition duration-200 hover:-translate-y-0.5 ${
                         partner.tier === "gold"
                             ? "border-amber-300/60 shadow-[0_0_0_1px_rgba(251,191,36,0.28)]"
                             : "border-[var(--site-card-border)]"
@@ -78,9 +78,9 @@ export default function SponsorWallCanvas({ partners }: SponsorWallCanvasProps) 
                     aria-label={partner.name}
                 >
                     {partner.logo ? (
-                        <img src={partner.logo} alt={partner.name} className="max-h-10 w-auto object-contain" loading="lazy" />
+                        <img src={partner.logo} alt={partner.name} className="max-h-[70%] max-w-[90%] object-contain" loading="lazy" />
                     ) : (
-                        <span className="text-xs font-semibold uppercase tracking-[0.12em] text-text-secondary">{partner.name}</span>
+                        <span className="text-xs font-semibold uppercase tracking-[0.12em] text-text-secondary text-center">{partner.name}</span>
                     )}
                 </a>
             ))}

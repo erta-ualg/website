@@ -21,10 +21,12 @@ const DepartmentLeadersSection: React.FC<DepartmentLeadersSectionProps> = ({ dep
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {departmentLeaders.map((member) => (
-          <TeamMemberCard key={member.id} member={member} />
-        ))}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {[...departmentLeaders]
+          .sort((a, b) => a.id - b.id)
+          .map((member) => (
+            <TeamMemberCard key={member.id} member={member} />
+          ))}
       </div>
     </section>
   );

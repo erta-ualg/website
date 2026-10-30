@@ -1,0 +1,319 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.results-picks { display: grid; gap: 2.25rem; }
+.pick { padding: 0; display: block; background: transparent; border: 2px solid var(--border); border-radius: 18px; overflow: hidden; }
+.pick:hover { border-color: var(--accent); }
+.pick.selected { border-color: var(--selected-border); box-shadow: 0 0 0 4px var(--selected-bg); }
+.pick-bar { display: flex; align-items: center; gap: .8rem; padding: .8rem 1rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border); }
+.pick-bar .letter { background: var(--bg-tertiary); color: var(--text-secondary); width: 1.7rem; height: 1.7rem; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .8rem; flex-shrink: 0; }
+.pick.selected .pick-bar .letter { background: var(--accent); color: #fff; }
+.pick-bar h3 { font-size: .95rem; margin: 0; }
+.pick-bar p { margin: 0; color: var(--text-secondary); font-size: .8rem; }
+.pick-bar .hint { margin-left: auto; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-tertiary); white-space: nowrap; }
+
+.m { font-family: 'Space Grotesk', system-ui, sans-serif; background: #070B14; color: #F5F7FB; position: relative; overflow: hidden; line-height: 1.4; }
+.m * { box-sizing: border-box; }
+.m-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 22px; border-bottom: 1px solid rgba(169,216,246,.12); background: linear-gradient(90deg, #0A1423, #0B1B33); }
+.m-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .18em; color: #fff; }
+.m-logo span { color: #11C7B9; }
+.m-links { display: flex; gap: 16px; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: rgba(245,247,251,.65); }
+.m-links b { color: #fff; border-bottom: 1px solid #11C7B9; padding-bottom: 2px; }
+.m-links .cta { border: 1px solid rgba(17,199,185,.55); padding: 5px 10px; color: #fff; }
+.m-eyebrow { font-size: 8px; text-transform: uppercase; letter-spacing: .3em; color: #11C7B9; font-weight: 600; }
+.m-meta { font-size: 8px; text-transform: uppercase; letter-spacing: .18em; color: rgba(245,247,251,.55); }
+.m-h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; line-height: .88; margin: 0; }
+.m-body { font-size: 10px; color: #A6B4CC; line-height: 1.55; }
+.m-panel { border: 1px solid rgba(169,216,246,.16); background: linear-gradient(145deg, rgba(19,75,138,.2), rgba(7,11,20,.75)); }
+.m-btn { display: inline-block; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; padding: 8px 14px; color: #06121F; background: linear-gradient(120deg, #A9D8F6, #11C7B9); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%); }
+.m-btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(169,216,246,.32); clip-path: none; }
+.m-tag { display: inline-block; font-size: 7px; text-transform: uppercase; letter-spacing: .2em; color: #A9D8F6; border: 1px solid rgba(169,216,246,.24); padding: 3px 6px; }
+.m-photo { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(47,128,237,.28), rgba(17,199,185,.08) 55%, rgba(7,11,20,.9)); border: 1px solid rgba(169,216,246,.14); }
+.m-photo::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(115deg, rgba(169,216,246,.055) 0 1px, transparent 1px 14px); }
+.m-photo span { position: absolute; left: 9px; bottom: 8px; z-index: 1; font-size: 7px; text-transform: uppercase; letter-spacing: .16em; color: rgba(245,247,251,.66); }
+.m-photo em { position: absolute; top: 9px; left: 9px; z-index: 1; font-style: normal; font-size: 7px; letter-spacing: .2em; color: #11C7B9; }
+
+/* ---------- SHARED SCOREBOARD ---------- */
+.m-score { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.m-score .cell { padding: 12px; border: 1px solid rgba(169,216,246,.14); background: rgba(10,22,38,.72); }
+.m-score .cell.accent { background: linear-gradient(145deg, rgba(17,199,185,.22), rgba(19,75,138,.32)); border-color: rgba(17,199,185,.42); }
+.m-score .rank { font-family: 'Rajdhani', sans-serif; font-size: 30px; font-weight: 700; line-height: 1; }
+.m-score .rank small { font-size: 11px; letter-spacing: .1em; }
+.m-score .name { font-size: 7px; text-transform: uppercase; letter-spacing: .18em; color: rgba(245,247,251,.68); margin-top: 6px; }
+
+/* ---------- A: RACE REPORT ---------- */
+.a-hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; padding: 26px 22px 22px; position: relative; }
+.a-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 78% 18%, rgba(47,128,237,.22), transparent 45%), radial-gradient(circle at 12% 92%, rgba(17,199,185,.1), transparent 40%); pointer-events: none; }
+.a-hero > * { position: relative; }
+.a-big { font-size: 76px; }
+.a-big .outline { color: transparent; -webkit-text-stroke: 1px rgba(169,216,246,.45); }
+.a-big .unit { font-size: 20px; letter-spacing: .06em; color: #11C7B9; display: block; margin-top: 2px; }
+.a-meta-card { padding: 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; }
+.a-meta-row { display: flex; justify-content: space-between; gap: 8px; border-top: 1px solid rgba(169,216,246,.12); padding-top: 7px; }
+.a-meta-row span:first-child { font-size: 7px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,247,251,.45); }
+.a-meta-row span:last-child { font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #F5F7FB; }
+.a-strip { padding: 0 22px 18px; }
+.a-section { padding: 18px 22px; border-top: 1px solid rgba(169,216,246,.1); }
+.a-section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.a-section-head h4 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: .06em; font-size: 18px; margin: 0; }
+.a-events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.a-event { padding: 13px; border: 1px solid rgba(169,216,246,.14); background: rgba(10,22,38,.6); }
+.a-event .r { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #A9D8F6; }
+.a-event .n { font-size: 8px; text-transform: uppercase; letter-spacing: .14em; margin: 3px 0 5px; }
+.a-event .d { font-size: 8px; color: #8D9CB5; line-height: 1.45; }
+.a-gallery { display: grid; grid-template-columns: 1.3fr .7fr .7fr; gap: 8px; height: 118px; padding: 0 22px 18px; }
+.a-gallery .m-photo:first-child { grid-row: span 1; }
+.a-cta { margin: 0 22px 22px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+
+/* ---------- B: SCOREBOARD ---------- */
+.b-hero { position: relative; padding: 26px 22px 18px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(19,75,138,.35), transparent 62%); }
+.b-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(169,216,246,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(169,216,246,.045) 1px, transparent 1px); background-size: 26px 26px; mask-image: linear-gradient(to bottom, #000, transparent 85%); pointer-events: none; }
+.b-hero > * { position: relative; z-index: 1; }
+.b-eight { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 112px; line-height: .78; letter-spacing: -.02em; background: linear-gradient(180deg, #F5F7FB 10%, #4B7FB8 78%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.b-eight-wrap { position: relative; display: inline-block; margin-top: 8px; }
+.b-eight-wrap .label { position: absolute; right: -54px; top: 14px; text-align: left; font-size: 7px; letter-spacing: .22em; text-transform: uppercase; color: #11C7B9; line-height: 1.5; }
+.b-eight-wrap .label b { display: block; color: #F5F7FB; font-size: 10px; letter-spacing: .12em; }
+.b-strip { padding: 0 22px 18px; }
+.b-body { padding: 0 22px 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.b-story { padding: 16px; }
+.b-story p + p { margin-top: 7px; }
+.b-list { display: flex; flex-direction: column; gap: 6px; }
+.b-row { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid rgba(169,216,246,.13); background: rgba(10,22,38,.58); }
+.b-row .r { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 19px; color: #A9D8F6; }
+.b-row .t { font-size: 8px; text-transform: uppercase; letter-spacing: .13em; }
+.b-row .bar { width: 74px; height: 3px; background: rgba(169,216,246,.13); }
+.b-row .bar i { display: block; height: 100%; background: linear-gradient(90deg, #2F80ED, #11C7B9); }
+.b-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; height: 98px; padding: 0 22px 18px; }
+.b-cta { margin: 0 22px 22px; text-align: center; padding: 18px; background: linear-gradient(110deg, rgba(19,75,138,.35), rgba(17,199,185,.1)); border: 1px solid rgba(17,199,185,.28); }
+
+/* ---------- C: CAMPAIGN LOG ---------- */
+.c-hero { display: grid; grid-template-columns: .62fr 1.38fr; min-height: 214px; }
+.c-rank-panel { padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(circle at 40% 10%, rgba(47,128,237,.35), transparent 65%), #0A1626; border-right: 1px solid rgba(169,216,246,.14); }
+.c-rank-panel .big { font-family: 'Rajdhani', sans-serif; font-size: 92px; line-height: .8; font-weight: 700; }
+.c-rank-panel .big span { font-size: 24px; letter-spacing: .08em; color: #11C7B9; }
+.c-copy { padding: 24px 24px 20px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.c-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.c-chip { font-size: 7px; text-transform: uppercase; letter-spacing: .16em; padding: 4px 8px; border: 1px solid rgba(169,216,246,.2); color: rgba(245,247,251,.72); }
+.c-chip b { color: #11C7B9; }
+.c-log { padding: 0 22px 18px; }
+.c-entry { display: grid; grid-template-columns: 42px 1fr 108px; gap: 12px; align-items: center; padding: 13px 0; border-top: 1px solid rgba(169,216,246,.11); }
+.c-entry .medal { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 20px; color: #06121F; background: #A9D8F6; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); }
+.c-entry .medal.bronze { background: #11C7B9; }
+.c-entry h5 { font-family: 'Rajdhani', sans-serif; font-size: 14px; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 2px; }
+.c-entry p { margin: 0; font-size: 8px; color: #8D9CB5; line-height: 1.45; }
+.c-entry .m-photo { height: 54px; }
+.c-quote { margin: 0 22px 18px; padding: 14px 16px; border-left: 2px solid #11C7B9; background: rgba(10,22,38,.65); }
+.c-quote p { font-size: 10px; color: #D7E2F2; font-style: italic; }
+.c-quote span { font-size: 7px; text-transform: uppercase; letter-spacing: .2em; color: #11C7B9; display: block; margin-top: 6px; }
+.c-cta { margin: 0 22px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 18px; }
+</style>
+
+<h2>Which direction feels right for the results page?</h2>
+<p class="subtitle">Three layouts using the site's existing dark technical look. Real FSPT26 content, real placements. Click one to select it, or just tell me what to change.</p>
+
+<div class="results-picks">
+
+  <!-- OPTION A -->
+  <div class="pick" data-choice="a" onclick="toggleSelect(this)">
+    <div class="pick-bar">
+      <div class="letter">A</div>
+      <div>
+        <h3>Race Report</h3>
+        <p>Editorial hero, placement strip, three event cards, photo band. Closest to the existing The Car page.</p>
+      </div>
+      <div class="hint">Click to choose A</div>
+    </div>
+
+    <div class="m">
+      <div class="m-nav">
+        <div class="m-logo">ER<span>TA</span></div>
+        <div class="m-links"><span>THE CAR</span><b>RESULTS</b><span>PARTNERS</span><span>TEAM</span><span>JOIN</span><span class="cta">CONTACT</span></div>
+      </div>
+
+      <div class="a-hero">
+        <div>
+          <p class="m-eyebrow">Formula Student Portugal · Class 2</p>
+          <h2 class="m-h1 a-big" style="margin-top:8px">FSPT<span class="outline">26</span><span class="unit">8th overall · 120.37 pts</span></h2>
+          <p class="m-body" style="max-width:330px;margin-top:10px">Our first Formula Student Portugal. Four days in Castelo Branco, three static events, and a clear benchmark for the car we build next.</p>
+          <div style="display:flex;gap:8px;margin-top:14px"><span class="m-btn">Read the breakdown</span><span class="m-btn ghost">See the team</span></div>
+        </div>
+        <div class="m-panel a-meta-card">
+          <div>
+            <p class="m-eyebrow" style="color:#A9D8F6">Event file</p>
+            <p style="font-family:'Rajdhani',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:.05em;margin-top:4px">Castelo Branco<br>Motorsport Park</p>
+          </div>
+          <div>
+            <div class="a-meta-row"><span>Dates</span><span>19–24 Jul 2026</span></div>
+            <div class="a-meta-row"><span>Class</span><span>Class 2 · Static</span></div>
+            <div class="a-meta-row"><span>Entries</span><span>8 teams</span></div>
+            <div class="a-meta-row"><span>Car</span><span>#E125</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="a-strip">
+        <div class="m-score">
+          <div class="cell accent"><div class="rank">P8</div><div class="name">Overall</div></div>
+          <div class="cell"><div class="rank">P5</div><div class="name">Cost &amp; Manufacturing</div></div>
+          <div class="cell"><div class="rank">P6</div><div class="name">Business Plan</div></div>
+          <div class="cell"><div class="rank">P7</div><div class="name">Engineering Design</div></div>
+        </div>
+      </div>
+
+      <div class="a-section">
+        <div class="a-section-head">
+          <h4>The three static events</h4>
+          <span class="m-meta">One week · three judging rooms</span>
+        </div>
+        <div class="a-events">
+          <div class="a-event"><div class="r">P5</div><div class="n">Cost &amp; Manufacturing</div><div class="d">A full cost breakdown and manufacturing plan for every component on the car.</div></div>
+          <div class="a-event"><div class="r">P6</div><div class="n">Business Plan Presentation</div><div class="d">The team's case for the project, delivered to a panel of industry judges.</div></div>
+          <div class="a-event"><div class="r">P7</div><div class="n">Engineering Design</div><div class="d">Defending the engineering decisions behind the package, part by part.</div></div>
+        </div>
+      </div>
+
+      <div class="a-gallery">
+        <div class="m-photo"><em>01</em><span>Team around the car in the paddock</span></div>
+        <div class="m-photo"><em>02</em><span>Business plan presentation</span></div>
+        <div class="m-photo"><em>03</em><span>Engineering design judging</span></div>
+      </div>
+
+      <div class="m-panel a-cta">
+        <div><p class="m-eyebrow">Next chapter</p><p style="font-family:'Rajdhani',sans-serif;font-size:17px;text-transform:uppercase;margin-top:3px">Class 1 is the target.</p></div>
+        <span class="m-btn">Join the team</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="pick" data-choice="b" onclick="toggleSelect(this)">
+    <div class="pick-bar">
+      <div class="letter">B</div>
+      <div>
+        <h3>Scoreboard</h3>
+        <p>Centered hero built around the P8, four-up results row, then story and event list side by side.</p>
+      </div>
+      <div class="hint">Click to choose B</div>
+    </div>
+
+    <div class="m">
+      <div class="m-nav">
+        <div class="m-logo">ER<span>TA</span></div>
+        <div class="m-links"><span>THE CAR</span><b>RESULTS</b><span>PARTNERS</span><span>TEAM</span><span>JOIN</span><span class="cta">CONTACT</span></div>
+      </div>
+
+      <div class="b-hero">
+        <p class="m-eyebrow">Formula Student Portugal 2026 · Class 2</p>
+        <div class="b-eight-wrap">
+          <div class="b-eight">08</div>
+          <div class="label">Overall<b>Class 2</b></div>
+        </div>
+        <h2 class="m-h1" style="font-size:27px;margin-top:6px">FSPT26 Results</h2>
+        <p class="m-body" style="max-width:380px;margin:8px auto 0">A first-year entry, three static events, and a top-half finish in a field of eight. This is where the next car starts.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:12px"><span class="m-btn">The full story</span><span class="m-btn ghost">Meet the team</span></div>
+      </div>
+
+      <div class="b-strip">
+        <div class="m-score">
+          <div class="cell accent"><div class="rank">P8</div><div class="name">Overall</div></div>
+          <div class="cell"><div class="rank">P5</div><div class="name">Cost &amp; Manufacturing</div></div>
+          <div class="cell"><div class="rank">P6</div><div class="name">Business Plan</div></div>
+          <div class="cell"><div class="rank">P7</div><div class="name">Engineering Design</div></div>
+        </div>
+      </div>
+
+      <div class="b-body">
+        <div class="m-panel b-story">
+          <p class="m-eyebrow">The week</p>
+          <p class="m-body" style="margin-top:6px">Castelo Branco, 19–24 July. ERTA arrived with a complete static package: a costed manufacturing plan, a business case, and an engineering design defence.</p>
+          <p class="m-body">The placements put the team 5th, 6th and 7th across the three events — consistency across every judging room, not one standout result.</p>
+          <div class="m-tag" style="margin-top:10px">Car #E125 · 120.37 pts</div>
+        </div>
+        <div class="b-list">
+          <div class="b-row"><span class="r">P5</span><span class="t">Cost &amp; Manufacturing</span><div class="bar"><i style="width:72%"></i></div></div>
+          <div class="b-row"><span class="r">P6</span><span class="t">Business Plan</span><div class="bar"><i style="width:65%"></i></div></div>
+          <div class="b-row"><span class="r">P7</span><span class="t">Engineering Design</span><div class="bar"><i style="width:58%"></i></div></div>
+          <div class="b-row" style="border-color:rgba(17,199,185,.4);background:rgba(17,199,185,.08)"><span class="r" style="color:#11C7B9">P8</span><span class="t">Overall Class 2</span><div class="bar"><i style="width:100%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="b-gallery">
+        <div class="m-photo"><em>01</em><span>Paddock</span></div>
+        <div class="m-photo"><em>02</em><span>Judging room</span></div>
+        <div class="m-photo"><em>03</em><span>Design review</span></div>
+      </div>
+
+      <div class="b-cta">
+        <p class="m-eyebrow">Building for Class 1</p>
+        <p style="font-family:'Rajdhani',sans-serif;font-size:20px;text-transform:uppercase;margin:4px 0 10px">Be part of the next result.</p>
+        <span class="m-btn">Join ERTA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div class="pick" data-choice="c" onclick="toggleSelect(this)">
+    <div class="pick-bar">
+      <div class="letter">C</div>
+      <div>
+        <h3>Campaign Log</h3>
+        <p>Rank panel locked beside an editorial story, with each event as a numbered log entry and a quote.</p>
+      </div>
+      <div class="hint">Click to choose C</div>
+    </div>
+
+    <div class="m">
+      <div class="m-nav">
+        <div class="m-logo">ER<span>TA</span></div>
+        <div class="m-links"><span>THE CAR</span><b>RESULTS</b><span>PARTNERS</span><span>TEAM</span><span>JOIN</span><span class="cta">CONTACT</span></div>
+      </div>
+
+      <div class="c-hero">
+        <div class="c-rank-panel">
+          <div>
+            <p class="m-eyebrow">Final standing</p>
+            <div class="big">08<span>TH</span></div>
+            <p class="m-meta" style="margin-top:6px">Overall · Class 2</p>
+          </div>
+          <div class="m-tag">FSPT26 · Car #E125</div>
+        </div>
+        <div class="c-copy">
+          <p class="m-eyebrow">Formula Student Portugal · Castelo Branco · 19–24 Jul 2026</p>
+          <h2 class="m-h1" style="font-size:38px">Three rooms.<br>One benchmark.</h2>
+          <p class="m-body" style="max-width:390px">ERTA's first national competition ended 8th overall in Class 2, with every static event finished between 5th and 7th. The score sheet is the starting point for the next car.</p>
+          <div class="c-chips"><span class="c-chip">Cost <b>P5</b></span><span class="c-chip">Business <b>P6</b></span><span class="c-chip">Design <b>P7</b></span><span class="c-chip">Overall <b>P8</b></span></div>
+          <div style="display:flex;gap:8px;margin-top:8px"><span class="m-btn">The breakdown</span><span class="m-btn ghost">Meet the team</span></div>
+        </div>
+      </div>
+
+      <div class="c-log">
+        <div class="c-entry">
+          <div class="medal">5</div>
+          <div><h5>Cost &amp; Manufacturing</h5><p>A complete bill of materials and manufacturing plan, defended line by line.</p></div>
+          <div class="m-photo"><em>01</em><span>Cost judging</span></div>
+        </div>
+        <div class="c-entry">
+          <div class="medal bronze">6</div>
+          <div><h5>Business Plan Presentation</h5><p>The project's commercial case, presented to a panel of industry judges.</p></div>
+          <div class="m-photo"><em>02</em><span>Presentation</span></div>
+        </div>
+        <div class="c-entry">
+          <div class="medal">7</div>
+          <div><h5>Engineering Design</h5><p>Every system, every trade-off, explained and challenged by the judges.</p></div>
+          <div class="m-photo"><em>03</em><span>Design review</span></div>
+        </div>
+      </div>
+
+      <div class="c-quote">
+        <p>“We went to Castelo Branco to learn what the car needs next. We came back with three top-seven finishes and a much clearer target.”</p>
+        <span>ERTA · FSPT26</span>
+      </div>
+
+      <div class="m-panel c-cta">
+        <div><p class="m-eyebrow">Next chapter</p><p style="font-family:'Rajdhani',sans-serif;font-size:17px;text-transform:uppercase;margin-top:3px">Class 1 is the target.</p></div>
+        <span class="m-btn">Join the team</span>
+      </div>
+    </div>
+  </div>
+
+</div>

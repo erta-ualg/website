@@ -11,10 +11,14 @@ import { SEO } from "../hooks/useSEO";
 export default function PartnersPage() {
     const { t } = useTranslation();
     const goldPartner = partners.find((partner) => partner.tier === "gold");
+    const silverPartners = partners.filter((partner) => partner.tier === "silver");
+    const bronzePartners = partners.filter((partner) => partner.tier === "bronze");
     const supportingPartners = partners.filter((partner) => partner.tier === "partner");
 
     const stats = [
         { label: t("partners-page.stats.gold"), value: String(partners.filter((partner) => partner.tier === "gold").length) },
+        { label: t("partners-page.stats.silver"), value: String(silverPartners.length) },
+        { label: t("partners-page.stats.bronze"), value: String(bronzePartners.length) },
         { label: t("partners-page.stats.supporting"), value: String(supportingPartners.length) },
         { label: t("partners-page.stats.total"), value: String(partners.length) },
     ];
@@ -22,9 +26,9 @@ export default function PartnersPage() {
     return (
         <div className="bg-background text-text">
             <SEO
-                title="Partners & Sponsors"
-                description="Discover ERTA's sponsors and partners supporting our Formula Student mission. Join our growing network of companies."
-                keywords="ERTA partners, sponsors, Formula Student, UAlg, motorsport sponsors"
+                title={t("seo.partners.title")}
+                description={t("seo.partners.description")}
+                keywords={t("seo.partners.keywords")}
                 ogUrl="https://fs-erta.com/partners"
                 canonicalUrl="https://fs-erta.com/partners"
                 structuredData={{
@@ -51,7 +55,7 @@ export default function PartnersPage() {
                                 {t("partners-page.hero.body")}
                             </p>
 
-                            <div className="grid gap-4 sm:grid-cols-3">
+                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                                 {stats.map((stat) => (
                                     <div
                                         key={stat.label}
@@ -68,53 +72,75 @@ export default function PartnersPage() {
                             </div>
                         </div>
 
-                        <div className="site-panel rounded-[2rem] p-4">
-                            <div className="min-h-[22rem] overflow-hidden rounded-[1.5rem]">
+                        <div className="site-panel rounded-[2rem] p-4 h-full">
+                            <div className="h-full min-h-[22rem] overflow-hidden rounded-[1.5rem]">
                                 <SponsorWallCanvas partners={partners} />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {goldPartner && (
-                    <section className="bg-background px-6 py-12 text-text lg:py-16">
-                        <div className="mx-auto max-w-7xl space-y-6">
-                            <div className="max-w-3xl space-y-4">
-                                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
-                                    {t("partners-page.gold.eyebrow")}
-                                </p>
-                                <h2 className="text-3xl font-black uppercase leading-[0.95] tracking-[0.06em] text-text md:text-5xl">
-                                    {t("partners-page.gold.title")}
-                                </h2>
-                                <p className="text-lg leading-8 text-text-secondary md:text-xl">
-                                    {t("partners-page.gold.body")}
-                                </p>
-                            </div>
-
-                            <PartnerCard partner={goldPartner} featured />
-                        </div>
-                    </section>
-                )}
-
                 <section className="bg-background px-6 py-12 text-text lg:py-16">
-                    <div className="mx-auto max-w-7xl space-y-6">
-                        <div className="max-w-3xl space-y-4">
-                            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--site-accent)]/80">
-                                {t("partners-page.supporting.title")}
-                            </p>
-                            <h2 className="text-3xl font-black uppercase leading-[0.95] tracking-[0.06em] text-text md:text-5xl">
-                                {t("partners-page.supporting.title")}
-                            </h2>
-                            <p className="text-lg leading-8 text-text-secondary md:text-xl">
-                                {t("partners-page.supporting.body")}
-                            </p>
-                        </div>
+                    <div className="mx-auto max-w-7xl space-y-8">
+                        {goldPartner && (
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                        {t("partners-page.tiers.gold")}
+                                    </span>
+                                    <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                                </div>
+                                <PartnerCard partner={goldPartner} featured />
+                            </div>
+                        )}
 
-                        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                            {supportingPartners.map((partner) => (
-                                <PartnerCard key={partner.name} partner={partner} compact />
-                            ))}
-                        </div>
+                        {silverPartners.length > 0 && (
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                        {t("partners-page.tiers.silver")}
+                                    </span>
+                                    <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                                </div>
+                                <div className={`grid gap-4 ${silverPartners.length === 1 ? "grid-cols-1" : "sm:grid-cols-2 xl:grid-cols-3"}`}>
+                                    {silverPartners.map((partner) => (
+                                        <PartnerCard key={partner.name} partner={partner} compact />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {bronzePartners.length > 0 && (
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                        {t("partners-page.tiers.bronze")}
+                                    </span>
+                                    <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                                </div>
+                                <div className={`grid gap-4 ${bronzePartners.length === 1 ? "grid-cols-1" : "sm:grid-cols-2 xl:grid-cols-3"}`}>
+                                    {bronzePartners.map((partner) => (
+                                        <PartnerCard key={partner.name} partner={partner} compact />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {supportingPartners.length > 0 && (
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                        {t("partners-page.tiers.partner")}
+                                    </span>
+                                    <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                                </div>
+                                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                                    {supportingPartners.map((partner) => (
+                                        <PartnerCard key={partner.name} partner={partner} compact />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </section>
 

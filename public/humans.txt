@@ -4,14 +4,15 @@
 /* Team */
 Team: ERTA - UAlg Formula Student Team
 Site: https://fs-erta.com
-Twitter: @erta.ualg
+Instagram: https://www.instagram.com/fs_erta/
+LinkedIn: https://www.linkedin.com/company/fs-erta/
 Location: Faro, Algarve, Portugal
 
 /* Site */
-Language: English, Portuguese
+Language: Portuguese, English
 Standards: HTML5, CSS3, JavaScript (React), TypeScript
 Components: Vite, React Router, TailwindCSS, Three.js
-Last Update: 2025-05-07
+Last Update: 2026-10-30
 Standards Compliance: HTML5, WCAG 2.1 AA
 
 /* Thanks */

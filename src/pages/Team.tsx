@@ -9,6 +9,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import TeamHero from '../components/Hero/TeamHero';
 import JoinCTA from '../components/CTA/JoinCTA';
+import TeamMemberCard from '../components/TeamMemberCard';
 // import { coursesCount } from '../data/siteStats';
 import { SEO } from '../hooks/useSEO';
 
@@ -33,8 +34,14 @@ const TeamPage = () => {
     member.department === 'Team Leaders' || member.role.toLowerCase().includes('engenheiro chefe')
   );
 
+  const technicalDirectors = teamData.filter((member) =>
+    member.role.toLowerCase().includes('td') || member.role.toLowerCase().includes('technical director')
+  );
+
   const departmentLeaders = teamData.filter((member) =>
-    member.department !== 'Team Leaders' && member.role.toLowerCase().includes('líder de departamento')
+    member.department !== 'Team Leaders' && 
+    member.role.toLowerCase().includes('líder de departamento') &&
+    !member.role.toLowerCase().includes('td')
   );
 
   const filteredLeadership = useMemo(() => {
@@ -65,12 +72,12 @@ const TeamPage = () => {
     });
   }, [departmentLeaders, search]);
 
-  const departmentMembers = useMemo(() => {
-    const query = search.trim().toLowerCase();
+  const departmentMembers = departments
+    .filter((department) => activeDepartment === 'all' || activeDepartment === department.sourceName)
+    .map((department) => {
+      const query = search.trim().toLowerCase();
 
-    return departments
-      .filter((department) => activeDepartment === 'all' || activeDepartment === department.sourceName)
-      .map((department) => ({
+      return {
         id: toDepartmentId(department.sourceName),
         name: t(department.translationKey),
         members: teamData.filter((member) => {
@@ -89,9 +96,9 @@ const TeamPage = () => {
             .toLowerCase()
             .includes(query);
         }),
-      }))
-      .filter((department) => department.members.length > 0);
-  }, [activeDepartment, search, t]);
+      };
+    })
+    .filter((department) => department.members.length > 0);
 
   /* const stats = [
     { label: t('team-page.stats.total-members'), value: String(teamData.length) },
@@ -112,9 +119,9 @@ const TeamPage = () => {
   return (
     <>
       <SEO
-        title="Team"
-        description="Meet ERTA's team - 20+ engineering students across 6 departments working on Formula Student competition."
-        keywords="ERTA team, Formula Student, UAlg, engineering, management, powertrain, chassis, software"
+        title={t("seo.team.title")}
+        description={t("seo.team.description")}
+        keywords={t("seo.team.keywords")}
         ogUrl="https://fs-erta.com/team"
         canonicalUrl="https://fs-erta.com/team"
         structuredData={{
@@ -126,8 +133,8 @@ const TeamPage = () => {
         }}
       />
       <Header />
-      <TeamHero />
 
+      <TeamHero />
       <main className="team-page-shell">
 
         {/* HACK disabled for now, on marketing and design request */}
@@ -211,7 +218,23 @@ const TeamPage = () => {
         </section>
 
         <section id="department-leaders" className="team-page-section py-8 sm:py-10 scroll-mt-28">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-8">
+            {technicalDirectors.length > 0 && (
+              <section className="site-panel team-section-shell">
+                <div className="mb-8 flex flex-col gap-3">
+                  <p className="section-eyebrow">{t('team-page.technical-directors.eyebrow')}</p>
+                  <h3 className="site-heading team-category-title text-3xl">{t('team-page.technical-directors.title')}</h3>
+                  <p className="site-body max-w-2xl">{t('team-page.technical-directors.description')}</p>
+                </div>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {[...technicalDirectors]
+                    .sort((a, b) => a.id - b.id)
+                    .map((member) => (
+                      <TeamMemberCard key={member.id} member={member} />
+                    ))}
+                </div>
+              </section>
+            )}
             <DepartmentLeadersSection departmentLeaders={filteredDepartmentLeaders} />
           </div>
         </section>

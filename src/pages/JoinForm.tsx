@@ -163,9 +163,9 @@ export default function JoinForm() {
     return (
         <div className="bg-background text-text">
             <SEO
-                title="Join Us"
-                description="Join ERTA - UAlg Formula Student Team. Apply now and become part of Portugal's premier racing team."
-                keywords="join ERTA, Formula Student team, apply, recruitment, UAlg"
+                title={t("seo.join.title")}
+                description={t("seo.join.description")}
+                keywords={t("seo.join.keywords")}
                 ogUrl="https://fs-erta.com/join"
                 canonicalUrl="https://fs-erta.com/join"
                 structuredData={{
@@ -178,20 +178,32 @@ export default function JoinForm() {
             />
             <Header />
 
-            <main className={joinFormProvider === "google" ? "h-[calc(100vh-var(--header-height))] overflow-hidden" : "overflow-hidden"}>
+            <main className="overflow-hidden">
             {joinFormProvider === "google" ? (
-                <section className="h-full min-h-0 overflow-hidden bg-background px-4 py-4 text-text lg:px-6 lg:py-6">
-                    <div className="mx-auto h-full w-full max-w-5xl overflow-hidden rounded-[1.5rem]">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSeqHlz2TAePptqzRKZv_Jd32ZVKGEP6vIePEx3CqmWwk6-a1A/viewform?embedded=true"
-                            title="ERTA recruitment form"
-                            className="block h-full min-h-0 w-full border-0"
-                            loading="lazy"
-                        >
-                            A carregar…
-                        </iframe>
-                    </div>
-                </section>
+                <>
+                    <section className="bg-background px-6 pb-8 pt-32 text-text lg:pb-10">
+                        <div className="mx-auto max-w-7xl contact-hero">
+                            <p className="section-eyebrow">{t("join-form.eyebrow")}</p>
+                            <h1 className="max-w-3xl text-4xl font-black uppercase leading-[0.92] tracking-[0.06em] text-text md:text-6xl">
+                                {t("join-form.title")}
+                            </h1>
+                            <p className="max-w-3xl text-lg leading-8 text-text-secondary md:text-xl">{t("join-form.subtitle")}</p>
+                        </div>
+                    </section>
+
+                    <section className="bg-background px-4 pb-10 text-text lg:px-6">
+                        <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[1.5rem]">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSeqHlz2TAePptqzRKZv_Jd32ZVKGEP6vIePEx3CqmWwk6-a1A/viewform?embedded=true"
+                                title="ERTA recruitment form"
+                                className="block h-[75vh] min-h-[640px] w-full border-0"
+                                loading="lazy"
+                            >
+                                A carregar…
+                            </iframe>
+                        </div>
+                    </section>
+                </>
             ) : joinFormProvider === "paperform" ? (
                 <section className="bg-background px-6 py-12 text-text lg:py-16">
                     <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[1.5rem]">

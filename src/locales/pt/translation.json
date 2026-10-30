@@ -4,7 +4,8 @@
         "team": "A EQUIPA",
         "join": "JUNTA-TE A NÓS",
         "contact": "CONTACTOS",
-        "the-car": "O CARRO"
+        "the-car": "O CARRO",
+        "results": "RESULTADOS"
     },
     "footer": {
         "contact": "Contacta-nos",
@@ -150,16 +151,46 @@
         },
         "stats": {
             "gold": "Parceiros Gold",
+            "silver": "Parceiros Silver",
+            "bronze": "Parceiros Bronze",
             "supporting": "Parceiros de apoio",
             "total": "Total de parceiros"
         },
         "tiers": {
-            "gold": "Gold Partner",
-            "partner": "Partner"
+            "gold": "Parceiro Gold",
+            "silver": "Patrocínio Silver",
+            "bronze": "Patrocínio Bronze",
+            "partner": "Parceiro"
         },
         "tier-descriptions": {
             "gold": "Parceiro de topo com destaque principal em todo o projeto.",
+            "silver": "Apoiador fundamental que ajuda a equipa a construir e crescer.",
+            "bronze": "Colaborador valioso que ajuda a equipa a construir e crescer.",
             "partner": "Parceiro de apoio que ajuda a equipa a construir e crescer."
+        },
+        "descriptions": {
+            "ualg": "Apoio académico de longa data à comunidade de engenharia da Universidade do Algarve.",
+            "cm-loule": "Compromisso com o território que fortalece a ligação da equipa à região.",
+            "cm-portimao": "Apoio regional que mantém o projeto ligado às suas raízes algarvias.",
+            "aeroporto-faro": "Parceiro com fortes ligações ao Algarve e ao seu desenvolvimento.",
+            "dassault": "Paixão comum pelo design digital e pelos processos de engenharia.",
+            "ansys": "Suporte à simulação rigorosa para decisões de engenharia mais acertadas.",
+            "autodromo-algarve": "Acesso prático a um ambiente de competição de referência mundial.",
+            "cadflow": "Abordagem colaborativa ao design e à partilha de conhecimento técnico.",
+            "celerator": "Apoio que ajuda a transformar ambição em ação concreta.",
+            "solidworks": "Ferramentas de design ao serviço do trabalho de engenharia da equipa.",
+            "ualg-cria": "Apoio à inovação que aproxima academia e empreendedorismo.",
+            "ualg-ise": "Continuidade natural com a casa académica e raízes de engenharia da equipa."
+        },
+        "silver": {
+            "eyebrow": "Patrocínios Silver",
+            "title": "Apoiadores de Confiança",
+            "body": "Os nossos patrocinadores Silver ajudam a reforçar as bases do trabalho da ERTA."
+        },
+        "bronze": {
+            "eyebrow": "Patrocínios Bronze",
+            "title": "Colaboradores Valiosos",
+            "body": "Os nossos patrocinadores Bronze prestam apoio essencial à construção e competição da equipa."
         },
         "card-label": "Parceiro",
         "compact-label": "Nível",
@@ -188,6 +219,7 @@
     },
     "team-page": {
         "hero": {
+            "eyebrow": "A Nossa Equipa",
             "title": "Construído para correr, projetado para vencer",
             "description": "Conheça os impulsionadores da inovação. A nossa equipa de Formula Student reúne as mentes mais brilhantes em engenharia, design e estratégia para construir uma máquina que desafia os limites do desempenho e da precisão.",
             "explore": "Explorar",
@@ -237,6 +269,11 @@
             "eyebrow": "Líderes de departamento",
             "title": "Liderança de departamentos",
             "description": "Estes membros coordenam cada área técnica e mantêm o trabalho alinhado em todo o carro."
+        },
+        "technical-directors": {
+            "eyebrow": "Liderança técnica",
+            "title": "Diretores Técnicos",
+            "description": "Orientam a direção técnica do projeto."
         },
         "departments-section": {
             "eyebrow": "Departamento",
@@ -405,6 +442,116 @@
             "title": "Junta-te ao projeto",
             "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "action": "Junta-te"
+        }
+    },
+    "results-page": {
+        "hero": {
+            "eyebrow": "Formula Student Portugal · Classe 2",
+            "title": "Três provas. Um ponto de partida.",
+            "body": "A estreia da ERTA na Formula Student Portugal terminou em 8.º lugar overall na Classe 2, com as três provas estáticas entre o 5.º e o 7.º lugar. A folha de resultados é o ponto de partida para o próximo carro.",
+            "primary": "Ver o resultado",
+            "secondary": "Conhecer a equipa"
+        },
+        "rank": {
+            "label": "Classificação final",
+            "overall": "Overall · Classe 2",
+            "suffix": "º",
+            "entries": "{{total}} equipas",
+            "car": "Carro #{{number}}"
+        },
+        "chips": {
+            "cost": "Custo",
+            "business": "Plano de negócios",
+            "design": "Design",
+            "overall": "Overall"
+        },
+        "stats": {
+            "overall": "Overall Classe 2",
+            "cost": "Custo & Fabrico",
+            "business": "Plano de Negócios",
+            "design": "Design de Engenharia"
+        },
+        "events": {
+            "title": "As três provas estáticas",
+            "meta": "Castelo Branco · 19–24 julho 2026",
+            "kicker": "Prova estática {{number}}",
+            "rank-label": "{{rank}}.º lugar",
+            "standing": "Classe 2",
+            "cost": {
+                "title": "Custo & Fabrico",
+                "body": "Lista completa de materiais e plano de fabrico, defendidos linha a linha contra o modelo de custos dos juízes."
+            },
+            "business": {
+                "title": "Plano de Negócios",
+                "body": "O caso comercial do projeto, apresentado a um painel de juízes da indústria como uma proposta de investimento."
+            },
+            "design": {
+                "title": "Design de Engenharia",
+                "body": "Cada sistema e compromisso explicado e questionado, do chassis à escolha do powertrain."
+            }
+        },
+        "gallery": {
+            "title": "Castelo Branco",
+            "meta": "A primeira competição nacional da ERTA",
+            "team": "A equipa",
+            "team-alt": "Equipa ERTA reunida antes da competição",
+            "prep": "Preparação",
+            "prep-alt": "Preparação do carro da ERTA no paddock de Castelo Branco",
+            "track": "Em pista",
+            "track-alt": "Carro da ERTA em pista em Castelo Branco"
+        },
+        "quote": {
+            "text": "“Fomos a Castelo Branco para perceber o que o carro precisa a seguir. Voltámos com uma base clara e um objetivo definido.”",
+            "author": "ERTA · FSPT26"
+        },
+        "cta": {
+            "eyebrow": "Próximo capítulo",
+            "title": "A Classe 1 é o objetivo.",
+            "body": "Faz parte da equipa que constrói o próximo resultado.",
+            "primary": "Junta-te à equipa",
+            "secondary": "Fala connosco"
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Equipa Formula Student da UAlg",
+            "description": "A ERTA é a equipa de Formula Student da Universidade do Algarve. No FSPT26 ficou em 8.º overall na Classe 2, com três provas estáticas entre o 5.º e o 7.º.",
+            "keywords": "ERTA, Formula Student, UAlg, Universidade do Algarve, FSPT26, carro de corrida, engenharia, motorsport"
+        },
+        "team": {
+            "title": "A Nossa Equipa — Engenharia Formula Student",
+            "description": "Conhece a equipa da ERTA: estudantes de engenharia de seis departamentos que projetam, constroem e competem com o carro da Universidade do Algarve.",
+            "keywords": "equipa ERTA, Formula Student, UAlg, engenharia, gestão, powertrain, chassis, software"
+        },
+        "partners": {
+            "title": "Parceiros e Patrocinadores — Formula Student",
+            "description": "Descobre os parceiros e patrocinadores que apoiam a equipa de Formula Student da Universidade do Algarve. Conhece os níveis de parceria e como apoiar o projeto.",
+            "keywords": "parceiros ERTA, patrocinadores, Formula Student, UAlg, patrocínio motorsport"
+        },
+        "car": {
+            "title": "O Carro — Protótipo Elétrico Formula Student",
+            "description": "Conhece o protótipo elétrico de Formula Student da ERTA: chassis, powertrain e aerodinâmica projetados e construídos por estudantes da Universidade do Algarve.",
+            "keywords": "carro ERTA, Formula Student, veículo elétrico, carro de corrida, engenharia, especificações"
+        },
+        "join": {
+            "title": "Junta-te à Equipa — Recrutamento Formula Student",
+            "description": "Junta-te à ERTA, a equipa de Formula Student da Universidade do Algarve. Candidata-te em engenharia, design, gestão ou marketing. Não precisas de experiência prévia.",
+            "keywords": "juntar ERTA, equipa Formula Student, candidatura, recrutamento, UAlg"
+        },
+        "contact": {
+            "title": "Contacta a ERTA — Patrocínios e Parcerias",
+            "description": "Contacta a ERTA para patrocínios, parcerias ou para te juntares à equipa de Formula Student da Universidade do Algarve. Vê o email, localização e redes sociais.",
+            "keywords": "contacto ERTA, Formula Student, patrocínio, parceria"
+        },
+        "results": {
+            "title": "Resultados FSPT26 — 8.º Overall Classe 2",
+            "description": "Resultados da ERTA no FSPT26: 8.º overall na Classe 2, 5.º em Custo & Fabrico, 6.º em Plano de Negócios e 7.º em Design de Engenharia.",
+            "keywords": "resultados ERTA, FSPT26, Formula Student Portugal, Classe 2, custo e fabrico, plano de negócios, design de engenharia"
+        },
+        "not-found": {
+            "title": "Página Não Encontrada",
+            "description": "A página que procuras não existe. Volta à página inicial da ERTA.",
+            "keywords": "404, página não encontrada, erro"
         }
     }
 }

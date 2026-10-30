@@ -1,37 +1,47 @@
+import { lazy, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { HelmetProvider } from "react-helmet-async"
-import Home from "./pages/Home"
-// import Join from "./pages/Join"
-import JoinForm from "./pages/JoinForm"
-import TeamPage from "./pages/Team"
-import PartnersPage from "./pages/Partners"
-// import TheCar from "./pages/TheCar"
-import Contactos from "./pages/Contactos"
-import NotFound from "./pages/NotFound"
-import UnderConstruction from "./pages/UnderConstruction"
+
+const Home = lazy(() => import("./pages/Home"))
+const JoinForm = lazy(() => import("./pages/JoinForm"))
+const TeamPage = lazy(() => import("./pages/Team"))
+const PartnersPage = lazy(() => import("./pages/Partners"))
+const Results = lazy(() => import("./pages/Results"))
+const TheCar = lazy(() => import("./pages/TheCar"))
+const Contactos = lazy(() => import("./pages/Contactos"))
+const NotFound = lazy(() => import("./pages/NotFound"))
+
+function RouteFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background text-text">
+      <span className="section-eyebrow" role="status">ERTA</span>
+    </div>
+  )
+}
 
 function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<RouteFallback />}>
         <Routes>
-        {/* homepage */}
-        <Route path="/" element={<Home />} />
+          {/* homepage */}
+          <Route path="/" element={<Home />} />
 
-        <Route path="/join" element={<JoinForm />} />
+          <Route path="/join" element={<JoinForm />} />
 
-        <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
 
-        <Route path="/team" element={<TeamPage />} />
+          <Route path="/results" element={<Results />} />
 
-        <Route path="/carro" element={<UnderConstruction />} />
+          <Route path="/team" element={<TeamPage />} />
 
-        <Route path="/contactos" element={<Contactos />} />
+          <Route path="/carro" element={<TheCar />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="/contactos" element={<Contactos />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
-    </HelmetProvider>
   )
 }
 

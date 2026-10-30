@@ -1,75 +1,104 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 	<meta name="theme-color" content="#134B8A" />
-	<meta name="description" content="ERTA - UAlg Formula Student Team. Join our innovative Formula Student racing team competing at the international level." />
-	<meta name="keywords" content="Formula Student, UAlg, ERTA, race car, engineering, student team, motorsport" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<meta name="language" content="English" />
-	<meta name="author" content="ERTA - UAlg Formula Student Team" />
-	<meta name="revisit-after" content="7 days" />
-	
+	<meta name="robots" content="index, follow, max-image-preview:large" />
+	<meta name="author" content="ERTA — Engineering Racing Team Algarve" />
+	<title>ERTA — Formula Student Team UAlg</title>
+
+	<!-- Default metadata. The SEO hook updates these tags per page. -->
+	<meta name="description" data-rh="true" content="ERTA — Engineering Racing Team Algarve. The University of Algarve's Formula Student team, competing in FSPT Class 2 and building toward Class 1." />
+	<meta name="keywords" content="ERTA, Formula Student, UAlg, Universidade do Algarve, Algarve, FSPT26, race car, engineering, motorsport, student team" />
+
 	<!-- Open Graph Tags -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="ERTA - UAlg Formula Student Team" />
-	<meta property="og:description" content="Join our innovative Formula Student racing team competing at the international level." />
-	<meta property="og:image" content="/og-image.png" />
-	<meta property="og:url" content="https://fs-erta.com" />
-	<meta property="og:site_name" content="ERTA - UAlg Formula Student Team" />
-	
+	<meta property="og:type" content="website" data-rh="true" />
+	<meta property="og:title" data-rh="true" content="ERTA — Engineering Racing Team Algarve" />
+	<meta property="og:description" data-rh="true" content="The University of Algarve's Formula Student team. FSPT26 Class 2: 8th overall, with three top-seven static event finishes." />
+	<meta property="og:image" data-rh="true" content="https://fs-erta.com/og-image.png" />
+	<meta property="og:image:width" data-rh="true" content="1200" />
+	<meta property="og:image:height" data-rh="true" content="630" />
+	<meta property="og:image:alt" data-rh="true" content="ERTA — Engineering Racing Team Algarve" />
+	<meta property="og:url" data-rh="true" content="https://fs-erta.com/" />
+	<meta property="og:site_name" data-rh="true" content="ERTA — Engineering Racing Team Algarve" />
+	<meta property="og:locale" data-rh="true" content="pt_PT" />
+	<meta property="og:locale:alternate" data-rh="true" content="en_US" />
+
 	<!-- Twitter Card Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="ERTA - UAlg Formula Student Team" />
-	<meta name="twitter:description" content="Join our innovative Formula Student racing team competing at the international level." />
-	<meta name="twitter:image" content="/og-image.png" />
-	
-	<!-- Canonical URL (will be overridden per page) -->
-	<link rel="canonical" href="https://fs-erta.com" />
-	
-	<!-- Preconnect for performance -->
+	<meta name="twitter:title" data-rh="true" content="ERTA — Engineering Racing Team Algarve" />
+	<meta name="twitter:description" data-rh="true" content="The University of Algarve's Formula Student team. FSPT26 Class 2: 8th overall, with three top-seven static event finishes." />
+	<meta name="twitter:image" data-rh="true" content="https://fs-erta.com/og-image.png" />
+	<meta name="twitter:image:alt" data-rh="true" content="ERTA — Engineering Racing Team Algarve" />
+
+	<!-- Canonical URL (updated per page) -->
+	<link rel="canonical" data-rh="true" href="https://fs-erta.com/" />
+
+	<!-- Performance -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap"
-		rel="stylesheet">
-	
-	<!-- Sitemap -->
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-	
-	<!-- JSON-LD Structured Data -->
+
+	<!-- Organization / SportsTeam structured data -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "Organization",
-		"name": "ERTA - UAlg Formula Student Team",
+		"@type": "SportsTeam",
+		"name": "ERTA — Engineering Racing Team Algarve",
+		"alternateName": "ERTA - UAlg Formula Student Team",
 		"url": "https://fs-erta.com",
 		"logo": "https://fs-erta.com/logo.png",
-		"description": "ERTA is the University of Algarve's Formula Student racing team",
+		"description": "ERTA is the University of Algarve's Formula Student racing team, competing in Formula Student Portugal Class 2.",
+		"foundingDate": "2026",
 		"sameAs": [
-			"https://www.facebook.com/erta.ualg",
-			"https://www.instagram.com/erta.ualg",
-			"https://www.linkedin.com/company/erta-ualg"
+			"https://www.instagram.com/fs_erta/",
+			"https://www.linkedin.com/company/fs-erta/"
 		],
 		"contactPoint": {
 			"@type": "ContactPoint",
 			"contactType": "Team Contact",
-			"email": "contact@fs-erta.com"
+			"email": "erta@ualg.pt"
 		},
 		"address": {
 			"@type": "PostalAddress",
 			"addressCountry": "PT",
 			"addressLocality": "Faro",
 			"addressRegion": "Algarve"
+		},
+		"parentOrganization": {
+			"@type": "CollegeOrUniversity",
+			"name": "Universidade do Algarve"
+		},
+		"sport": "Motorsport",
+		"knowsAbout": [
+			"Formula Student",
+			"Motorsport engineering",
+			"Electric vehicles"
+		]
+	}
+	</script>
+
+	<!-- WebSite structured data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "ERTA — Engineering Racing Team Algarve",
+		"url": "https://fs-erta.com/",
+		"inLanguage": ["pt-PT", "en"],
+		"publisher": {
+			"@type": "SportsTeam",
+			"name": "ERTA — Engineering Racing Team Algarve",
+			"url": "https://fs-erta.com/"
 		}
 	}
 	</script>
-	
-	<title>ERTA - UAlg Formula Student Team</title>
 </head>
 
 <body>

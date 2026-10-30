@@ -92,7 +92,9 @@ export default function PartnerCard({ partner, featured = false, compact = false
                         {partner.name}
                     </h3>
                     <p className="mt-1 text-sm leading-6 text-[color:var(--site-muted)]">
-                        {t(`partners-page.tier-descriptions.${partner.tier}`)}
+                        {partner.descriptionKey
+                            ? t(`partners-page.descriptions.${partner.descriptionKey}`)
+                            : t(`partners-page.tier-descriptions.${partner.tier}`)}
                     </p>
                 </div>
             </div>

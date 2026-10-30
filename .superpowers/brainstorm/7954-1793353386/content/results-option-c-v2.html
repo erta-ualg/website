@@ -1,0 +1,278 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+.mock-toolbar { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:.75rem; }
+.mock-toolbar p { color:var(--text-secondary); font-size:.82rem; margin:0; }
+.mock-toolbar button { font:inherit; font-size:.76rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; padding:.45rem .8rem; border-radius:6px; border:1px solid var(--border); background:var(--bg-secondary); color:var(--text-primary); cursor:pointer; }
+.mock-toolbar button:hover { border-color:var(--accent); }
+
+.site {
+  --bg: #eef4ff;
+  --surface: rgba(250, 252, 255, 0.96);
+  --surface-2: rgba(255, 255, 255, 0.72);
+  --border: rgba(122, 167, 226, 0.22);
+  --border-strong: rgba(19, 75, 138, 0.18);
+  --accent: #2f80ed;
+  --accent-strong: #11c7b9;
+  --text: #0f172a;
+  --muted: #52627a;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+  --header-a: rgba(9, 22, 44, 0.96);
+  --header-b: rgba(19, 75, 138, 0.98);
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 10% 6%, rgba(47, 128, 237, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 2%, rgba(17, 199, 185, 0.12), transparent 26%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4ff 40%, #e9f1fd 100%);
+  color: var(--text);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+}
+.site.dark {
+  --bg: #0e1420;
+  --surface: rgba(29, 38, 56, 0.96);
+  --surface-2: rgba(16, 23, 38, 0.86);
+  --border: rgba(111, 160, 229, 0.18);
+  --border-strong: rgba(111, 160, 229, 0.22);
+  --accent: #5ea6ff;
+  --accent-strong: #19d3c5;
+  --text: #f5f7fb;
+  --muted: #b7c3d8;
+  --shadow: 0 22px 56px rgba(0, 0, 0, 0.30);
+  background:
+    radial-gradient(circle at 10% 6%, rgba(94, 166, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 2%, rgba(25, 211, 197, 0.11), transparent 26%),
+    linear-gradient(180deg, #101827 0%, #0e1420 55%, #0b1120 100%);
+}
+.site * { box-sizing: border-box; }
+.site::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .38;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, .035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent 62%);
+}
+.site.dark::before { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); }
+.site > * { position: relative; }
+
+/* header */
+.s-header { background: linear-gradient(120deg, var(--header-a), var(--header-b)); border-bottom: 1px solid rgba(122,167,226,.24); box-shadow: 0 18px 40px rgba(2,6,23,.18); }
+.s-header-inner { max-width: 1180px; margin: 0 auto; height: 64px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+.s-header-inner::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(47,128,237,.85), rgba(17,199,185,.7), transparent); opacity: .6; }
+.s-logo { font-size: 24px; font-weight: 700; letter-spacing: .3em; color: #fff; text-shadow: 0 0 18px rgba(47,128,237,.55); }
+.s-nav { display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,.82); }
+.s-nav b { color: #fff; border-bottom: 1px solid var(--accent-strong); padding-bottom: 2px; }
+.s-nav .cta { background: linear-gradient(120deg, rgba(255,255,255,.98), rgba(214,231,255,.96)); color: #0b1b37; padding: 9px 14px; border-radius: 4px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px)); box-shadow: 0 0 24px rgba(47,128,237,.28), 0 0 56px rgba(17,199,185,.16); }
+
+/* layout */
+.s-section { max-width: 1180px; margin: 0 auto; padding: 34px 28px; }
+.s-hero-section { padding-top: 52px; padding-bottom: 20px; }
+.s-eyebrow { margin: 0 0 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .28em; color: var(--muted); }
+.s-eyebrow.accent { color: var(--accent); }
+.s-title { margin: 0; font-size: 46px; font-weight: 700; line-height: .96; text-transform: uppercase; letter-spacing: .04em; color: var(--text); }
+.s-body { margin: 0; font-size: 17px; line-height: 1.55; color: var(--muted); }
+
+/* panels */
+.s-panel { position: relative; background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(244,248,255,.92)); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(14px); border-radius: 4px; overflow: hidden; }
+.site.dark .s-panel { background: linear-gradient(180deg, rgba(16,23,38,.96), rgba(11,16,29,.92)); }
+.s-panel::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(47,128,237,.10), transparent 28%, transparent 72%, rgba(17,199,185,.08)); }
+.s-panel::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, rgba(47,128,237,.85), rgba(17,199,185,.85)); opacity: .75; }
+
+/* hero */
+.s-hero-grid { display: grid; grid-template-columns: .68fr 1.32fr; min-height: 320px; }
+.s-rank { position: relative; padding: 30px 28px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(150deg, rgba(9,22,44,.98), rgba(19,75,138,.96) 60%, #0b1b33); color: #fff; overflow: hidden; }
+.s-rank::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 12%, rgba(47,128,237,.45), transparent 55%), radial-gradient(circle at 90% 90%, rgba(17,199,185,.22), transparent 45%); }
+.s-rank::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(169,216,246,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(169,216,246,.07) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(160deg, #000, transparent 72%); }
+.s-rank > * { position: relative; z-index: 1; }
+.s-rank .s-eyebrow { color: rgba(169,216,246,.82); }
+.s-rank .big { font-size: 128px; font-weight: 700; line-height: .78; letter-spacing: -.01em; color: #f5f7fb; text-shadow: 0 14px 34px rgba(0,0,0,.24); }
+.s-rank .big span { font-size: 28px; letter-spacing: .1em; color: #11c7b9; }
+.s-rank .caption { margin-top: 10px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: rgba(245,247,251,.86); }
+.s-rank .tag { align-self: flex-start; border: 1px solid rgba(169,216,246,.3); padding: 5px 9px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,247,251,.8); }
+.s-hero-copy { padding: 34px 38px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.s-hero-copy .s-title span { color: var(--accent); }
+.s-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.s-chip { border: 1px solid var(--border); background: rgba(255,255,255,.6); padding: 6px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text); }
+.site.dark .s-chip { background: rgba(255,255,255,.06); }
+.s-chip b { color: var(--accent); }
+.s-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
+.s-btn-primary, .s-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; text-decoration: none; border-radius: 4px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px)); }
+.s-btn-primary { background: linear-gradient(135deg, var(--accent), #0f4ca8 62%, rgba(17,199,185,.92)); color: #fff; border: 1px solid rgba(255,255,255,.32); box-shadow: 0 0 24px rgba(47,128,237,.28), 0 0 56px rgba(17,199,185,.16); }
+.s-btn-secondary { border: 1px solid var(--border-strong); color: var(--text); background: rgba(255,255,255,.55); }
+.site.dark .s-btn-secondary { background: rgba(255,255,255,.06); }
+
+/* stats */
+.s-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding-top: 0; padding-bottom: 8px; }
+.s-stat { padding: 16px 18px; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow); border-radius: 4px; display: grid; gap: 2px; }
+.s-stat.primary { background: linear-gradient(140deg, rgba(47,128,237,.13), rgba(17,199,185,.09)), var(--surface); border-color: rgba(47,128,237,.32); }
+.s-stat .n { font-size: 34px; font-weight: 700; line-height: 1; color: var(--text); }
+.s-stat.primary .n { color: var(--accent); }
+.s-stat .l { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--muted); }
+
+/* events */
+.s-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.s-head h2 { margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; }
+.s-head h2::before { content: ''; width: 3px; height: 18px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-strong)); box-shadow: 0 0 0 3px rgba(47,128,237,.08); }
+.s-head .meta { font-size: 11px; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); }
+.s-events { display: grid; gap: 12px; }
+.s-event { display: grid; grid-template-columns: 74px 1fr 170px; gap: 20px; align-items: center; padding: 18px 20px; }
+.s-event > * { position: relative; z-index: 1; }
+.s-medal { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--accent), #0f4ca8 70%, rgba(17,199,185,.9)); clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); box-shadow: 0 0 24px rgba(47,128,237,.24); }
+.s-event .kicker { margin: 0 0 2px; font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.s-event h3 { margin: 0 0 4px; font-size: 19px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text); }
+.s-event p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--muted); }
+.s-photo { position: relative; height: 82px; overflow: hidden; border: 1px solid var(--border); border-radius: 3px; background: linear-gradient(135deg, rgba(47,128,237,.18), rgba(17,199,185,.08) 60%, rgba(255,255,255,.4)); }
+.s-photo::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, transparent 0 16px, rgba(255,255,255,.28) 16px 18px); }
+.s-photo span { position: absolute; left: 8px; bottom: 7px; z-index: 1; font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.site.dark .s-photo { background: linear-gradient(135deg, rgba(94,166,255,.18), rgba(25,211,197,.10), rgba(16,23,38,.6)); }
+
+/* quote + cta */
+.s-footer-cta { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; align-items: stretch; }
+.s-quote { padding: 24px 26px; border-left: 3px solid var(--accent-strong); }
+.s-quote p { margin: 0; font-size: 18px; line-height: 1.45; color: var(--text); }
+.s-quote span { display: block; margin-top: 10px; font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.s-cta { padding: 24px 26px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.s-cta h3 { margin: 0; font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.s-cta p { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* footer */
+.s-footer { margin-top: 12px; background: linear-gradient(120deg, rgba(8,18,35,.98), rgba(12,34,63,.98)); border-top: 1px solid rgba(122,167,226,.16); color: rgba(226,232,240,.88); }
+.s-footer-inner { max-width: 1180px; margin: 0 auto; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.s-footer .mark { font-size: 18px; font-weight: 700; letter-spacing: .38em; color: #fff; text-shadow: 0 0 14px rgba(47,128,237,.4); }
+.s-footer small { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(226,232,240,.6); }
+@media (max-width: 760px) {
+  .s-hero-grid, .s-footer-cta { grid-template-columns: 1fr; }
+  .s-stats { grid-template-columns: 1fr 1fr; }
+  .s-event { grid-template-columns: 52px 1fr; }
+  .s-event .s-photo { display: none; }
+  .s-nav { display: none; }
+}
+</style>
+
+<div class="mock-toolbar">
+  <p>Refined C · same structure, rebuilt with the site's actual tokens, type and surface treatment.</p>
+  <button type="button" onclick="document.getElementById('c2').classList.toggle('dark')">Toggle dark theme</button>
+</div>
+
+<div class="site" id="c2">
+  <div class="s-header">
+    <div class="s-header-inner">
+      <div class="s-logo">ERTA</div>
+      <div class="s-nav">
+        <span>The Car</span>
+        <b>Results</b>
+        <span>Partners</span>
+        <span>Team</span>
+        <span>Join</span>
+        <span class="cta">Contact</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="s-section s-hero-section">
+      <div class="s-panel">
+        <div class="s-hero-grid">
+          <div class="s-rank">
+            <div>
+              <p class="s-eyebrow">Final standing</p>
+              <div class="big">08<span>TH</span></div>
+              <div class="caption">Overall · Class 2</div>
+            </div>
+            <div class="tag">FSPT26 · Car #E125</div>
+          </div>
+
+          <div class="s-hero-copy">
+            <p class="s-eyebrow accent">Formula Student Portugal · Castelo Branco · 19–24 July 2026</p>
+            <h1 class="s-title">Three rooms.<br><span>One benchmark.</span></h1>
+            <p class="s-body" style="max-width: 560px">ERTA's first national competition ended 8th overall in Class 2, with every static event finished between 5th and 7th. The score sheet is the starting point for the next car.</p>
+            <div class="s-chips">
+              <span class="s-chip">Cost <b>P5</b></span>
+              <span class="s-chip">Business <b>P6</b></span>
+              <span class="s-chip">Design <b>P7</b></span>
+              <span class="s-chip">Overall <b>P8</b></span>
+            </div>
+            <div class="s-actions">
+              <a class="s-btn-primary" href="#">The breakdown</a>
+              <a class="s-btn-secondary" href="#">Meet the team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s-section s-stats">
+      <div class="s-stat primary"><div class="n">P8</div><div class="l">Overall Class 2</div></div>
+      <div class="s-stat"><div class="n">P5</div><div class="l">Cost &amp; Manufacturing</div></div>
+      <div class="s-stat"><div class="n">P6</div><div class="l">Business Plan</div></div>
+      <div class="s-stat"><div class="n">P7</div><div class="l">Engineering Design</div></div>
+    </section>
+
+    <section class="s-section">
+      <div class="s-head">
+        <h2>The three static events</h2>
+        <span class="meta">One week · three judging rooms</span>
+      </div>
+
+      <div class="s-events">
+        <div class="s-panel s-event">
+          <div class="s-medal">5</div>
+          <div>
+            <p class="kicker">Static event 01</p>
+            <h3>Cost &amp; Manufacturing</h3>
+            <p>A complete bill of materials and manufacturing plan, defended line by line against the judges' cost model.</p>
+          </div>
+          <div class="s-photo"><span>Cost judging</span></div>
+        </div>
+
+        <div class="s-panel s-event">
+          <div class="s-medal">6</div>
+          <div>
+            <p class="kicker">Static event 02</p>
+            <h3>Business Plan Presentation</h3>
+            <p>The project's commercial case, delivered to a panel of industry judges as a full investment proposition.</p>
+          </div>
+          <div class="s-photo"><span>Presentation</span></div>
+        </div>
+
+        <div class="s-panel s-event">
+          <div class="s-medal">7</div>
+          <div>
+            <p class="kicker">Static event 03</p>
+            <h3>Engineering Design</h3>
+            <p>Every system and trade-off explained and challenged, from the chassis package to the powertrain choices.</p>
+          </div>
+          <div class="s-photo"><span>Design review</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s-section">
+      <div class="s-footer-cta">
+        <div class="s-panel s-quote">
+          <p>“We went to Castelo Branco to learn what the car needs next. We came back with three top-seven finishes and a much clearer target.”</p>
+          <span>ERTA · FSPT26</span>
+        </div>
+        <div class="s-panel s-cta">
+          <p class="s-eyebrow accent" style="margin:0">Next chapter</p>
+          <h3>Class 1 is the target.</h3>
+          <p>Be part of the team that builds the next result.</p>
+          <div class="s-actions"><a class="s-btn-primary" href="#">Join ERTA</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="s-footer">
+    <div class="s-footer-inner">
+      <div class="mark">ERTA</div>
+      <small>Formula Student · University of Algarve</small>
+    </div>
+  </footer>
+</div>

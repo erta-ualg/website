@@ -33,10 +33,18 @@ const DepartmentsSection: React.FC<DepartmentsSectionProps> = ({ departmentMembe
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {department.members.map((member) => (
-              <TeamMemberCard key={member.id} member={member} />
-            ))}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[...department.members]
+              .sort((a, b) => {
+                const aIsLead = a.role?.toLowerCase().includes("líder de departamento") || a.role?.toLowerCase().includes("department leader");
+                const bIsLead = b.role?.toLowerCase().includes("líder de departamento") || b.role?.toLowerCase().includes("department leader");
+                if (aIsLead && !bIsLead) return -1;
+                if (!aIsLead && bIsLead) return 1;
+                return a.id - b.id;
+              })
+              .map((member) => (
+                <TeamMemberCard key={member.id} member={member} />
+              ))}
           </div>
         </section>
       ))}

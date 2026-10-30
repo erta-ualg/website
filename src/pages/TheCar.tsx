@@ -31,9 +31,9 @@ export default function TheCar() {
     return (
         <div className="bg-background text-text">
             <SEO
-                title="The Car"
-                description="Discover ERTA's electric Formula Student racing car. Learn about its innovative design, specs, and engineering."
-                keywords="ERTA car, Formula Student car, electric vehicle, racing car, engineering, specs"
+                title={t("seo.car.title")}
+                description={t("seo.car.description")}
+                keywords={t("seo.car.keywords")}
                 ogUrl="https://fs-erta.com/carro"
                 canonicalUrl="https://fs-erta.com/carro"
                 structuredData={{

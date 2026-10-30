@@ -1,0 +1,341 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+.mock-toolbar { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:.75rem; }
+.mock-toolbar p { color:var(--text-secondary); font-size:.82rem; margin:0; max-width:760px; }
+.mock-toolbar button { font:inherit; font-size:.76rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; padding:.45rem .8rem; border-radius:6px; border:1px solid var(--border); background:var(--bg-secondary); color:var(--text-primary); cursor:pointer; white-space:nowrap; }
+.mock-toolbar button:hover { border-color:var(--accent); }
+
+.results-site {
+  --bg: #0b111d;
+  --panel-bg: linear-gradient(180deg, rgba(16, 23, 38, 0.96), rgba(11, 16, 29, 0.92));
+  --surface: rgba(29, 38, 56, 0.96);
+  --border: rgba(111, 160, 229, 0.20);
+  --border-soft: rgba(111, 160, 229, 0.14);
+  --accent: #5ea6ff;
+  --accent-strong: #19d3c5;
+  --text: #f5f7fb;
+  --muted: #b7c3d8;
+  --shadow: 0 22px 56px rgba(0, 0, 0, 0.30);
+  --header-a: rgba(12, 19, 32, 0.96);
+  --header-b: rgba(20, 37, 62, 0.98);
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 2%, rgba(94, 166, 255, 0.13), transparent 28%),
+    radial-gradient(circle at 90% 4%, rgba(25, 211, 197, 0.08), transparent 24%),
+    var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.results-site.light {
+  --bg: #eef4ff;
+  --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.92));
+  --surface: rgba(250, 252, 255, 0.96);
+  --border: rgba(122, 167, 226, 0.22);
+  --border-soft: rgba(19, 75, 138, 0.14);
+  --accent: #2f80ed;
+  --accent-strong: #11c7b9;
+  --text: #0f172a;
+  --muted: #52627a;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+  background:
+    radial-gradient(circle at 10% 2%, rgba(47, 128, 237, 0.13), transparent 28%),
+    radial-gradient(circle at 90% 4%, rgba(17, 199, 185, 0.09), transparent 24%),
+    var(--bg);
+}
+.results-site * { box-sizing: border-box; }
+.results-site::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent 45%);
+}
+.results-site.light::before {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+.results-site > * { position: relative; }
+
+/* header */
+.r-header { background: linear-gradient(120deg, var(--header-a), var(--header-b)); border-bottom: 1px solid rgba(122, 167, 226, 0.24); box-shadow: 0 18px 40px rgba(2, 6, 23, 0.24); }
+.r-header-inner { max-width: 1280px; margin: 0 auto; height: 80px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+.r-header-inner::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(94,166,255,.9), rgba(25,211,197,.78), transparent); opacity: .6; }
+.r-logo { height: 32px; width: auto; display: block; filter: drop-shadow(0 0 12px rgba(94, 166, 255, 0.5)); }
+.r-nav { display: flex; align-items: center; gap: 24px; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: rgba(255, 255, 255, 0.82); }
+.r-nav .active { color: #fff; border-bottom: 1px solid var(--accent-strong); padding-bottom: 2px; }
+.r-lang { display: flex; align-items: center; gap: 5px; font-size: 11px; color: rgba(255,255,255,.6); }
+.r-lang b { color: #fff; }
+.r-header-cta { display: inline-flex; align-items: center; justify-content: center; padding: 13px 18px; border-radius: 4px; background: linear-gradient(120deg, rgba(239,245,255,.98), rgba(192,219,255,.96)); color: #0b1b37; border: 1px solid rgba(255,255,255,.5); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .11em; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px)); }
+
+/* shared */
+.r-container { max-width: 1280px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.r-eyebrow { margin: 0 0 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .35em; color: rgba(94, 166, 255, 0.82); }
+.r-title { margin: 0; font-size: 60px; font-weight: 700; line-height: .92; text-transform: uppercase; letter-spacing: .06em; color: var(--text); }
+.r-body { margin: 0; font-size: 18px; line-height: 1.55; color: var(--muted); }
+.r-panel { position: relative; background: var(--panel-bg); border: 1px solid var(--border); border-radius: 5px; box-shadow: var(--shadow); overflow: hidden; }
+.r-panel::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(94,166,255,.08), transparent 28%, transparent 72%, rgba(25,211,197,.06)); }
+.r-panel::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, rgba(94,166,255,.85), rgba(25,211,197,.85)); opacity: .8; }
+.results-site.light .r-panel::before { background: linear-gradient(135deg, rgba(47,128,237,.10), transparent 28%, transparent 72%, rgba(17,199,185,.08)); }
+.r-corner { position: absolute; top: 16px; left: 16px; width: 34px; height: 34px; border-top: 1px solid rgba(94,166,255,.38); border-left: 1px solid rgba(94,166,255,.38); pointer-events: none; z-index: 1; }
+.results-site.light .r-corner { border-color: rgba(47,128,237,.38); }
+
+/* buttons */
+.r-btn-primary, .r-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; text-decoration: none; border-radius: 4px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px)); }
+.r-btn-primary { background: linear-gradient(135deg, var(--accent), #0f4ca8 62%, rgba(25,211,197,.92)); color: #fff; border: 1px solid rgba(255,255,255,.32); box-shadow: 0 0 24px rgba(94,166,255,.34), 0 0 60px rgba(25,211,197,.14); }
+.r-btn-secondary { border: 1px solid var(--border); background: rgba(255,255,255,.03); color: var(--text); }
+.results-site.light .r-btn-secondary { background: rgba(255,255,255,.55); }
+
+/* hero */
+.r-hero { position: relative; padding: 80px 0; overflow: hidden; }
+.r-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .5; filter: saturate(.7); }
+.r-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,.55) 0%, rgba(10,16,28,.82) 100%), radial-gradient(circle at 15% 20%, rgba(94,166,255,.18), transparent 40%); }
+.results-site.light .r-hero-overlay { background: linear-gradient(180deg, rgba(15,23,42,.45) 0%, rgba(15,23,42,.72) 100%), radial-gradient(circle at 15% 20%, rgba(47,128,237,.16), transparent 40%); }
+.r-hero .r-container { position: relative; z-index: 1; }
+.r-hero-panel { padding: 56px 56px; }
+.r-hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
+.r-hero-copy { display: grid; gap: 18px; justify-items: start; }
+.r-hero-copy .r-body { max-width: 640px; }
+.r-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.r-chip { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.04); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--text); }
+.results-site.light .r-chip { background: rgba(255,255,255,.7); }
+.r-chip b { color: var(--accent); }
+.r-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* rank card */
+.r-rank-card { position: relative; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 30px; background: linear-gradient(155deg, rgba(9,22,44,.98), rgba(19,75,138,.96) 58%, #0b1b33); border: 1px solid rgba(122,167,226,.28); border-radius: 5px; overflow: hidden; }
+.r-rank-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 0%, rgba(94,166,255,.45), transparent 55%), radial-gradient(circle at 95% 95%, rgba(25,211,197,.22), transparent 45%); }
+.r-rank-card::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(169,216,246,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(169,216,246,.07) 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(155deg, #000, transparent 75%); }
+.r-rank-card > * { position: relative; z-index: 1; }
+.r-rank-card .label { margin: 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .3em; color: rgba(169,216,246,.8); }
+.r-rank-card .big { margin-top: 8px; font-size: 146px; font-weight: 700; line-height: .76; letter-spacing: -.01em; color: #f5f7fb; text-shadow: 0 14px 34px rgba(0,0,0,.24); }
+.r-rank-card .big span { font-size: 30px; letter-spacing: .1em; color: #19d3c5; }
+.r-rank-card .caption { margin-top: 14px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: rgba(245,247,251,.9); }
+.r-rank-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 24px; }
+.r-rank-foot span { border: 1px solid rgba(169,216,246,.3); padding: 5px 9px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,247,251,.8); }
+
+/* stats */
+.r-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.r-stat { padding: 16px; border-radius: 16px; border: 1px solid rgba(34, 211, 238, 0.15); background: var(--surface); box-shadow: var(--shadow); }
+.results-site.light .r-stat { border-color: rgba(122,167,226,.22); }
+.r-stat .n { font-size: 32px; font-weight: 700; line-height: 1; color: var(--text); }
+.r-stat.highlight .n { color: var(--accent); }
+.r-stat .l { margin-top: 8px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); }
+
+/* events */
+.r-section { padding: 80px 0; }
+.r-section-tight { padding-top: 0; }
+.r-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.r-head h2 { margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: .075em; color: var(--text); }
+.r-head h2::before { content: ''; width: 3px; height: 18px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-strong)); box-shadow: 0 0 0 3px rgba(94,166,255,.08); }
+.r-head .meta { font-size: 11px; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); }
+.r-events { display: grid; gap: 16px; }
+.r-event { display: grid; grid-template-columns: 76px 1fr 190px; gap: 24px; align-items: center; padding: 26px 28px; }
+.r-event > * { position: relative; z-index: 1; }
+.r-medal { width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--accent), #0f4ca8 70%, rgba(25,211,197,.9)); clip-path: polygon(0 0, 100% 0, 100% 76%, 76% 100%, 0 100%); box-shadow: 0 0 26px rgba(94,166,255,.26); }
+.r-event .kicker { margin: 0 0 3px; font-size: 10px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
+.r-event h3 { margin: 0 0 5px; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text); }
+.r-event p { margin: 0; max-width: 620px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.r-thumb { position: relative; height: 92px; overflow: hidden; border: 1px solid var(--border); border-radius: 4px; }
+.r-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .8; }
+.r-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(8,13,23,.75)); }
+.r-thumb span { position: absolute; left: 9px; bottom: 8px; z-index: 1; font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,247,251,.9); }
+
+/* gallery */
+.r-gallery { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 16px; }
+.r-gallery figure { margin: 0; position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 5px; box-shadow: var(--shadow); }
+.r-gallery img { display: block; width: 100%; height: 210px; object-fit: cover; transition: transform .4s ease; }
+.r-gallery figure:hover img { transform: scale(1.04); }
+.r-gallery figcaption { position: absolute; inset: auto 0 0 0; padding: 26px 14px 12px; background: linear-gradient(180deg, transparent, rgba(6,10,18,.85)); font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,247,251,.9); }
+
+/* closing */
+.r-closing { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+.r-quote { padding: 34px 36px; border-left: 3px solid var(--accent-strong); }
+.r-quote p { margin: 0; font-size: 20px; line-height: 1.5; color: var(--text); }
+.r-quote span { display: block; margin-top: 14px; font-size: 10px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+.r-cta { padding: 34px 36px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.r-cta h3 { margin: 0; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; line-height: 1; }
+.r-cta p { margin: 0; font-size: 15px; color: var(--muted); }
+.r-cta .r-actions { margin-top: 6px; }
+
+/* footer */
+.r-footer { background: linear-gradient(120deg, rgba(11,18,31,.98), rgba(16,27,45,.98)); border-top: 1px solid var(--border-soft); color: rgba(226,232,240,.88); }
+.r-footer-inner { max-width: 1280px; margin: 0 auto; padding: 30px 16px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.r-footer .mark { font-size: 20px; font-weight: 700; letter-spacing: .38em; color: #fff; text-shadow: 0 0 14px rgba(94,166,255,.4); }
+.r-footer small { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(226,232,240,.6); }
+
+@media (max-width: 900px) {
+  .r-hero-grid, .r-closing { grid-template-columns: 1fr; }
+  .r-hero-panel { padding: 32px 24px; }
+  .r-title { font-size: 40px; }
+  .r-stats { grid-template-columns: 1fr 1fr; }
+  .r-event { grid-template-columns: 58px 1fr; }
+  .r-event .r-thumb { display: none; }
+  .r-gallery { grid-template-columns: 1fr; }
+  .r-nav { display: none; }
+}
+</style>
+
+<div class="mock-toolbar">
+  <p>Refined C, v3 · I checked the running site in this browser: it renders in dark mode. Rebuilt the page in that same dark language, with the real logo and site imagery.</p>
+  <button type="button" onclick="document.getElementById('c3').classList.toggle('light')">Toggle light theme</button>
+</div>
+
+<div class="results-site" id="c3">
+  <header class="r-header">
+    <div class="r-header-inner">
+      <img class="r-logo" src="/files/erta-logo.svg" alt="ERTA" />
+      <nav class="r-nav">
+        <span class="r-lang">☀ <b>EN</b> / PT</span>
+        <span>O Carro</span>
+        <span class="active">Resultados</span>
+        <span>Parceiros</span>
+        <span>A Equipa</span>
+        <span>Junta-te a nós</span>
+        <span class="r-header-cta">Contactos</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="r-hero">
+      <img class="r-hero-bg" src="/files/track.png" alt="" aria-hidden="true" />
+      <div class="r-hero-overlay"></div>
+
+      <div class="r-container">
+        <div class="r-panel r-hero-panel">
+          <div class="r-corner"></div>
+
+          <div class="r-hero-grid">
+            <div class="r-hero-copy">
+              <p class="r-eyebrow">Formula Student Portugal · Classe 2</p>
+              <h1 class="r-title">Três provas.<br>Um ponto de partida.</h1>
+              <p class="r-body">A estreia da ERTA na Formula Student Portugal terminou em 8.º lugar overall na Classe 2, com as três provas estáticas entre o 5.º e o 7.º lugar. A folha de resultados é o ponto de partida para o próximo carro.</p>
+
+              <div class="r-chips">
+                <span class="r-chip">Custo <b>P5</b></span>
+                <span class="r-chip">Plano de negócios <b>P6</b></span>
+                <span class="r-chip">Design <b>P7</b></span>
+                <span class="r-chip">Overall <b>P8</b></span>
+              </div>
+
+              <div class="r-actions">
+                <a class="r-btn-primary" href="#resultado">Ver o resultado</a>
+                <a class="r-btn-secondary" href="#">Conhecer a equipa</a>
+              </div>
+            </div>
+
+            <div class="r-rank-card">
+              <div>
+                <p class="label">Classificação final</p>
+                <div class="big">08<span>TH</span></div>
+                <div class="caption">Overall · Classe 2</div>
+              </div>
+              <div class="r-rank-foot">
+                <span>FSPT26</span>
+                <span>8 equipas</span>
+                <span>Carro #E125</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-stats">
+          <div class="r-stat highlight"><div class="n">P8</div><div class="l">Overall Classe 2</div></div>
+          <div class="r-stat"><div class="n">P5</div><div class="l">Custo &amp; Fabrico</div></div>
+          <div class="r-stat"><div class="n">P6</div><div class="l">Plano de Negócios</div></div>
+          <div class="r-stat"><div class="n">P7</div><div class="l">Design de Engenharia</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="r-section r-section-tight" id="resultado">
+      <div class="r-container">
+        <div class="r-head">
+          <h2>As três provas estáticas</h2>
+          <span class="meta">Castelo Branco · 19–24 julho 2026</span>
+        </div>
+
+        <div class="r-events">
+          <div class="r-panel r-event">
+            <div class="r-medal">5</div>
+            <div>
+              <p class="kicker">Prova estática 01</p>
+              <h3>Custo &amp; Fabrico</h3>
+              <p>Lista completa de materiais e plano de fabrico, defendidos linha a linha contra o modelo de custos dos juízes.</p>
+            </div>
+            <div class="r-thumb"><img src="/files/card1.jpg" alt="" /><span>Julgamento de custos</span></div>
+          </div>
+
+          <div class="r-panel r-event">
+            <div class="r-medal">6</div>
+            <div>
+              <p class="kicker">Prova estática 02</p>
+              <h3>Plano de Negócios</h3>
+              <p>O caso comercial do projeto, apresentado a um painel de juízes da indústria como uma proposta de investimento.</p>
+            </div>
+            <div class="r-thumb"><img src="/files/card2.jpg" alt="" /><span>Apresentação</span></div>
+          </div>
+
+          <div class="r-panel r-event">
+            <div class="r-medal">7</div>
+            <div>
+              <p class="kicker">Prova estática 03</p>
+              <h3>Design de Engenharia</h3>
+              <p>Cada sistema e compromisso explicado e questionado, do chassis à escolha do powertrain.</p>
+            </div>
+            <div class="r-thumb"><img src="/files/card3.jpg" alt="" /><span>Revisão de design</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="r-section r-section-tight">
+      <div class="r-container">
+        <div class="r-head">
+          <h2>Castelo Branco</h2>
+          <span class="meta">A primeira competição nacional da ERTA</span>
+        </div>
+        <div class="r-gallery">
+          <figure><img src="/files/team.jpg" alt="Equipa ERTA reunida antes da competição" /><figcaption>A equipa · Algarve</figcaption></figure>
+          <figure><img src="/files/card1.jpg" alt="Detalhe do carro em pista" /><figcaption>Preparação</figcaption></figure>
+          <figure><img src="/files/card3.jpg" alt="Carro da ERTA em pista" /><figcaption>Em pista</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="r-section">
+      <div class="r-container">
+        <div class="r-closing">
+          <div class="r-panel r-quote">
+            <p>“Fomos a Castelo Branco para perceber o que o carro precisa a seguir. Voltámos com uma base clara e um objetivo definido.”</p>
+            <span>ERTA · FSPT26</span>
+          </div>
+          <div class="r-panel r-cta">
+            <p class="r-eyebrow" style="margin:0">Próximo capítulo</p>
+            <h3>A Classe 1 é o objetivo.</h3>
+            <p>Faz parte da equipa que constrói o próximo resultado.</p>
+            <div class="r-actions">
+              <a class="r-btn-primary" href="#">Junta-te à equipa</a>
+              <a class="r-btn-secondary" href="#">Fala connosco</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="r-footer">
+    <div class="r-footer-inner">
+      <div class="mark">ERTA</div>
+      <small>Formula Student · Universidade do Algarve</small>
+    </div>
+  </footer>
+</div>

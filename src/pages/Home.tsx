@@ -1,12 +1,14 @@
+import { lazy, Suspense } from "react";
 import Header from "../components/Header/Header";
 import Slogan from "../components/Hero/Slogan";
 import Footer from "../components/Footer/Footer";
 import PartnersSection from "../components/Feature/Partners";
-import WorkshopDiorama from "../components/Three/WorkshopDiorama";
 import { useTranslation } from "react-i18next";
 import { SEO } from "../hooks/useSEO";
 
 import MissionData from "../data/Mission";
+
+const WorkshopDiorama = lazy(() => import("../components/Three/WorkshopDiorama"));
 
 function MissionSection() {
     const { t } = useTranslation();
@@ -108,9 +110,11 @@ function MachineSection() {
                 </div>
 
                 <div className="site-panel mt-10 rounded-[2rem] p-4 shadow-[0_0_60px_rgba(8,145,178,0.10)] backdrop-blur-xl">
-                    <div className="flex min-h-[24rem] items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
-                        <div className="h-[20rem] w-full overflow-hidden rounded-[1.25rem]">
-                            <WorkshopDiorama mode="compact" />
+                    <div className="flex h-[24rem] min-h-[24rem] items-stretch justify-center rounded-[1.5rem] border border-dashed border-cyan-300/30 bg-background text-center">
+                        <div className="h-full w-full overflow-hidden rounded-[1.25rem]">
+                            <Suspense fallback={<div className="h-full w-full" aria-hidden="true" />}>
+                                <WorkshopDiorama mode="compact" />
+                            </Suspense>
                         </div>
                     </div>
 
@@ -139,12 +143,14 @@ function MachineSection() {
 }
 
 export default function Home() {
+    const { t } = useTranslation();
+
     return (
         <div className="bg-background text-text">
             <SEO
-                title="Home"
-                description="ERTA - UAlg Formula Student Team. Discover our mission, innovative race car, and join Portugal's premier Formula Student team."
-                keywords="ERTA, Formula Student, UAlg, Algarve, race car, engineering, motorsport, student team"
+                title={t("seo.home.title")}
+                description={t("seo.home.description")}
+                keywords={t("seo.home.keywords")}
                 ogUrl="https://fs-erta.com/"
                 canonicalUrl="https://fs-erta.com/"
                 structuredData={{

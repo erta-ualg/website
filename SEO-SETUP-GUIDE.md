@@ -1,130 +1,123 @@
-# ERTA Website - Google Search Console Setup Guide
+# ERTA Website — SEO Setup
 
-## What We've Implemented
+Last updated: 2026-10-30
 
-### 1. **Dynamic Meta Tags (react-helmet-async)**
-   - Each page now has custom title, description, and keywords
-   - Open Graph tags for better social media sharing
-   - Twitter Card tags for Twitter optimization
-   - Canonical URLs to prevent duplicate content issues
+## What the codebase now does
 
-### 2. **Structured Data (JSON-LD)**
-   - Organization schema on homepage
-   - WebPage schema on individual pages
-   - This helps Google understand your site structure better
+### Metadata
+- Every page sets its own title, description, keywords, canonical URL, Open Graph and Twitter tags through `src/hooks/useSEO.tsx`.
+- Metadata is localized from the `seo` block in `src/locales/pt/translation.json` and `src/locales/en/translation.json`.
+- `document.title`, `<html lang>`, canonical and social tags are updated in place, so there are no duplicate tags.
+- `index.html` keeps generic fallback metadata for crawlers that do not execute JavaScript.
+- Canonical host is `https://fs-erta.com` (no `www`, no trailing slash except the homepage).
 
-### 3. **Robots.txt & Sitemap.xml**
-   - `robots.txt` - Tells search engines what to crawl
-   - `sitemap.xml` - Lists all your pages for indexing
+### Structured data
+- `SportsTeam` and `WebSite` JSON-LD in `index.html`.
+- `WebPage` JSON-LD per page, with `inLanguage`.
+- `BreadcrumbList` added automatically to every non-home page.
+- `SportsEvent` JSON-LD on `/results` for FSPT26.
 
-### 4. **Performance Optimizations (.htaccess)**
-   - GZIP compression for faster loading
-   - Browser caching to reduce server requests
-   - Security headers (X-Frame-Options, X-Content-Type-Options, etc.)
+### Crawling and indexing
+- `public/robots.txt` allows crawling and points to the sitemap.
+- `public/sitemap.xml` lists every canonical page, including `/results`.
+- `public/404.html` provides a branded 404 page.
+- `functions/_middleware.js` serves the SPA shell for known routes on Cloudflare Pages, redirects trailing slashes with a 301, and lets unknown paths fall through to `404.html` with a real 404 status.
+- `public/_redirects` provides the same route rewrites for static hosts that do not support Pages Functions.
+- `public/_headers` sets security headers and long-lived caching for hashed assets.
 
-## Next Steps for Google SEO Success
+### Performance
+- Route-level code splitting keeps Three.js and page-specific code out of the initial bundle.
+- Hero images are WebP, sized and marked `fetchpriority="high"`.
+- Font request reduced to the one family the interface actually uses (Rajdhani).
 
-### 1. **Submit to Google Search Console**
-   - Go to: https://search.google.com/search-console/about
-   - Add your domain: `https://fs-erta.com`
-   - Verify ownership via DNS record or HTML file
-   - Submit sitemap from: `https://fs-erta.com/sitemap.xml`
+## Cloudflare setup checklist
 
-### 2. **Submit Sitemap to Bing**
-   - Go to: https://www.bing.com/webmasters/
-   - Add your site and verify
-   - Submit sitemap
+The domain currently resolves over both `fs-erta.com` and `www.fs-erta.com`, and both `http` and `https` return 200. The Pages middleware in `functions/_middleware.js` now enforces `www` → apex and `http` → `https`; configure the dashboard rules below as the first line of defense.
 
-### 3. **Update Domain URL References**
-   - Replace `fs-erta.com` with your actual domain throughout:
-     - `index.html` - Open Graph and JSON-LD
-     - `public/sitemap.xml` - All URLs
-     - `src/hooks/useSEO.ts` - Base URL references
-   
-### 4. **Add OG Image**
-   - Place an image at `/public/og-image.png` (1200x630px recommended)
-   - This appears when people share your site on social media
+### 1. Redirect `www` to the apex domain
+Cloudflare dashboard → Rules → Redirect Rules → Create rule:
 
-### 5. **Add Favicon**
-   - Replace `/vite.svg` with your actual favicon
+- **When**: `Hostname` equals `www.fs-erta.com`
+- **Then**: Static redirect to `https://fs-erta.com`
+- **Status**: `301`
+- Enable **Preserve query string** and **Preserve path**.
 
-### 6. **Monitor & Improve**
-   - Check Google Search Console for:
-     - Indexing status
-     - Crawl errors
-     - Mobile usability issues
-     - Core Web Vitals
-   - Use Google Lighthouse: DevTools → Lighthouse → SEO audit
+### 2. Force HTTPS
+Cloudflare dashboard → SSL/TLS → Edge Certificates:
 
-## SEO Best Practices for Content
+- **Always Use HTTPS**: On
+- **Automatic HTTPS Rewrites**: On
+- **SSL/TLS encryption mode**: Full (strict)
 
-### On-Page SEO Tips:
-1. **Use H1 tags** for main page title (one per page)
-2. **Use H2-H3 tags** for section headings in hierarchical order
-3. **Include keywords naturally** in headings and content
-4. **Add alt text** to all images
-5. **Use descriptive anchor text** for links
+### 3. HSTS
+The `_headers` file already sends:
 
-### Technical SEO Checklist:
-- ✅ Mobile responsive design (Tailwind handles this)
-- ✅ Fast loading speed (implement lazy loading, optimize images)
-- ✅ HTTPS (ensure your hosting uses SSL)
-- ✅ Meta descriptions on all pages
-- ✅ Unique titles for each page
-- ✅ Proper heading hierarchy
-- ✅ Sitemap and robots.txt
-- ✅ Structured data
+```text
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+```
 
-### Content Strategy:
-1. Create blog posts about Formula Student and engineering
-2. Update the sitemap when adding new pages
-3. Ensure all links are internal where possible
-4. Create quality backlinks through partnerships/press releases
+Only enable HSTS preload in Cloudflare after every subdomain is HTTPS.
 
-## Monitoring Tools
+### 4. Performance settings
+- **Brotli**: On
+- **Early Hints**: On
+- **Rocket Loader**: Off (it can break React hydration)
+- **Auto Minify**: Off (Vite already minifies)
 
-Free tools for monitoring SEO:
-- **Google Search Console**: Track indexing and search performance
-- **Google Analytics 4**: Monitor traffic and user behavior
-- **Google Lighthouse**: Audit performance, SEO, accessibility
-- **Mobile-Friendly Test**: https://search.google.com/test/mobile-friendly
-- **Rich Results Test**: https://search.google.com/test/rich-results
+### 5. Cache
+- HTML: `Cache-Control: public, max-age=0, must-revalidate` (Pages default)
+- Hashed assets: `public/_headers` sets `max-age=31536000, immutable`
 
-## Page Titles & Meta Descriptions Currently Set
+If the site is not hosted on Cloudflare Pages, the `_redirects` and `_headers` files are ignored by some hosts. Cloudflare Pages and Netlify both support them.
 
-| Page | Title | Focus Keywords |
-|------|-------|-----------------|
-| Home | Home \| ERTA | Formula Student, UAlg, racing team |
-| Team | Team \| ERTA | Formula Student team, engineering, departments |
-| Partners | Partners & Sponsors \| ERTA | sponsors, partnerships, motorsport |
-| The Car | The Car \| ERTA | Formula Student car, electric, engineering |
-| Join | Join Us \| ERTA | recruitment, apply, Formula Student |
-| Contact | Contact Us \| ERTA | contact, sponsorship, partnership |
+On Cloudflare Pages, deploy from the repository (Git integration) so the `functions/` directory is included. A direct upload of only `dist/` will skip the middleware and fall back to `_redirects`.
 
-## Future Enhancements
+### 6. Search Console and Bing
+1. Add a **Domain property** for `fs-erta.com` in Google Search Console.
+2. Verify with a DNS TXT record in Cloudflare DNS.
+3. Submit `https://fs-erta.com/sitemap.xml`.
+4. Add the site to Bing Webmaster Tools and submit the same sitemap.
+5. Check the Page Indexing report after the first crawl for soft 404s, duplicate canonicals or blocked resources.
 
-1. **Blog/News Section**: Create regular content to improve rankings
-2. **Video Schema**: Add schema for videos if you embed race footage
-3. **Event Schema**: If you participate in competitions, add event structured data
-4. **Mobile App Schema**: If you plan an app
-5. **AMP Pages**: Consider Accelerated Mobile Pages for content
-6. **Hreflang Tags**: If you support multiple languages (you already have i18n!)
+### 7. DNSSEC
+Enable DNSSEC in Cloudflare DNS. It is a trust signal and prevents DNS spoofing.
 
-## Internationalization (i18n) SEO Note
+## Current page metadata
 
-Your site already supports Portuguese and English. For proper SEO:
-- Add hreflang tags to link language versions
-- Ensure language switcher is working properly
-- Create separate metadata for each language version
+| Route | PT title | EN title |
+|-------|----------|----------|
+| `/` | Equipa Formula Student da UAlg \| ERTA | Formula Student Team UAlg \| ERTA |
+| `/team` | A Nossa Equipa — Engenharia Formula Student \| ERTA | Our Team — Formula Student Engineering \| ERTA |
+| `/partners` | Parceiros e Patrocinadores — Formula Student \| ERTA | Partners & Sponsors — Formula Student \| ERTA |
+| `/carro` | O Carro — Protótipo Elétrico Formula Student \| ERTA | The Car — Electric Formula Student Prototype \| ERTA |
+| `/join` | Junta-te à Equipa — Recrutamento Formula Student \| ERTA | Join the Team — Formula Student Recruitment \| ERTA |
+| `/contactos` | Contacta a ERTA — Patrocínios e Parcerias \| ERTA | Contact ERTA — Sponsorship & Partnerships \| ERTA |
+| `/results` | Resultados FSPT26 — 8.º Overall Classe 2 \| ERTA | FSPT26 Results — 8th Overall Class 2 \| ERTA |
 
-## Important Reminders
+## Remaining SEO work
 
-- **Update URLs**: Change `fs-erta.com` references to your actual domain
-- **Monitor Search Console**: Check regularly for errors and opportunities
-- **Content is King**: Quality content ranks better than technical tricks
-- **Backlinks Matter**: Building quality backlinks from relevant sites helps
-- **User Experience**: Fast, mobile-friendly sites rank better
+### English content is not separately indexable
+The language switcher changes the page in place. Googlebot sees the Portuguese default at a single URL, so English titles and descriptions are not separate ranking opportunities.
 
----
+The next structural step is a locale URL strategy, preferably:
 
-For more information, visit: https://developers.google.com/search/docs
+- Portuguese at `/` (current URLs preserved)
+- English at `/en/...`
+- `hreflang` for `pt`, `en` and `x-default`
+- Locale-aware canonical URLs and sitemap entries
+
+This is a routing and link refactor across the site, not just metadata. Decide whether to invest in it before targeting English-language search traffic.
+
+### Social previews are generic
+Static Open Graph tags are visible to crawlers that do not run JavaScript, but they use the generic ERTA image and copy. Per-route social cards need pre-rendering or an edge worker that rewrites metadata per URL.
+
+### `/carro` still contains placeholder copy
+The car page has several `Lorem ipsum` sections. It will not rank well until it has real chassis, powertrain, aerodynamics and design content.
+
+### Content growth
+The strongest next content opportunities are:
+
+- A short FSPT26 race report with real photos and results context
+- Technical deep-dives on chassis, powertrain and aerodynamics
+- Sponsor and partner case studies
+- Recruitment and outreach posts

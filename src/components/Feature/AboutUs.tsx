@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import data from "../../data/AboutUs";
+import data from "../../assets/sponsor/AboutUs";
 
 export default function AboutUs() {
     const { t } = useTranslation();

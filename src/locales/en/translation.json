@@ -4,7 +4,8 @@
         "team": "THE TEAM",
         "join": "JOIN US",
         "contact": "CONTACTS",
-        "the-car": "THE CAR"
+        "the-car": "THE CAR",
+        "results": "RESULTS"
     },
     "footer": {
         "contact": "Contact us",
@@ -150,16 +151,46 @@
         },
         "stats": {
             "gold": "Gold partners",
+            "silver": "Silver partners",
+            "bronze": "Bronze partners",
             "supporting": "Supporting partners",
             "total": "Total partners"
         },
         "tiers": {
             "gold": "Gold Partner",
+            "silver": "Silver Sponsor",
+            "bronze": "Bronze Sponsor",
             "partner": "Partner"
         },
         "tier-descriptions": {
             "gold": "Top-tier partner with prominent placement across the project.",
+            "silver": "Key supporter helping the team build and grow.",
+            "bronze": "Valued contributor helping the team build and grow.",
             "partner": "Supporting partner helping the team build and grow."
+        },
+        "descriptions": {
+            "ualg": "Longstanding academic support rooted in the University of Algarve's engineering community.",
+            "cm-loule": "Local commitment helping strengthen the region around the team.",
+            "cm-portimao": "Pragmatic regional support that keeps the project grounded in its home territory.",
+            "aeroporto-faro": "A gateway partner with strong roots in the Algarve.",
+            "dassault": "A shared passion for digital design and engineering workflows.",
+            "ansys": "Enabling rigorous simulation to guide smart engineering decisions.",
+            "autodromo-algarve": "Hands-on access to a world-class motorsport environment.",
+            "cadflow": "A collaborative approach to design and technical expertise.",
+            "celerator": "Support that helps turn ambition into structured action.",
+            "solidworks": "Practical design tools powering the team's engineering work.",
+            "ualg-cria": "Innovation-driven support connecting academia and entrepreneurship.",
+            "ualg-ise": "A natural extension of the team's academic home and engineering roots."
+        },
+        "silver": {
+            "eyebrow": "Silver Sponsors",
+            "title": "Trusted Supporters",
+            "body": "Our Silver sponsors help strengthen the foundations of ERTA's work."
+        },
+        "bronze": {
+            "eyebrow": "Bronze Sponsors",
+            "title": "Valued Contributors",
+            "body": "Our Bronze sponsors provide essential support as we build and compete."
         },
         "card-label": "Partner",
         "compact-label": "Tier",
@@ -188,6 +219,7 @@
     },
     "team-page": {
         "hero": {
+            "eyebrow": "Our Team",
             "title": "Built to race, engineered to win",
             "description": "Meet the drivers of innovation. Our Formula Student team brings together the brightest minds in engineering, design, and strategy to build a machine that pushes the limits of performance and precision.",
             "explore": "Explore",
@@ -237,6 +269,11 @@
             "eyebrow": "Department leads",
             "title": "Department Leaders",
             "description": "These members coordinate each technical area and keep work aligned across the car."
+        },
+        "technical-directors": {
+            "eyebrow": "Technical leadership",
+            "title": "Technical Directors",
+            "description": "Guiding the technical direction of the project."
         },
         "departments-section": {
             "eyebrow": "Department",
@@ -405,6 +442,116 @@
             "title": "Join the build",
             "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "action": "Join the team"
+        }
+    },
+    "results-page": {
+        "hero": {
+            "eyebrow": "Formula Student Portugal · Class 2",
+            "title": "Three events. One starting point.",
+            "body": "ERTA's first Formula Student Portugal ended 8th overall in Class 2, with all three static events finishing between 5th and 7th. The score sheet is the starting point for the next car.",
+            "primary": "See the results",
+            "secondary": "Meet the team"
+        },
+        "rank": {
+            "label": "Final standing",
+            "overall": "Overall · Class 2",
+            "suffix": "th",
+            "entries": "{{total}} teams",
+            "car": "Car #{{number}}"
+        },
+        "chips": {
+            "cost": "Cost",
+            "business": "Business plan",
+            "design": "Design",
+            "overall": "Overall"
+        },
+        "stats": {
+            "overall": "Overall Class 2",
+            "cost": "Cost & Manufacturing",
+            "business": "Business Plan",
+            "design": "Engineering Design"
+        },
+        "events": {
+            "title": "The three static events",
+            "meta": "Castelo Branco · 19–24 July 2026",
+            "kicker": "Static event {{number}}",
+            "rank-label": "{{rank}}th place",
+            "standing": "Class 2",
+            "cost": {
+                "title": "Cost & Manufacturing",
+                "body": "A complete bill of materials and manufacturing plan, defended line by line against the judges' cost model."
+            },
+            "business": {
+                "title": "Business Plan Presentation",
+                "body": "The project's commercial case, delivered to a panel of industry judges as a full investment proposition."
+            },
+            "design": {
+                "title": "Engineering Design",
+                "body": "Every system and trade-off explained and challenged, from the chassis package to the powertrain choices."
+            }
+        },
+        "gallery": {
+            "title": "Castelo Branco",
+            "meta": "ERTA's first national competition",
+            "team": "The team",
+            "team-alt": "ERTA team gathered before the competition",
+            "prep": "Preparation",
+            "prep-alt": "ERTA car being prepared in the Castelo Branco paddock",
+            "track": "On track",
+            "track-alt": "ERTA car on track in Castelo Branco"
+        },
+        "quote": {
+            "text": "“We went to Castelo Branco to learn what the car needs next. We came back with a clear base and a defined target.”",
+            "author": "ERTA · FSPT26"
+        },
+        "cta": {
+            "eyebrow": "Next chapter",
+            "title": "Class 1 is the target.",
+            "body": "Be part of the team building the next result.",
+            "primary": "Join the team",
+            "secondary": "Talk to us"
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Formula Student Team UAlg",
+            "description": "ERTA is the University of Algarve's Formula Student team. FSPT26 Class 2: 8th overall, with three top-seven static event finishes, and building toward Class 1.",
+            "keywords": "ERTA, Formula Student, UAlg, University of Algarve, FSPT26, race car, engineering, motorsport"
+        },
+        "team": {
+            "title": "Our Team — Formula Student Engineering",
+            "description": "Meet ERTA's team: engineering students across six departments designing, building and competing with the University of Algarve's Formula Student car.",
+            "keywords": "ERTA team, Formula Student, UAlg, engineering, management, powertrain, chassis, software"
+        },
+        "partners": {
+            "title": "Partners & Sponsors — Formula Student",
+            "description": "Discover ERTA's partners and sponsors supporting the University of Algarve's Formula Student team. See our partner tiers and how to support the project.",
+            "keywords": "ERTA partners, sponsors, Formula Student, UAlg, motorsport sponsors"
+        },
+        "car": {
+            "title": "The Car — Electric Formula Student Prototype",
+            "description": "Discover ERTA's electric Formula Student prototype: chassis, powertrain and aerodynamics designed and built by students at the University of Algarve.",
+            "keywords": "ERTA car, Formula Student car, electric vehicle, racing car, engineering, specs"
+        },
+        "join": {
+            "title": "Join the Team — Formula Student Recruitment",
+            "description": "Join ERTA, the University of Algarve's Formula Student team. Apply to work across engineering, design, management or marketing. No prior experience needed.",
+            "keywords": "join ERTA, Formula Student team, apply, recruitment, UAlg"
+        },
+        "contact": {
+            "title": "Contact ERTA — Sponsorship & Partnerships",
+            "description": "Contact ERTA about sponsorship, partnerships or joining the University of Algarve's Formula Student team. Find our email, location and social channels.",
+            "keywords": "contact ERTA, Formula Student contact, sponsorship, partnership inquiry"
+        },
+        "results": {
+            "title": "FSPT26 Results — 8th Overall Class 2",
+            "description": "ERTA's FSPT26 results: 8th overall in Class 2, 5th in Cost & Manufacturing, 6th in Business Plan Presentation and 7th in Engineering Design.",
+            "keywords": "ERTA results, FSPT26, Formula Student Portugal, Class 2, Cost and Manufacturing, Business Plan, Engineering Design"
+        },
+        "not-found": {
+            "title": "Page Not Found",
+            "description": "The page you're looking for doesn't exist. Return to ERTA's homepage.",
+            "keywords": "404, not found, error"
         }
     }
 }

@@ -115,30 +115,88 @@ function WorkshopScene() {
 export default function WorkshopDiorama({ reducedMotion, mode = "hero" }: WorkshopDioramaProps) {
     const [viewShift, setViewShift] = useState(0);
     const [isInteracting, setIsInteracting] = useState(false);
+    const [cameraSettings, setCameraSettings] = useState(() => {
+        if (typeof window === "undefined") {
+            return mode === "compact"
+                ? { position: [2.7, 1.45, 2.2] as [number, number, number], fov: 38 }
+                : { position: [3.4, 1.7, 2.6] as [number, number, number], fov: 42 };
+        }
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const isMobile = width < 768;
+        const isPortrait = height > width;
+        if (mode === "compact") {
+            if (isMobile && isPortrait) {
+                return { position: [3.0, 1.6, 2.4] as [number, number, number], fov: 44 };
+            }
+            if (isMobile) {
+                return { position: [2.85, 1.5, 2.3] as [number, number, number], fov: 40 };
+            }
+            return { position: [2.7, 1.45, 2.2] as [number, number, number], fov: 38 };
+        }
+        if (isMobile && isPortrait) {
+            return { position: [3.8, 1.9, 2.9] as [number, number, number], fov: 48 };
+        }
+        if (isMobile) {
+            return { position: [3.6, 1.8, 2.75] as [number, number, number], fov: 45 };
+        }
+        return { position: [3.4, 1.7, 2.6] as [number, number, number], fov: 42 };
+    });
     const isCompact = mode === "compact";
 
     useEffect(() => {
         if (isCompact) {
             setViewShift(0);
-            return;
+        } else {
+            const updateShift = () => {
+                const width = window.innerWidth;
+                const ratio = width < 768 ? -0.08 : -0.17;
+                setViewShift(Math.round(width * ratio));
+            };
+            updateShift();
+            window.addEventListener("resize", updateShift);
+            return () => window.removeEventListener("resize", updateShift);
         }
+    }, [isCompact]);
 
-        const updateShift = () => {
+    useEffect(() => {
+        const updateCamera = () => {
             const width = window.innerWidth;
-            const ratio = width < 768 ? -0.08 : -0.17;
-            setViewShift(Math.round(width * ratio));
+            const height = window.innerHeight;
+            const isMobile = width < 768;
+            const isPortrait = height > width;
+            if (isCompact) {
+                if (isMobile && isPortrait) {
+                    setCameraSettings({ position: [3.0, 1.6, 2.4], fov: 44 });
+                } else if (isMobile) {
+                    setCameraSettings({ position: [2.85, 1.5, 2.3], fov: 40 });
+                } else {
+                    setCameraSettings({ position: [2.7, 1.45, 2.2], fov: 38 });
+                }
+                return;
+            }
+            if (isMobile && isPortrait) {
+                setCameraSettings({ position: [3.8, 1.9, 2.9], fov: 48 });
+            } else if (isMobile) {
+                setCameraSettings({ position: [3.6, 1.8, 2.75], fov: 45 });
+            } else {
+                setCameraSettings({ position: [3.4, 1.7, 2.6], fov: 42 });
+            }
         };
-
-        updateShift();
-        window.addEventListener("resize", updateShift);
-        return () => window.removeEventListener("resize", updateShift);
+        updateCamera();
+        window.addEventListener("resize", updateCamera);
+        window.addEventListener("orientationchange", updateCamera);
+        return () => {
+            window.removeEventListener("resize", updateCamera);
+            window.removeEventListener("orientationchange", updateCamera);
+        };
     }, [isCompact]);
 
     return (
         <Canvas
             shadows="soft"
-            camera={isCompact ? { position: [2.7, 1.45, 2.2], fov: 38 } : { position: [3.4, 1.7, 2.6], fov: 42 }}
-            style={{ width: "100%", height: "100%" }}
+            camera={{ position: cameraSettings.position, fov: cameraSettings.fov }}
+            style={{ width: "100%", height: "100%", display: "block" }}
             gl={{ antialias: true }}
             aria-hidden="true"
         >

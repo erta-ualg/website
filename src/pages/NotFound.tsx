@@ -11,11 +11,12 @@ export default function NotFound() {
     return (
         <div className="bg-background text-text">
             <SEO
-                title="Page Not Found"
-                description="The page you're looking for doesn't exist. Return to ERTA's homepage."
-                keywords="404, not found, error"
-                ogUrl="https://fs-erta.com"
-                canonicalUrl="https://fs-erta.com"
+                title={t("seo.not-found.title")}
+                description={t("seo.not-found.description")}
+                keywords={t("seo.not-found.keywords")}
+                robots="noindex, follow"
+                ogUrl="https://fs-erta.com/404"
+                canonicalUrl="https://fs-erta.com/404"
             />
             <Header />
 

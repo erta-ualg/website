@@ -59,9 +59,9 @@ export default function Contactos() {
     return (
         <div className="bg-background text-text">
             <SEO
-                title="Contact Us"
-                description="Get in touch with ERTA. We'd love to hear from you about sponsorships, partnerships, or any inquiries."
-                keywords="contact ERTA, Formula Student contact, sponsorship, partnership inquiry"
+                title={t("seo.contact.title")}
+                description={t("seo.contact.description")}
+                keywords={t("seo.contact.keywords")}
                 ogUrl="https://fs-erta.com/contactos"
                 canonicalUrl="https://fs-erta.com/contactos"
                 structuredData={{

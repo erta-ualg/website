@@ -7,6 +7,8 @@ import PartnerCard from "../Card/PartnerCard";
 export default function Partners() {
     const { t } = useTranslation();
     const goldPartner = partners.find((partner) => partner.tier === "gold");
+    const silverPartners = partners.filter((partner) => partner.tier === "silver");
+    const bronzePartners = partners.filter((partner) => partner.tier === "bronze");
     const supportingPartners = partners.filter((partner) => partner.tier === "partner");
     const highlightPartners = supportingPartners.slice(0, 3);
     const remainingPartners = supportingPartners.slice(3);
@@ -27,24 +29,73 @@ export default function Partners() {
                 </div>
 
                 {goldPartner && (
-                    <div className="rounded-[2rem] border border-[var(--site-card-border)] bg-[color:var(--site-surface-strong)] p-4 md:p-5">
-                        <PartnerCard partner={goldPartner} compact featured />
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                {t("partners-page.tiers.gold")}
+                            </span>
+                            <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                        </div>
+                        <div className="rounded-[2rem] border border-[var(--site-card-border)] bg-[color:var(--site-surface-strong)] p-4 md:p-5">
+                            <PartnerCard partner={goldPartner} compact featured />
+                        </div>
                     </div>
                 )}
 
-                {highlightPartners.length > 0 && (
-                    <div className="grid gap-4 md:grid-cols-3">
-                        {highlightPartners.map((partner) => (
-                            <PartnerCard key={partner.name} partner={partner} compact />
-                        ))}
+                {silverPartners.length > 0 && (
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                {t("partners-page.tiers.silver")}
+                            </span>
+                            <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                        </div>
+                        <div className={`grid gap-4 ${silverPartners.length === 1 ? "grid-cols-1" : "md:grid-cols-2"}`}>
+                            {silverPartners.map((partner) => (
+                                <PartnerCard key={partner.name} partner={partner} compact />
+                            ))}
+                        </div>
                     </div>
                 )}
 
-                {remainingPartners.length > 0 && (
-                    <div className="grid gap-4 md:grid-cols-3">
-                        {remainingPartners.map((partner) => (
-                            <PartnerCard key={partner.name} partner={partner} compact />
-                        ))}
+                {bronzePartners.length > 0 && (
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                {t("partners-page.tiers.bronze")}
+                            </span>
+                            <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                        </div>
+                        <div className={`grid gap-4 ${bronzePartners.length === 1 ? "grid-cols-1" : "sm:grid-cols-2 md:grid-cols-3"}`}>
+                            {bronzePartners.map((partner) => (
+                                <PartnerCard key={partner.name} partner={partner} compact />
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {(highlightPartners.length > 0 || remainingPartners.length > 0) && (
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--site-muted)]">
+                                {t("partners-page.tiers.partner")}
+                            </span>
+                            <div className="h-px flex-1 bg-[color:var(--site-card-border)]" />
+                        </div>
+                        {highlightPartners.length > 0 && (
+                            <div className="grid gap-4 md:grid-cols-3">
+                                {highlightPartners.map((partner) => (
+                                    <PartnerCard key={partner.name} partner={partner} compact />
+                                ))}
+                            </div>
+                        )}
+                        {remainingPartners.length > 0 && (
+                            <div className="grid gap-4 md:grid-cols-3">
+                                {remainingPartners.map((partner) => (
+                                    <PartnerCard key={partner.name} partner={partner} compact />
+                                ))}
+                            </div>
+                        )}
                     </div>
                 )}
 
