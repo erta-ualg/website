@@ -21,8 +21,7 @@ Last updated: 2026-10-30
 - `public/robots.txt` allows crawling and points to the sitemap.
 - `public/sitemap.xml` lists every canonical page, including `/results`.
 - `public/404.html` provides a branded 404 page.
-- `functions/_middleware.js` serves the SPA shell for known routes on Cloudflare Pages, redirects trailing slashes with a 301, and lets unknown paths fall through to `404.html` with a real 404 status.
-- `public/_redirects` provides the same route rewrites for static hosts that do not support Pages Functions.
+- `public/_worker.js` runs as a Cloudflare Pages advanced-mode worker. It serves the SPA shell for known routes, returns real 404s for unknown paths, normalizes trailing slashes with 301s, and redirects `www`/`http` to the canonical `https` apex.
 - `public/_headers` sets security headers and long-lived caching for hashed assets.
 
 ### Performance
@@ -32,7 +31,7 @@ Last updated: 2026-10-30
 
 ## Cloudflare setup checklist
 
-The domain currently resolves over both `fs-erta.com` and `www.fs-erta.com`, and both `http` and `https` return 200. The Pages middleware in `functions/_middleware.js` now enforces `www` → apex and `http` → `https`; configure the dashboard rules below as the first line of defense.
+The domain currently resolves over both `fs-erta.com` and `www.fs-erta.com`, and both `http` and `https` return 200. The `_worker.js` edge worker now enforces `www` → apex and `http` → `https`; configure the dashboard rules below as the first line of defense.
 
 ### 1. Redirect `www` to the apex domain
 Cloudflare dashboard → Rules → Redirect Rules → Create rule:
@@ -68,9 +67,7 @@ Only enable HSTS preload in Cloudflare after every subdomain is HTTPS.
 - HTML: `Cache-Control: public, max-age=0, must-revalidate` (Pages default)
 - Hashed assets: `public/_headers` sets `max-age=31536000, immutable`
 
-If the site is not hosted on Cloudflare Pages, the `_redirects` and `_headers` files are ignored by some hosts. Cloudflare Pages and Netlify both support them.
-
-On Cloudflare Pages, deploy from the repository (Git integration) so the `functions/` directory is included. A direct upload of only `dist/` will skip the middleware and fall back to `_redirects`.
+`_worker.js` is copied into `dist/` and deployed with the static output, so it works with both Cloudflare Pages Git integration and direct uploads. `_headers` is supported by Cloudflare Pages and Netlify.
 
 ### 6. Search Console and Bing
 1. Add a **Domain property** for `fs-erta.com` in Google Search Console.

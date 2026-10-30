@@ -4,6 +4,7 @@ import { changeLanguage } from "i18next";
 import i18n from "i18next";
 import { HiBars3, HiMoon, HiSun, HiXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 
 import data from "../../data/Header";
 
@@ -169,15 +170,15 @@ export default function Header() {
                 <ul className="site-mobile-nav-list">
                     {navigationLinks.map((link) => (
                         <li key={link.key}>
-                            <a href={link.href} onClick={closeMobileMenu}>
+                            <Link to={link.href} onClick={closeMobileMenu}>
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                     <li>
-                        <a href="/contactos" className="site-header-cta" onClick={closeMobileMenu}>
+                        <Link to="/contactos" className="site-header-cta" onClick={closeMobileMenu}>
                             {t("header.contact")}
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
@@ -188,13 +189,13 @@ export default function Header() {
         <>
             <header className="sticky top-0 z-50 w-full bg-primary shadow-sm site-header">
                 <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 site-header-inner">
-                    <a href="/" className="flex items-center logo-link">
+                    <Link to="/" className="flex items-center logo-link">
                         <img
                             src={data.logoText}
                             alt="ERTA"
                             className="h-8 w-auto object-contain site-logo"
                         />
-                    </a>
+                    </Link>
 
                     <button
                         type="button"
@@ -248,18 +249,18 @@ export default function Header() {
                             </li>
                             {navigationLinks.map((link) => (
                                 <li key={link.key}>
-                                    <a href={link.href} className="transition-colors duration-200 hover:opacity-80">
+                                    <Link to={link.href} className="transition-colors duration-200 hover:opacity-80">
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                             <li>
-                                <a
-                                    href="/contactos"
+                                <Link
+                                    to="/contactos"
                                     className="site-header-cta transition-opacity duration-200 hover:opacity-90"
                                 >
                                     {t("header.contact")}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
