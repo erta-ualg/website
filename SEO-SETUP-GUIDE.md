@@ -21,7 +21,7 @@ Last updated: 2026-10-30
 - `public/robots.txt` allows crawling and points to the sitemap.
 - `public/sitemap.xml` lists every canonical page, including `/results`.
 - `public/404.html` provides a branded 404 page.
-- `public/_worker.js` runs as a Cloudflare Pages advanced-mode worker. It serves the SPA shell for known routes, returns real 404s for unknown paths, normalizes trailing slashes with 301s, and redirects `www`/`http` to the canonical `https` apex.
+- `wrangler.toml` + `worker/index.js` deploy a Cloudflare Worker with static assets from `dist`. It serves the SPA shell for known routes, returns real 404s for unknown paths, normalizes trailing slashes with 301s, and redirects `www`/`http` to the canonical `https` apex.
 - `public/_headers` sets security headers and long-lived caching for hashed assets.
 
 ### Performance
@@ -31,7 +31,7 @@ Last updated: 2026-10-30
 
 ## Cloudflare setup checklist
 
-The domain currently resolves over both `fs-erta.com` and `www.fs-erta.com`, and both `http` and `https` return 200. The `_worker.js` edge worker now enforces `www` → apex and `http` → `https`; configure the dashboard rules below as the first line of defense.
+The domain currently resolves over both `fs-erta.com` and `www.fs-erta.com`, and both `http` and `https` return 200. The Worker now enforces `www` → apex and `http` → `https`; configure the dashboard rules below as the first line of defense.
 
 ### 1. Redirect `www` to the apex domain
 Cloudflare dashboard → Rules → Redirect Rules → Create rule:
@@ -64,10 +64,19 @@ Only enable HSTS preload in Cloudflare after every subdomain is HTTPS.
 - **Auto Minify**: Off (Vite already minifies)
 
 ### 5. Cache
-- HTML: `Cache-Control: public, max-age=0, must-revalidate` (Pages default)
+- HTML: `Cache-Control: public, max-age=0, must-revalidate` (Worker static asset default)
 - Hashed assets: `public/_headers` sets `max-age=31536000, immutable`
 
-`_worker.js` is copied into `dist/` and deployed with the static output, so it works with both Cloudflare Pages Git integration and direct uploads. `_headers` is supported by Cloudflare Pages and Netlify.
+### Build settings for Workers Builds
+
+- Repository: `erta-ualg/website`
+- Branch: `main`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Preview command: `npx wrangler versions upload` (or disable preview builds)
+- Output: the Worker serves `dist/` as static assets through `wrangler.toml` (`name = "website"`, `main = "worker/index.js"`)
+
+The Worker service must be named `website` so it keeps the existing `fs-erta.com` custom domain. `_headers` is applied to static asset responses.
 
 ### 6. Search Console and Bing
 1. Add a **Domain property** for `fs-erta.com` in Google Search Console.
