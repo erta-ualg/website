@@ -65,7 +65,7 @@ export const SEO = ({
   structuredData,
 }: SEOProps) => {
   const { i18n } = useTranslation();
-  const isPortuguese = i18n.language?.startsWith("pt") ?? true;
+  const isPortuguese = i18n.language?.startsWith("pt") ?? false;
   const fullTitle = titleTemplate.replace("%s", title);
   const locale = isPortuguese ? "pt_PT" : "en_US";
   const alternateLocale = isPortuguese ? "en_US" : "pt_PT";

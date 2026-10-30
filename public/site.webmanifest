@@ -4,6 +4,7 @@
   "description": "The University of Algarve's Formula Student team.",
   "start_url": "/",
   "display": "standalone",
+  "lang": "en",
   "background_color": "#070b14",
   "theme_color": "#134B8A",
   "icons": [

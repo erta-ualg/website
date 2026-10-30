@@ -9,7 +9,7 @@ LinkedIn: https://www.linkedin.com/company/fs-erta/
 Location: Faro, Algarve, Portugal
 
 /* Site */
-Language: Portuguese, English
+Language: English, Portuguese
 Standards: HTML5, CSS3, JavaScript (React), TypeScript
 Components: Vite, React Router, TailwindCSS, Three.js
 Last Update: 2026-10-30

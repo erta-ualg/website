@@ -17,7 +17,7 @@ export default function Footer() {
                             href={data.instagram}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Link para o Instagram da ERTA"
+                            aria-label={t("footer.instagram-aria")}
                         >
                             <FaInstagram className="w-5 h-5 hover:text-pink-500 transition-colors site-footer-icon" />
                         </a>
@@ -25,7 +25,7 @@ export default function Footer() {
                             href={data.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Link para o LinkedIn da ERTA"
+                            aria-label={t("footer.linkedin-aria")}
                         >
                             <FaLinkedin className="w-5 h-5 hover:text-blue-400 transition-colors site-footer-icon" />
                         </a>

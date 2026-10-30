@@ -199,7 +199,7 @@ export default function JoinForm() {
                                 className="block h-[75vh] min-h-[640px] w-full border-0"
                                 loading="lazy"
                             >
-                                A carregar…
+                                {t("join-form.loading")}
                             </iframe>
                         </div>
                     </section>

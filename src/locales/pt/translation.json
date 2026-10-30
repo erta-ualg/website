@@ -10,7 +10,9 @@
     "footer": {
         "contact": "Contacta-nos",
         "email": "erta@ualg.pt",
-        "location": "Universidade do Algarve, Faro, Portugal"
+        "location": "Universidade do Algarve, Faro, Portugal",
+        "instagram-aria": "ERTA no Instagram",
+        "linkedin-aria": "ERTA no LinkedIn"
     },
     "feature": {
         "about-us": {
@@ -282,13 +284,15 @@
         },
         "card": {
             "linkedin": "{{name}} no LinkedIn",
-            "instagram": "{{name}} no Instagram"
+            "instagram": "{{name}} no Instagram",
+            "photo-alt": "Foto de {{name}}"
         }
     },
     "join-form": {
         "eyebrow": "JUNTA-TE À EQUIPA",
         "title": "Junta-te a ERTA",
         "subtitle": "Somos a primeira equipa de Fórmula Student da Universidade do Algarve. O nosso objetivo é projetar, desenvolver e, futuramente, construir um carro de competição estudantil, aplicando o que aprendemos em engenharia, design e gestão. Todas as áreas são importantes - não é preciso ter experiência prévia.",
+        "loading": "A carregar…",
         "email-subject": "Candidatura ERTA",
         "form": {
             "title": "Formulário de candidatura",

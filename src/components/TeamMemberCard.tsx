@@ -27,7 +27,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
         <div className="relative aspect-[4/5] w-full overflow-hidden">
           <img
             src={photoUrl}
-            alt={`Foto de ${name}`}
+            alt={t("team-page.card.photo-alt", { name })}
             className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
             loading="lazy"
           />

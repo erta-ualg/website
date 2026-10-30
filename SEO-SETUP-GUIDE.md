@@ -7,6 +7,7 @@ Last updated: 2026-10-30
 ### Metadata
 - Every page sets its own title, description, keywords, canonical URL, Open Graph and Twitter tags through `src/hooks/useSEO.tsx`.
 - Metadata is localized from the `seo` block in `src/locales/pt/translation.json` and `src/locales/en/translation.json`.
+- The default language is English; users can switch to Portuguese and their choice is persisted in `localStorage`.
 - `document.title`, `<html lang>`, canonical and social tags are updated in place, so there are no duplicate tags.
 - `index.html` keeps generic fallback metadata for crawlers that do not execute JavaScript.
 - Canonical host is `https://fs-erta.com` (no `www`, no trailing slash except the homepage).
@@ -90,29 +91,29 @@ Enable DNSSEC in Cloudflare DNS. It is a trust signal and prevents DNS spoofing.
 
 ## Current page metadata
 
-| Route | PT title | EN title |
-|-------|----------|----------|
-| `/` | Equipa Formula Student da UAlg \| ERTA | Formula Student Team UAlg \| ERTA |
-| `/team` | A Nossa Equipa — Engenharia Formula Student \| ERTA | Our Team — Formula Student Engineering \| ERTA |
-| `/partners` | Parceiros e Patrocinadores — Formula Student \| ERTA | Partners & Sponsors — Formula Student \| ERTA |
-| `/carro` | O Carro — Protótipo Elétrico Formula Student \| ERTA | The Car — Electric Formula Student Prototype \| ERTA |
-| `/join` | Junta-te à Equipa — Recrutamento Formula Student \| ERTA | Join the Team — Formula Student Recruitment \| ERTA |
-| `/contactos` | Contacta a ERTA — Patrocínios e Parcerias \| ERTA | Contact ERTA — Sponsorship & Partnerships \| ERTA |
-| `/results` | Resultados FSPT26 — 8.º Overall Classe 2 \| ERTA | FSPT26 Results — 8th Overall Class 2 \| ERTA |
+| Route | EN title (default) | PT title |
+|-------|--------------------|----------|
+| `/` | Formula Student Team UAlg \| ERTA | Equipa Formula Student da UAlg \| ERTA |
+| `/team` | Our Team — Formula Student Engineering \| ERTA | A Nossa Equipa — Engenharia Formula Student \| ERTA |
+| `/partners` | Partners & Sponsors — Formula Student \| ERTA | Parceiros e Patrocinadores — Formula Student \| ERTA |
+| `/carro` | The Car — Electric Formula Student Prototype \| ERTA | O Carro — Protótipo Elétrico Formula Student \| ERTA |
+| `/join` | Join the Team — Formula Student Recruitment \| ERTA | Junta-te à Equipa — Recrutamento Formula Student \| ERTA |
+| `/contactos` | Contact ERTA — Sponsorship & Partnerships \| ERTA | Contacta a ERTA — Patrocínios e Parcerias \| ERTA |
+| `/results` | FSPT26 Results — 8th Overall Class 2 \| ERTA | Resultados FSPT26 — 8.º Overall Classe 2 \| ERTA |
 
 ## Remaining SEO work
 
-### English content is not separately indexable
-The language switcher changes the page in place. Googlebot sees the Portuguese default at a single URL, so English titles and descriptions are not separate ranking opportunities.
+### Portuguese content is not separately indexable
+The language switcher changes the page in place. Googlebot sees the English default at a single URL, so Portuguese titles and descriptions are not separate ranking opportunities.
 
-The next structural step is a locale URL strategy, preferably:
+The next structural step, if Portuguese organic traffic matters, is:
 
-- Portuguese at `/` (current URLs preserved)
-- English at `/en/...`
-- `hreflang` for `pt`, `en` and `x-default`
+- English at `/` (current URLs preserved)
+- Portuguese at `/pt/...`
+- `hreflang` for `en`, `pt-PT` and `x-default`
 - Locale-aware canonical URLs and sitemap entries
 
-This is a routing and link refactor across the site, not just metadata. Decide whether to invest in it before targeting English-language search traffic.
+This is a routing and link refactor across the site, not just metadata.
 
 ### Social previews are generic
 Static Open Graph tags are visible to crawlers that do not run JavaScript, but they use the generic ERTA image and copy. Per-route social cards need pre-rendering or an edge worker that rewrites metadata per URL.
