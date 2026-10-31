@@ -53,7 +53,7 @@
     "contacts": {
         "eyebrow": "GET IN TOUCH",
         "title": "Contacts",
-        "subtitle": "Have a question, want to sponsor us, or interested in joining the team? Reach out — we'd love to hear from you.",
+        "subtitle": "Have a question, want to sponsor us, or interested in joining the team? Reach out, we'd love to hear from you.",
         "info": {
             "title": "Contact information",
             "email-label": "Email",
@@ -146,8 +146,8 @@
     "partners-page": {
         "hero": {
             "eyebrow": "Partners",
-            "title": "Two tiers. One team.",
-            "body": "Our partner network is now organized into Partner and Gold Partner tiers so the page can properly spotlight the organizations helping the project move forward.",
+            "title": "Powered by our partners.",
+            "body": "Our partner network is organized into Gold, Silver, Bronze and Supporting tiers, so every organization behind the project gets the spotlight it deserves.",
             "placeholder-title": "Partner showcase placeholder",
             "placeholder-body": "A team photo, sponsor wall, or partner montage can live here later."
         },
@@ -381,6 +381,12 @@
     },
     "the-car": {
         "eyebrow": "THE CAR",
+        "coming-soon": {
+            "badge": "The Car",
+            "title": "Coming soon",
+            "body": "There's no prototype to show yet. The next car is being redesigned from the ground up with everything we learned at FSPT26.",
+            "action": "See our FSPT26 results"
+        },
         "hero": {
              "title": "The car",
              "subtitle": "Lorem ipsum dolor sit amet."
@@ -403,11 +409,11 @@
         },
         "timeline": {
             "title": "Program timeline",
-            "step-1": "Phase 01 — Architecture",
+            "step-1": "Phase 01 · Architecture",
             "step-1-body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "step-2": "Phase 02 — Prototype",
+            "step-2": "Phase 02 · Prototype",
             "step-2-body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "step-3": "Phase 03 — Track",
+            "step-3": "Phase 03 · Track",
             "step-3-body": "Ut enim ad minim veniam, quis nostrud exercitation."
         },
         "specs": {
@@ -538,32 +544,32 @@
             "keywords": "ERTA, Formula Student, UAlg, University of Algarve, FSPT26, race car, engineering, motorsport"
         },
         "team": {
-            "title": "Our Team — Formula Student Engineering",
+            "title": "Our Team · Formula Student Engineering",
             "description": "Meet ERTA's team: engineering students across six departments designing, building and competing with the University of Algarve's Formula Student car.",
             "keywords": "ERTA team, Formula Student, UAlg, engineering, management, powertrain, chassis, software"
         },
         "partners": {
-            "title": "Partners & Sponsors — Formula Student",
+            "title": "Partners & Sponsors · Formula Student",
             "description": "Discover ERTA's partners and sponsors supporting the University of Algarve's Formula Student team. See our partner tiers and how to support the project.",
             "keywords": "ERTA partners, sponsors, Formula Student, UAlg, motorsport sponsors"
         },
         "car": {
-            "title": "The Car — Electric Formula Student Prototype",
+            "title": "The Car · Electric Formula Student Prototype",
             "description": "Discover ERTA's electric Formula Student prototype: chassis, powertrain and aerodynamics designed and built by students at the University of Algarve.",
             "keywords": "ERTA car, Formula Student car, electric vehicle, racing car, engineering, specs"
         },
         "join": {
-            "title": "Join the Team — Formula Student Recruitment",
+            "title": "Join the Team · Formula Student Recruitment",
             "description": "Join ERTA, the University of Algarve's Formula Student team. Apply to work across engineering, design, management or marketing. No prior experience needed.",
             "keywords": "join ERTA, Formula Student team, apply, recruitment, UAlg"
         },
         "contact": {
-            "title": "Contact ERTA — Sponsorship & Partnerships",
+            "title": "Contact ERTA · Sponsorship & Partnerships",
             "description": "Contact ERTA about sponsorship, partnerships or joining the University of Algarve's Formula Student team. Find our email, location and social channels.",
             "keywords": "contact ERTA, Formula Student contact, sponsorship, partnership inquiry"
         },
         "results": {
-            "title": "FSPT26 Results — 8th Overall Class 2",
+            "title": "FSPT26 Results · 8th Overall Class 2",
             "description": "ERTA's FSPT26 results: 8th overall in Class 2, 5th in Cost & Manufacturing, 6th in Business Plan Presentation and 7th in Engineering Design.",
             "keywords": "ERTA results, FSPT26, Formula Student Portugal, Class 2, Cost and Manufacturing, Business Plan, Engineering Design"
         },

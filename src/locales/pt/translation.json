@@ -53,7 +53,7 @@
     "contacts": {
         "eyebrow": "FALA CONNOSCO",
         "title": "Contactos",
-        "subtitle": "Tens alguma dúvida, queres patrocinar-nos ou juntar-te à equipa? Entra em contacto — adorávamos saber de ti.",
+        "subtitle": "Tens alguma dúvida, queres patrocinar-nos ou juntar-te à equipa? Entra em contacto, adorávamos saber de ti.",
         "info": {
             "title": "Informação de contacto",
             "email-label": "Email",
@@ -146,8 +146,8 @@
     "partners-page": {
         "hero": {
             "eyebrow": "Parceiros",
-            "title": "Cinco níveis. Uma equipa.",
-            "body": "A nossa rede de parceiros está agora organizada em níveis Partner e Gold Partner para dar o destaque certo às organizações que ajudam o projeto a avançar.",
+            "title": "Impulsionados pelos nossos parceiros.",
+            "body": "A nossa rede de parceiros está organizada em níveis Gold, Silver, Bronze e Supporting, para que cada organização que apoia o projeto receba o destaque que merece.",
             "placeholder-title": "Espaço reservado da montra de parceiros",
             "placeholder-body": "Uma foto da equipa, parede de patrocinadores ou montagem de parceiros pode entrar aqui depois."
         },
@@ -381,11 +381,17 @@
     },
     "the-car": {
         "eyebrow": "O CARRO",
+        "coming-soon": {
+            "badge": "O Carro",
+            "title": "Em breve",
+            "body": "Ainda não há protótipo para mostrar. O próximo carro está a ser redesenhado de raiz com tudo o que aprendemos no FSPT26.",
+            "action": "Ver os nossos resultados no FSPT26"
+        },
         "hero": {
             "title": "O carro",
             "subtitle": "Lorem ipsum dolor sit amet."
         },
-        "title": "Protótipo EV — Classe 2",
+        "title": "Protótipo EV · Classe 2",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "stats": {
             "value-1": "2026",
@@ -403,11 +409,11 @@
         },
         "timeline": {
             "title": "Calendário",
-            "step-1": "Fase 01 — Arquitetura",
+            "step-1": "Fase 01 · Arquitetura",
             "step-1-body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "step-2": "Fase 02 — Protótipo",
+            "step-2": "Fase 02 · Protótipo",
             "step-2-body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "step-3": "Fase 03 — Pista",
+            "step-3": "Fase 03 · Pista",
             "step-3-body": "Ut enim ad minim veniam, quis nostrud exercitation."
         },
         "specs": {
@@ -538,32 +544,32 @@
             "keywords": "ERTA, Formula Student, UAlg, Universidade do Algarve, FSPT26, carro de corrida, engenharia, motorsport"
         },
         "team": {
-            "title": "A Nossa Equipa — Engenharia Formula Student",
+            "title": "A Nossa Equipa · Engenharia Formula Student",
             "description": "Conhece a equipa da ERTA: estudantes de engenharia de seis departamentos que projetam, constroem e competem com o carro da Universidade do Algarve.",
             "keywords": "equipa ERTA, Formula Student, UAlg, engenharia, gestão, powertrain, chassis, software"
         },
         "partners": {
-            "title": "Parceiros e Patrocinadores — Formula Student",
+            "title": "Parceiros e Patrocinadores · Formula Student",
             "description": "Descobre os parceiros e patrocinadores que apoiam a equipa de Formula Student da Universidade do Algarve. Conhece os níveis de parceria e como apoiar o projeto.",
             "keywords": "parceiros ERTA, patrocinadores, Formula Student, UAlg, patrocínio motorsport"
         },
         "car": {
-            "title": "O Carro — Protótipo Elétrico Formula Student",
+            "title": "O Carro · Protótipo Elétrico Formula Student",
             "description": "Conhece o protótipo elétrico de Formula Student da ERTA: chassis, powertrain e aerodinâmica projetados e construídos por estudantes da Universidade do Algarve.",
             "keywords": "carro ERTA, Formula Student, veículo elétrico, carro de corrida, engenharia, especificações"
         },
         "join": {
-            "title": "Junta-te à Equipa — Recrutamento Formula Student",
+            "title": "Junta-te à Equipa · Recrutamento Formula Student",
             "description": "Junta-te à ERTA, a equipa de Formula Student da Universidade do Algarve. Candidata-te em engenharia, design, gestão ou marketing. Não precisas de experiência prévia.",
             "keywords": "juntar ERTA, equipa Formula Student, candidatura, recrutamento, UAlg"
         },
         "contact": {
-            "title": "Contacta a ERTA — Patrocínios e Parcerias",
+            "title": "Contacta a ERTA · Patrocínios e Parcerias",
             "description": "Contacta a ERTA para patrocínios, parcerias ou para te juntares à equipa de Formula Student da Universidade do Algarve. Vê o email, localização e redes sociais.",
             "keywords": "contacto ERTA, Formula Student, patrocínio, parceria"
         },
         "results": {
-            "title": "Resultados FSPT26 — 8.º Overall Classe 2",
+            "title": "Resultados FSPT26 · 8.º Overall Classe 2",
             "description": "Resultados da ERTA no FSPT26: 8.º overall na Classe 2, 5.º em Custo & Fabrico, 6.º em Plano de Negócios e 7.º em Design de Engenharia.",
             "keywords": "resultados ERTA, FSPT26, Formula Student Portugal, Classe 2, custo e fabrico, plano de negócios, design de engenharia"
         },

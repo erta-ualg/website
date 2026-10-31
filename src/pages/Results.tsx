@@ -24,14 +24,14 @@ export default function Results() {
                     {
                         "@context": "https://schema.org",
                         "@type": "WebPage",
-                        name: "ERTA Results — FSPT26",
+                        name: "ERTA Results · FSPT26",
                         description: "ERTA's results at Formula Student Portugal 2026",
                         url: "https://fs-erta.com/results",
                     },
                     {
                         "@context": "https://schema.org",
                         "@type": "SportsEvent",
-                        name: "Formula Student Portugal 2026 — Class 2",
+                        name: "Formula Student Portugal 2026 · Class 2",
                         startDate: "2026-07-19",
                         endDate: "2026-07-24",
                         eventStatus: "https://schema.org/EventScheduled",
@@ -46,7 +46,7 @@ export default function Results() {
                         },
                         competitor: {
                             "@type": "SportsTeam",
-                            name: "ERTA — Engineering Racing Team Algarve",
+                            name: "ERTA · Engineering Racing Team Algarve",
                             url: "https://fs-erta.com/",
                         },
                         description:

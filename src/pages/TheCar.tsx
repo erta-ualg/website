@@ -2,34 +2,34 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Header/Header";
-import CarroHero from "../components/Hero/CarroHero";
+// import CarroHero from "../components/Hero/CarroHero";
 import Footer from "../components/Footer/Footer";
 import { SEO } from "../hooks/useSEO";
 
 export default function TheCar() {
     const { t } = useTranslation();
 
-    const stats = [
-        { value: t("the-car.stats.value-1"), label: t("the-car.stats.label-1") },
-        { value: t("the-car.stats.value-2"), label: t("the-car.stats.label-2") },
-        { value: t("the-car.stats.value-3"), label: t("the-car.stats.label-3") },
-    ];
+    // const stats = [
+    //     { value: t("the-car.stats.value-1"), label: t("the-car.stats.label-1") },
+    //     { value: t("the-car.stats.value-2"), label: t("the-car.stats.label-2") },
+    //     { value: t("the-car.stats.value-3"), label: t("the-car.stats.label-3") },
+    // ];
 
-    const specs = [
-        { title: t("the-car.specs.item-1.title"), body: t("the-car.specs.item-1.body") },
-        { title: t("the-car.specs.item-2.title"), body: t("the-car.specs.item-2.body") },
-        { title: t("the-car.specs.item-3.title"), body: t("the-car.specs.item-3.body") },
-        { title: t("the-car.specs.item-4.title"), body: t("the-car.specs.item-4.body") },
-    ];
+    // const specs = [
+    //     { title: t("the-car.specs.item-1.title"), body: t("the-car.specs.item-1.body") },
+    //     { title: t("the-car.specs.item-2.title"), body: t("the-car.specs.item-2.body") },
+    //     { title: t("the-car.specs.item-3.title"), body: t("the-car.specs.item-3.body") },
+    //     { title: t("the-car.specs.item-4.title"), body: t("the-car.specs.item-4.body") },
+    // ];
 
-    const systems = [
-        { title: t("the-car.systems.item-1.title"), body: t("the-car.systems.item-1.body") },
-        { title: t("the-car.systems.item-2.title"), body: t("the-car.systems.item-2.body") },
-        { title: t("the-car.systems.item-3.title"), body: t("the-car.systems.item-3.body") },
-    ];
+    // const systems = [
+    //     { title: t("the-car.systems.item-1.title"), body: t("the-car.systems.item-1.body") },
+    //     { title: t("the-car.systems.item-2.title"), body: t("the-car.systems.item-2.body") },
+    //     { title: t("the-car.systems.item-3.title"), body: t("the-car.systems.item-3.body") },
+    // ];
 
     return (
-        <div className="bg-background text-text">
+        <div className="flex min-h-screen flex-col bg-background text-text">
             <SEO
                 title={t("seo.car.title")}
                 description={t("seo.car.description")}
@@ -45,9 +45,20 @@ export default function TheCar() {
                 }}
             />
             <Header />
+
+            {/* --- Original car page, commented out until the new prototype is revealed ---
             <CarroHero />
 
             <main className="overflow-hidden">
+            <section className="bg-background px-6 pt-12 text-text">
+                <div className="mx-auto max-w-7xl car-section">
+                    <div className="site-panel flex flex-wrap items-center gap-x-4 gap-y-2 rounded-[1.5rem] border-cyan-300/40 p-6">
+                        <span className="site-fact-chip">{t("the-car.notice.badge")}</span>
+                        <p className="site-body min-w-[16rem] flex-1">{t("the-car.notice.body")}</p>
+                    </div>
+                </div>
+            </section>
+
             <section className="bg-background px-6 py-16 text-text lg:py-24">
                 <div className="mx-auto max-w-7xl car-section">
                     <div className="car-intro">
@@ -159,6 +170,25 @@ export default function TheCar() {
                     </div>
                 </div>
             </section>
+            --- end of original car page --- */}
+
+            <main className="flex flex-1 flex-col justify-center overflow-hidden">
+                <section className="bg-background px-6 py-10 text-text lg:py-16">
+                    <div className="mx-auto max-w-3xl car-section text-center">
+                        <p className="section-eyebrow">{t("the-car.coming-soon.badge")}</p>
+                        <h1 className="mt-4 max-w-xl mx-auto text-4xl font-black uppercase leading-[0.95] tracking-[0.06em] text-text md:text-6xl">
+                            {t("the-car.coming-soon.title")}
+                        </h1>
+                        <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-text-secondary md:text-xl">
+                            {t("the-car.coming-soon.body")}
+                        </p>
+                        <div className="mt-8 flex justify-center">
+                            <Link to="/results" className="hero-cta-primary">
+                                {t("the-car.coming-soon.action")}
+                            </Link>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />

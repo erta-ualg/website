@@ -122,7 +122,7 @@ export const SEO = ({
     setPropertyMeta("og:image:alt", fullTitle);
     setPropertyMeta("og:type", ogType);
     setPropertyMeta("og:url", ogUrl);
-    setPropertyMeta("og:site_name", "ERTA — Engineering Racing Team Algarve");
+    setPropertyMeta("og:site_name", "ERTA · Engineering Racing Team Algarve");
     setPropertyMeta("og:locale", locale);
     setPropertyMeta("og:locale:alternate", alternateLocale);
     setNamedMeta("twitter:card", "summary_large_image");
