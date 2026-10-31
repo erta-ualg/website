@@ -29,7 +29,7 @@ export default function PartnerCard({ partner, featured = false, compact = false
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t("partners-page.card.open", { name: partner.name })}
-            className={`group site-panel flex h-full flex-col justify-between gap-6 rounded-[1.75rem] border transition duration-300 hover:-translate-y-1 hover:border-[color:var(--site-accent)] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)] ${
+            className={`group site-panel flex h-full flex-col justify-between gap-6 rounded-[1.75rem] border transition duration-200 hover:-translate-y-1 hover:border-[color:var(--site-accent)] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)] ${
                 isGold
                     ? "border-amber-300/70 shadow-[0_0_40px_rgba(251,191,36,0.18)]"
                     : featured

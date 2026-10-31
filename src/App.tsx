@@ -1,5 +1,15 @@
-import { lazy, Suspense } from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { lazy, Suspense, useEffect } from "react"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+  }, [pathname])
+
+  return null
+}
 
 const Home = lazy(() => import("./pages/Home"))
 const JoinForm = lazy(() => import("./pages/JoinForm"))
@@ -21,6 +31,7 @@ function RouteFallback() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           {/* homepage */}

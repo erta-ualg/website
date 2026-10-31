@@ -1,5 +1,7 @@
 import heroImage from "../assets/results/hero.webp";
 import teamImage from "../assets/results/team.jpg";
+import prepImage from "../assets/results/prep.jpg";
+import ontrackImage from "../assets/results/ontrack.jpg";
 
 export interface CompetitionEvent {
     id: "cost" | "business" | "design";
@@ -46,11 +48,13 @@ const results: CompetitionResult[] = [
             },
             {
                 id: "prep",
+                image: prepImage,
                 altKey: "results-page.gallery.prep-alt",
                 captionKey: "results-page.gallery.prep",
             },
             {
                 id: "track",
+                image: ontrackImage,
                 altKey: "results-page.gallery.track-alt",
                 captionKey: "results-page.gallery.track",
             },

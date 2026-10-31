@@ -23,12 +23,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
 
   return (
     <article className="group relative h-full">
-      <div className="relative h-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--site-card-border)] bg-[color:var(--site-surface-strong)] transition duration-500 group-hover:z-10 group-hover:border-[color:var(--site-accent)] group-hover:shadow-[0_0_60px_rgba(34,211,238,0.14)]">
+      <div className="relative h-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--site-card-border)] bg-[color:var(--site-surface-strong)] transition duration-300 group-hover:z-10 group-hover:border-[color:var(--site-accent)] group-hover:shadow-[0_0_60px_rgba(34,211,238,0.14)]">
         <div className="relative aspect-[4/5] w-full overflow-hidden">
           <img
             src={photoUrl}
             alt={t("team-page.card.photo-alt", { name })}
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             loading="lazy"
           />
           <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-slate-950 to-transparent" />
@@ -36,7 +36,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
             {department}
           </span>
         </div>
-        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-4 transition-all duration-500 group-hover:translate-y-[-4px]">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-4 transition-all duration-300 group-hover:translate-y-[-4px]">
           <div className="space-y-1">
             <h3 className="text-lg font-black uppercase tracking-[0.08em] text-white">{name}</h3>
             {displayRole && (
@@ -44,7 +44,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
             )}
           </div>
           {cardCopy && (
-            <p className="max-h-0 overflow-hidden text-xs leading-relaxed text-white/80 opacity-0 transition-all duration-500 group-hover:max-h-32 group-hover:opacity-100">
+            <p className="max-h-0 overflow-hidden text-xs leading-relaxed text-white/80 opacity-0 transition-all duration-300 group-hover:max-h-32 group-hover:opacity-100">
               {cardCopy}
             </p>
           )}
