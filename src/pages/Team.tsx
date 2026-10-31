@@ -14,11 +14,11 @@ import TeamMemberCard from '../components/TeamMemberCard';
 import { SEO } from '../hooks/useSEO';
 
 const departments = [
-  { sourceName: 'Gestão / Finanças', translationKey: 'team-page.departments.management' },
-  { sourceName: 'Marketing / Design', translationKey: 'team-page.departments.marketing' },
+  { sourceName: 'Management & Business', translationKey: 'team-page.departments.management' },
+  { sourceName: 'Marketing', translationKey: 'team-page.departments.marketing' },
   { sourceName: 'Vehicle Dynamics', translationKey: 'team-page.departments.vehicle-dynamics' },
   { sourceName: 'Powertrain / Elétrica', translationKey: 'team-page.departments.powertrain' },
-  { sourceName: 'Chassis / Aerodinâmica', translationKey: 'team-page.departments.chassis-aero' },
+  { sourceName: 'Chassis / Aero', translationKey: 'team-page.departments.chassis-aero' },
   { sourceName: 'Software / Informática', translationKey: 'team-page.departments.software' },
 ];
 

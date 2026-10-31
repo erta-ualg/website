@@ -7,6 +7,24 @@ interface TeamMemberCardProps {
   member: TeamMember;
 }
 
+const departmentKeys: Record<string, string> = {
+  "Team Leaders": "team-page.departments.leadership",
+  "Management & Business": "team-page.departments.management",
+  "Marketing": "team-page.departments.marketing",
+  "Vehicle Dynamics": "team-page.departments.vehicle-dynamics",
+  "Powertrain / Elétrica": "team-page.departments.powertrain",
+  "Chassis / Aero": "team-page.departments.chassis-aero",
+  "Software / Informática": "team-page.departments.software",
+};
+
+const roleKeys: Record<string, string> = {
+  "Team Leader": "team-page.roles.team-leader",
+  "Líder de Departamento": "team-page.roles.department-leader",
+  "Eletrical TD": "team-page.roles.electrical-td",
+  "Mechanical TD": "team-page.roles.mechanical-td",
+  "Membro": "team-page.roles.member",
+};
+
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
   const { t, i18n } = useTranslation();
   const { name, role, photoUrl, linkedin, instagram, department, descriptionPt, descriptionEn } = member;
@@ -15,11 +33,14 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
   const localizedDescription = activeLanguage.startsWith('pt') ? descriptionPt : descriptionEn;
   const cardCopy = localizedDescription.trim() || descriptionPt;
 
+  const departmentKey = departmentKeys[department];
+  const departmentLabel = departmentKey ? t(departmentKey) : department;
+
   const hasLinkedin = Boolean(linkedin && linkedin !== '#');
   const hasInstagram = Boolean(instagram && instagram !== '#');
   const roleLower = role?.toLowerCase() || '';
   const isPlainMember = roleLower === 'membro' || roleLower === 'member';
-  const displayRole = isPlainMember ? '' : role;
+  const displayRole = isPlainMember ? '' : roleKeys[role] ? t(roleKeys[role]) : role;
 
   return (
     <article className="group relative h-full">
@@ -33,15 +54,14 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           />
           <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-slate-950 to-transparent" />
           <span className="absolute left-3 top-3 rounded-full border border-cyan-300/40 bg-slate-950/70 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.26em] text-[color:var(--site-accent)] backdrop-blur">
-            {department}
+            {departmentLabel}
           </span>
         </div>
         <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-4 transition-all duration-300 group-hover:translate-y-[-4px]">
           <div className="space-y-1">
             <h3 className="text-lg font-black uppercase tracking-[0.08em] text-white">{name}</h3>
             {displayRole && (
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyan-300/90">{displayRole}</p>
-            )}
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyan-300/90">{displayRole}</p>            )}
           </div>
           {cardCopy && (
             <p className="max-h-0 overflow-hidden text-xs leading-relaxed text-white/80 opacity-0 transition-all duration-300 group-hover:max-h-32 group-hover:opacity-100">

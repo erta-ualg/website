@@ -260,7 +260,15 @@
             "vehicle-dynamics": "Vehicle Dynamics",
             "powertrain": "Powertrain & Electrical",
             "chassis-aero": "Chassis & Aerodynamics",
-            "software": "Software & Informatics"
+            "software": "Software & Informatics",
+            "leadership": "Team Leaders"
+        },
+        "roles": {
+            "team-leader": "Team Leader",
+            "department-leader": "Department Leader",
+            "electrical-td": "Electrical TD",
+            "mechanical-td": "Mechanical TD",
+            "member": "Member"
         },
         "leadership": {
             "eyebrow": "Leadership",
