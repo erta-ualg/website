@@ -477,11 +477,18 @@
             "design": "Design",
             "overall": "Overall"
         },
-        "stats": {
-            "overall": "Overall Classe 2",
-            "cost": "Custo & Fabrico",
-            "business": "Plano de Negócios",
-            "design": "Design de Engenharia"
+        "context": {
+            "title": "A competição em resumo",
+            "meta": "Formula Student · Regulamento FSG",
+            "what-eyebrow": "A competição",
+            "what-title": "O que é a Formula Student?",
+            "what-body": "Uma competição internacional de engenharia em que equipas universitárias projetam e constroem um protótipo de corrida e defendem cada decisão perante júris da indústria. A Classe 2 (a nossa) valida o projeto antes de avançar para a Classe 1, com corrida em pista.",
+            "scoring-eyebrow": "A folha de pontuação",
+            "scoring-title": "Como são avaliadas as equipas",
+            "scoring-body": "Na Classe 2, júris da indústria pontuam três provas estáticas segundo o regulamento oficial. O resultado combinado face a todas as equipas determina a classificação geral.",
+            "item-design": "a solidez da engenharia.",
+            "item-cost": "o que o carro custaria a produzir.",
+            "item-business": "se é um projeto financável."
         },
         "events": {
             "title": "As três provas estáticas",

@@ -2227,46 +2227,6 @@ html[data-theme="light"] .results-chip {
   color: rgba(245, 247, 251, 0.82);
 }
 
-.results-stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-  margin-top: 2rem;
-}
-
-.results-stat {
-  padding: 1rem;
-  border: 1px solid rgba(34, 211, 238, 0.15);
-  border-radius: 1rem;
-  background: var(--site-surface-strong);
-  box-shadow: var(--site-shadow);
-}
-
-html[data-theme="light"] .results-stat {
-  border-color: rgba(122, 167, 226, 0.22);
-}
-
-.results-stat-value {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--site-text);
-}
-
-.results-stat-highlight .results-stat-value {
-  color: var(--site-accent);
-}
-
-.results-stat-label {
-  margin-top: 0.5rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--site-muted);
-}
-
 .results-section {
   padding-block: 4rem;
 }
@@ -2395,6 +2355,68 @@ html[data-theme="light"] .results-stat {
   grid-template-columns: 1fr;
 }
 
+.results-context {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .results-context {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.results-context-card {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  padding: 1.75rem;
+}
+
+.results-context-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--site-text);
+}
+
+.results-context-body {
+  color: var(--site-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.results-context-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+.results-context-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--site-muted);
+}
+
+.results-context-list li::before {
+  content: "\2014";
+  flex: none;
+  color: var(--site-accent);
+}
+
+.results-context-list b {
+  flex: none;
+  max-width: 14rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--site-text);
+}
+
 .results-gallery-item {
   position: relative;
   min-height: 15rem;
@@ -2505,10 +2527,6 @@ html[data-theme="dark"] .results-gallery-placeholder {
 }
 
 @media (min-width: 768px) {
-  .results-stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .results-section {
     padding-block: 5rem;
   }

@@ -10,12 +10,6 @@ export default function Results() {
     const { t } = useTranslation();
     const result = results[0];
 
-    const eventStats = result.events.map((event) => ({
-        id: event.id,
-        rank: event.rank,
-        label: t(`results-page.stats.${event.id}`),
-    }));
-
     return (
         <div className="results-page-shell text-text">
             <SEO
@@ -122,24 +116,48 @@ export default function Results() {
 
                                     <div className="results-rank-foot">
                                         <span>{result.season}</span>
-                                        <span>{t("results-page.rank.entries", { total: result.entries })}</span>
                                         <span>{t("results-page.rank.car", { number: result.carNumber })}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="results-stats">
-                            <div className="results-stat results-stat-highlight">
-                                <p className="results-stat-value">P{result.overallRank}</p>
-                                <p className="results-stat-label">{t("results-page.stats.overall")}</p>
+                    </div>
+                </section>
+
+                <section id="results-formula-student" className="results-section scroll-mt-28">
+                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div className="results-section-head">
+                            <h2 className="results-section-title">{t("results-page.context.title")}</h2>
+                            <p className="results-section-meta">{t("results-page.context.meta")}</p>
+                        </div>
+
+                        <div className="results-context">
+                            <div className="site-panel results-context-card">
+                                <p className="section-eyebrow results-eyebrow">{t("results-page.context.what-eyebrow")}</p>
+                                <h3 className="results-context-title">{t("results-page.context.what-title")}</h3>
+                                <p className="results-context-body">{t("results-page.context.what-body")}</p>
                             </div>
-                            {eventStats.map((stat) => (
-                                <div key={stat.id} className="results-stat">
-                                    <p className="results-stat-value">P{stat.rank}</p>
-                                    <p className="results-stat-label">{stat.label}</p>
-                                </div>
-                            ))}
+
+                            <div className="site-panel results-context-card">
+                                <p className="section-eyebrow results-eyebrow">{t("results-page.context.scoring-eyebrow")}</p>
+                                <h3 className="results-context-title">{t("results-page.context.scoring-title")}</h3>
+                                <p className="results-context-body">{t("results-page.context.scoring-body")}</p>
+                                <ul className="results-context-list">
+                                    <li>
+                                        <b>{t("results-page.events.design.title")}</b>
+                                        <span>{t("results-page.context.item-design")}</span>
+                                    </li>
+                                    <li>
+                                        <b>{t("results-page.events.cost.title")}</b>
+                                        <span>{t("results-page.context.item-cost")}</span>
+                                    </li>
+                                    <li>
+                                        <b>{t("results-page.events.business.title")}</b>
+                                        <span>{t("results-page.context.item-business")}</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>

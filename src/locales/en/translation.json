@@ -477,11 +477,18 @@
             "design": "Design",
             "overall": "Overall"
         },
-        "stats": {
-            "overall": "Overall Class 2",
-            "cost": "Cost & Manufacturing",
-            "business": "Business Plan",
-            "design": "Engineering Design"
+        "context": {
+            "title": "The competition, in short",
+            "meta": "Formula Student · FSG rules",
+            "what-eyebrow": "The competition",
+            "what-title": "What is Formula Student?",
+            "what-body": "An international engineering competition where university teams design and build a prototype race car, then defend every decision to industry judges. Class 2 (ours) validates the project before stepping up to Class 1, full on-track racing.",
+            "scoring-eyebrow": "The score sheet",
+            "scoring-title": "How teams are evaluated",
+            "scoring-body": "In Class 2, industry juries score three static events against the official rules. The combined result against every other team sets the overall rank.",
+            "item-design": "how sound the engineering is.",
+            "item-cost": "what the car would cost to produce.",
+            "item-business": "whether it is a fundable project."
         },
         "events": {
             "title": "The three static events",
