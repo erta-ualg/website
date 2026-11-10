@@ -5,7 +5,7 @@
         "join": "JUNTA-TE A NÓS",
         "contact": "CONTACTOS",
         "the-car": "O CARRO",
-        "results": "RESULTADOS"
+        "results": "COMPETIÇÃO"
     },
     "footer": {
         "contact": "Contacta-nos",
@@ -530,7 +530,7 @@
             "author": "ERTA · FSPT26"
         },
         "cta": {
-            "eyebrow": "Próximo capítulo",
+            "eyebrow": "No futuro",
             "title": "A Classe 1 é o objetivo.",
             "body": "Faz parte da equipa que constrói o próximo resultado.",
             "primary": "Junta-te à equipa",

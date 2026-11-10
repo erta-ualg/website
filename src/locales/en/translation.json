@@ -5,7 +5,7 @@
         "join": "JOIN US",
         "contact": "CONTACTS",
         "the-car": "THE CAR",
-        "results": "RESULTS"
+        "results": "COMPETITION"
     },
     "footer": {
         "contact": "Contact us",
@@ -530,7 +530,7 @@
             "author": "ERTA · FSPT26"
         },
         "cta": {
-            "eyebrow": "Next chapter",
+            "eyebrow": "In the future",
             "title": "Class 1 is the target.",
             "body": "Be part of the team building the next result.",
             "primary": "Join the team",

@@ -24,6 +24,8 @@
   ExpiresByType image/jpeg "access plus 60 days"
   ExpiresByType image/gif "access plus 60 days"
   ExpiresByType image/png "access plus 60 days"
+  ExpiresByType image/x-icon "access plus 60 days"
+  ExpiresByType image/vnd.microsoft.icon "access plus 60 days"
   ExpiresByType image/webp "access plus 60 days"
   ExpiresByType application/font-woff "access plus 1 year"
   ExpiresByType font/ttf "access plus 1 year"
