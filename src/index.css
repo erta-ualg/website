@@ -2367,8 +2367,8 @@ html[data-theme="light"] .results-chip {
 }
 
 .results-context-card {
-  display: grid;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   gap: 0.65rem;
   padding: 1.75rem;
 }
@@ -2415,6 +2415,22 @@ html[data-theme="light"] .results-chip {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--site-text);
+}
+
+.results-context-image {
+  /* inset by the panel padding, pinned to the panel's bottom, corners matching the panel radius */
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--site-panel-border);
+}
+
+/* extra breathing room between each panel's content and its image */
+.results-context-card > :nth-last-child(2) {
+  margin-bottom: 1.25rem;
 }
 
 .results-gallery-item {

@@ -299,7 +299,7 @@
     "join-form": {
         "eyebrow": "JUNTA-TE À EQUIPA",
         "title": "Junta-te a ERTA",
-        "subtitle": "Somos a primeira equipa de Fórmula Student da Universidade do Algarve. O nosso objetivo é projetar, desenvolver e, futuramente, construir um carro de competição estudantil, aplicando o que aprendemos em engenharia, design e gestão. Todas as áreas são importantes - não é preciso ter experiência prévia.",
+        "subtitle": "As candidaturas para este ano estão encerradas, mas já estamos a recolher contactos para a equipa do próximo ano. Envia-nos o teu contacto para erta@ualg.pt e avisamos-te assim que o recrutamento abrir.",
         "loading": "A carregar…",
         "email-subject": "Candidatura ERTA",
         "form": {
@@ -489,9 +489,11 @@
             "what-eyebrow": "A competição",
             "what-title": "O que é a Formula Student?",
             "what-body": "Uma competição internacional de engenharia em que equipas universitárias projetam e constroem um protótipo de corrida e defendem cada decisão perante júris da indústria. A Classe 2 (a nossa) valida o projeto antes de avançar para a Classe 1, com corrida em pista.",
+            "what-image-alt": "Equipas estudantis de todas as universidades reunidas no paddock da FSPT26",
             "scoring-eyebrow": "A folha de pontuação",
             "scoring-title": "Como são avaliadas as equipas",
             "scoring-body": "Na Classe 2, júris da indústria pontuam três provas estáticas segundo o regulamento oficial. O resultado combinado face a todas as equipas determina a classificação geral.",
+            "scoring-image-alt": "Membros da ERTA a apresentar o projeto ao júri durante a avaliação de design",
             "item-design": "a solidez da engenharia.",
             "item-cost": "o que o carro custaria a produzir.",
             "item-business": "se é um projeto financável."

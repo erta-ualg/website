@@ -18,6 +18,11 @@ After adding `prep.jpg` and `track.jpg`, import them in `src/data/Results.ts` an
 - `results-page.gallery.prep-alt`
 - `results-page.gallery.track-alt`
 
+## Context panel photos ("The competition, in short")
+
+- `formula-student-paddock.jpg` — 1260 × 540 (21:9). Teams from across the paddock at FSPT26. Left panel, under "What is Formula Student?".
+- `design-judging.jpg` — 1260 × 540 (21:9). ERTA presenting the project to the judges during design evaluation. Right panel, under "How teams are evaluated".
+
 ## Optional event photos
 
 If you want thumbnails on the three static-event rows, add:

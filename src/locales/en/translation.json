@@ -299,7 +299,7 @@
     "join-form": {
         "eyebrow": "JOIN THE TEAM",
         "title": "Join ERTA",
-        "subtitle": "We are the first Formula Student team from the University of the Algarve. Our goal is to design, develop and, in the future, build a student racing car, applying what we learn in engineering, design and management. All areas are important - no prior experience needed.",
+        "subtitle": "Applications for this year are closed, but we are already collecting contacts for next year's team. Send us your contact at erta@ualg.pt and we will let you know as soon as recruitment opens.",
         "loading": "Loading…",
         "email-subject": "ERTA Join Application",
         "form": {
@@ -489,9 +489,11 @@
             "what-eyebrow": "The competition",
             "what-title": "What is Formula Student?",
             "what-body": "An international engineering competition where university teams design and build a prototype race car, then defend every decision to industry judges. Class 2 (ours) validates the project before stepping up to Class 1, full on-track racing.",
+            "what-image-alt": "Student teams from every university gathered in the FSPT26 paddock",
             "scoring-eyebrow": "The score sheet",
             "scoring-title": "How teams are evaluated",
             "scoring-body": "In Class 2, industry juries score three static events against the official rules. The combined result against every other team sets the overall rank.",
+            "scoring-image-alt": "ERTA members presenting the project to the judges during design evaluation",
             "item-design": "how sound the engineering is.",
             "item-cost": "what the car would cost to produce.",
             "item-business": "whether it is a fundable project."

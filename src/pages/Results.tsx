@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import results from "../data/Results";
+import designJudging from "../assets/results/design-judging.jpg";
+import formulaStudentPaddock from "../assets/results/formula-student-paddock.jpg";
 import { SEO } from "../hooks/useSEO";
 
 export default function Results() {
@@ -137,6 +139,15 @@ export default function Results() {
                                 <p className="section-eyebrow results-eyebrow">{t("results-page.context.what-eyebrow")}</p>
                                 <h3 className="results-context-title">{t("results-page.context.what-title")}</h3>
                                 <p className="results-context-body">{t("results-page.context.what-body")}</p>
+                                <img
+                                    src={formulaStudentPaddock}
+                                    alt={t("results-page.context.what-image-alt")}
+                                    width={1260}
+                                    height={540}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="results-context-image"
+                                />
                             </div>
 
                             <div className="site-panel results-context-card">
@@ -157,6 +168,15 @@ export default function Results() {
                                         <span>{t("results-page.context.item-business")}</span>
                                     </li>
                                 </ul>
+                                <img
+                                    src={designJudging}
+                                    alt={t("results-page.context.scoring-image-alt")}
+                                    width={1260}
+                                    height={540}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="results-context-image"
+                                />
                             </div>
                         </div>
                     </div>
